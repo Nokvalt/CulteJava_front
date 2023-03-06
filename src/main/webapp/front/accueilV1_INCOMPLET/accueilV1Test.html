@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Accueil</title>
+  <style>
+  body {
+    background-color: #060522;
+    color: white;
+    overflow: hidden;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  input[type="login"],
+  input[type="password"],
+  input[type="submit"] {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #13131a;
+
+    font-family: monospace;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  input[type="login"],
+  input[type="password"]{
+    color: #0b795a;
+  }
+  input[type="submit"] {
+    margin-top: 20px;
+    color: white;
+  }
+  #background1 {
+    display: flex;
+
+    color: white; /* Changez la couleur de texte à votre goût */
+    font-family: monospace; /* Changez la police de caractères à votre goût */
+    white-space: pre-wrap; /* Permet de conserver les espaces et les sauts de ligne */
+    padding: 20px; /* Ajoutez de la marge intérieure pour éviter que le texte ne soit collé aux bords */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    font-size: 20px;
+    float: left;
+    justify-content: flex-start;
+  }
+
+  #background2 {
+    display: flex;
+
+    color: white; /* Changez la couleur de texte à votre goût */
+    font-family: monospace; /* Changez la police de caractères à votre goût */
+    white-space: pre-wrap; /* Permet de conserver les espaces et les sauts de ligne */
+    padding: 20px; /* Ajoutez de la marge intérieure pour éviter que le texte ne soit collé aux bords */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    font-size: 20px;
+    float: right;
+    justify-content: flex-end;
+  }
+  #background3 {
+    display: flex;
+
+    color: white; /* Changez la couleur de texte à votre goût */
+    font-family: monospace; /* Changez la police de caractères à votre goût */
+    white-space: pre-wrap; /* Permet de conserver les espaces et les sauts de ligne */
+    padding: 20px; /* Ajoutez de la marge intérieure pour éviter que le texte ne soit collé aux bords */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    font-size: 20px;
+    float: left;
+    justify-content: flex-start;
+  }
+  #background4 {
+    display: flex;
+
+    color: white; /* Changez la couleur de texte à votre goût */
+    font-family: monospace; /* Changez la police de caractères à votre goût */
+    white-space: pre-wrap; /* Permet de conserver les espaces et les sauts de ligne */
+    padding: 20px; /* Ajoutez de la marge intérieure pour éviter que le texte ne soit collé aux bords */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    font-size: 20px;
+    float: right;
+    justify-content: flex-end;
+  }
+
+  .animation1 {
+    animation-name: fadeInOut1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .animation2 {
+    animation-name: fadeInOut2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeInOut1 {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  @keyframes fadeInOut2 {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  .animation3{
+  animation-name: fadeInOut4;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  }
+
+  .animation4 {
+    animation-name: fadeInOut4;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeInOut3 {
+    display: flex;
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInOut4 {
+    display: flex;
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  </style>
+
+<script defer src="accueilV1.js" charset="utf-8"></script>
+
+</head>
+<body>
+  <div class="ascii" id="background1">
+  test1
+
+
+
+  </div>
+  <div class="ascii" id="background2">
+    test2
+  </div>
+  <div class="ascii" id="background3">
+  test3
+
+  </div>
+  <div class="ascii" id="background4">
+  test4
+  </div>
+  <form>
+    <table>
+      <tr>
+        <td></td>
+        <td>
+          <input required type="login" placeholder="Saisir votre login">
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input required type="password" placeholder="Saisir votre password">
+        </td>
+      </tr>
+    </table>
+    <input type="submit" value="Connexion">
+  </form>
+</body>
+</html>

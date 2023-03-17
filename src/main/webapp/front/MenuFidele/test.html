@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Titre du document</title>
+    <style>
+      input {
+        width: 90%;
+        padding: 10px;
+        margin: 5px;
+        outline: none;
+      }
+      input::placeholder {
+        color: #ff0000;
+        opacity: 1;
+      }
+      input:placeholder-shown {
+        border: 1px solid #095484;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/action_page.php">
+      Prénom: <input type="text" name="firstname" placeholder="John" /><br />
+      <br />
+      Nom: <input type="text" name="lastname" placeholder="Lennon" /><br />
+      <br />
+      Adresse éléctronique: <input type="email" name="email" placeholder="VotreEmail@gmail.com" />
+    </form>
+  </body>
+</html>

@@ -23,6 +23,7 @@ export class TapoteurHttpService {
   }
 
   findAll(): Array<TapoteurResponse>{
+    console.log(this.tapoteurs);
     return this.tapoteurs;
   }
 }

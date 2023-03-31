@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FideleComponent } from './fidele/fidele.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { EvenementComponent } from './evenement/evenement.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FideleComponent,
     AccueilComponent,
-    NavBarComponent
+    NavBarComponent,
+    EvenementComponent
   ],
   imports: [
     BrowserModule,

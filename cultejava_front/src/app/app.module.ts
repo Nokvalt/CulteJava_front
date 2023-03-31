@@ -18,21 +18,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     AccueilComponent,
     NavBarComponent,
     EvenementComponent,
-<<<<<<< HEAD
-    TapoteurComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-=======
+    TapoteurComponent,
     InscriptionComponent
   ],
+  
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
->>>>>>> FormInscpt
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

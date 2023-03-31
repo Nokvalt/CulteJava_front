@@ -25,6 +25,24 @@ export class Tapoteur{
     }
 }
 
+export class TapoteurResponse{
+    id: number;
+    nom: string;
+    prenom: string;
+    login: string;
+    dateAdhesion: Date
+    sommeDon: number;
+
+    constructor(id?: number, nom?: string, prenom?: string, dateAdhesion?: Date, login?: string, sommeDon?: number){
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateAdhesion = dateAdhesion;
+        this.login = login;
+        this.sommeDon = sommeDon;
+    }
+}
+
 
 export class Fidele extends Tapoteur{
     //inscriptions: Array<Evenement>;

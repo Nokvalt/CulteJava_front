@@ -7,6 +7,9 @@ import { FideleComponent } from './fidele/fidele.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { EvenementComponent } from './evenement/evenement.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -14,10 +17,12 @@ import { EvenementComponent } from './evenement/evenement.component';
     FideleComponent,
     AccueilComponent,
     NavBarComponent,
-    EvenementComponent
+    EvenementComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,0 +1,53 @@
+import { Injectable } from '@angular/core';
+import { Evenement } from '../modelEvenement';
+
+import { EvenementComponent } from './evenement.component';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EvenementService {
+
+  private evenements: Array<Evenement> = new Array<Evenement>();
+
+  constructor() { 
+    this.evenements.push(new Evenement(4, "LEROY MERLIN"));
+    this.evenements.push(new Evenement(6, "CASTORAMA"));
+  }
+
+  findAll(): Array<Evenement> {
+    return this.evenements;
+  }
+
+  findById(id: number): Evenement {
+    return this.evenements.find(f => f.id == id);
+  }
+
+  create(evenement: Evenement): void {
+    let maxId = 0;
+
+    this.evenements.forEach(f => {
+      if(f.id > maxId) {
+        maxId = f.id;
+      }
+    });
+
+    evenement.id = maxId + 1;  
+
+    this.evenements.push(evenement);
+  }
+
+  update(evenement: Evenement): void {
+    let idx: number;
+
+    idx = this.evenements.findIndex(f => f.id == evenement.id);
+
+    this.evenements[idx] = evenement;
+  }
+
+  remove(id: number): void {
+    let idx: number = this.evenements.findIndex(f => f.id == id);
+
+    this.evenements.splice(idx, 1);
+  }
+}

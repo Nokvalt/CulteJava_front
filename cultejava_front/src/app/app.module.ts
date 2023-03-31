@@ -8,6 +8,9 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TapoteurComponent } from './tapoteur/tapoteur.component';
 import { EvenementComponent } from './evenement/evenement.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +18,21 @@ import { EvenementComponent } from './evenement/evenement.component';
     AccueilComponent,
     NavBarComponent,
     EvenementComponent,
+<<<<<<< HEAD
     TapoteurComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+=======
+    InscriptionComponent
+  ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRoutingModule
+>>>>>>> FormInscpt
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,7 @@ import { FideleComponent } from './tapoteur/fidele.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TapoteurComponent } from './tapoteur/tapoteur.component';
+import { EvenementComponent } from './evenement/evenement.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { TapoteurComponent } from './tapoteur/tapoteur.component';
     FideleComponent,
     AccueilComponent,
     NavBarComponent,
+    EvenementComponent
     TapoteurComponent
   ],
   imports: [

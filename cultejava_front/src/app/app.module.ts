@@ -3,16 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FideleComponent } from './fidele/fidele.component';
+import { FideleComponent } from './tapoteur/fidele.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { TapoteurComponent } from './tapoteur/tapoteur.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FideleComponent,
     AccueilComponent,
-    NavBarComponent
+    NavBarComponent,
+    TapoteurComponent
   ],
   imports: [
     BrowserModule,

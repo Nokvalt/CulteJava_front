@@ -11,8 +11,7 @@ export class EvenementService {
   private evenements: Array<Evenement> = new Array<Evenement>();
 
   constructor() { 
-    this.evenements.push(new Evenement(4, "LEROY MERLIN"));
-    this.evenements.push(new Evenement(6, "CASTORAMA"));
+    
   }
 
   findAll(): Array<Evenement> {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Tapoteur } from '../modelTapoteur';
+import { Tapoteur, TapoteurResponse } from '../modelTapoteur';
 import { TapoteurHttpService } from './tapoteur-http.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class TapoteurComponent {
   
   constructor(private tapoteurService: TapoteurHttpService){}
 
-  listTapoteurs(): Array<Tapoteur>{
+  listTapoteurs(): Array<TapoteurResponse>{
     return this.tapoteurService.findAll();
   }
 }

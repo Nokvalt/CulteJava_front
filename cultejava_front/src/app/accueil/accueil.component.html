@@ -1,10 +1,18 @@
-Culte de Java
-
-<form #loginForm="ngForm" (ngSubmit)="connexion()">
-    <input type="text" id="login" name="login" class="form-control" [(ngModel)]="connexionForm.login"/><br>
-
-    <input type="password" id="password" name="paswword" class="form-control" [(ngModel)]="connexionForm.password"/><br>
+<body>
+    <div id="title">
+        <h1>Culte de Java</h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/2146/2146434.png" alt=""> <!-- penser a modifier le lien de l'image-->
+    </div>
     
-    <input type="submit" value="Connexion" />
-    <div *ngIf="wrongPassword">Login ou mot de passe incorrect</div>
-</form>
+
+    <form #loginForm="ngForm" (ngSubmit)="connexion()">
+        <input type="login" id="login" name="login" class="form-control" [(ngModel)]="connexionForm.login"/><br>
+
+        <input type="password" id="password" name="paswword" class="form-control" [(ngModel)]="connexionForm.password"/><br>
+        
+        <input type="submit" value="Connexion" />
+        <div *ngIf="wrongPassword">Login ou mot de passe incorrect</div>
+    </form>
+
+</body>
+

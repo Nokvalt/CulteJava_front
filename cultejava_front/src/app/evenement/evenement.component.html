@@ -17,13 +17,13 @@
                 <tr *ngFor="let evenement of list()">
                     <td>{{evenement.id}}</td>
                     <td>{{evenement.nom}}</td>
-                    <td>{{evenement.date}}</td>
-                    <td>{{evenement.lieu}}</td>
                     <td>{{evenement.activite}}</td>
+                    <td>{{evenement.lieu}}</td>
+                    <td>{{evenement.date}}</td>
                     <td>
                         <div >
-                            <a input type ="button" value = "Editer"(click)="edit(evenement.id)"></a>
-                            <a input type ="button" value = "Effacer"(click)="remove(evenement.id)"></a>
+                            <a><input type ="button" value = "Editer"(click)="edit(evenement.id)"></a>
+                            <a><input type ="button" value = "Effacer"(click)="remove(evenement.id)"></a>
                         </div>
                     </td>
                 </tr>
@@ -41,19 +41,19 @@
     <div>Edition d'un evenement</div>
     <div>
         <div>
-            <label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" >
+            <label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" readonly [(ngModel)]="evenementForm.id"/>
         </div>
         <div>
-            <label for="nom">Nom:</label> <input type="text" class="form-control" id="nom" name="nom" />
+            <label for="nom">Nom:</label> <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="evenementForm.nom"/>
         </div>
         <div>
-            <label for="date">Date:</label> <input type="date" class="form-control" id="date" name="date" />
+            <label for="date">Activité:</label> <input type="enum" class="form-control" id="date" name="date" [(ngModel)]="evenementForm.activite"/>
         </div>
         <div>
-            <label for="lieu">Lieu:</label> <input type="text" class="form-control" id="lieu" name="lieu" />
+            <label for="lieu">Lieu:</label> <input type="text" class="form-control" id="lieu" name="lieu" [(ngModel)]="evenementForm.lieu"/>
         </div>
         <div>
-            <label for="activite">Activité:</label> <input type="enum" class="form-control" id="activite" name="activite" />
+            <label for="activite">Date:</label> <input type="date" class="form-control" id="activite" name="activite" [(ngModel)]="evenementForm.date"/>
         </div>
     </div>
     <a><input type ="button" value = "Ajouter à la liste" (click)="save()"></a>

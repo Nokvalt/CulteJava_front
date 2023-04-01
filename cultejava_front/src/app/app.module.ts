@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { EvenementComponent } from './evenement/evenement.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    FormsModule
   ], 
   providers: [],
   bootstrap: [AppComponent]

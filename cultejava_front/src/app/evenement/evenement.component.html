@@ -15,17 +15,16 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let produit of list()">
-                    <tr *ngFor="let evenement of list()">
+                <tr *ngFor="let evenement of list()">
                         <td>{{evenement.id}}</td>
                         <td>{{evenement.nom}}</td>
-                        <td>{{evenement.nomactivite}}</td>
+                        <td>{{evenement.dateEvent}}</td>
                         <td>{{evenement.lieu}}</td>
-                        <td>{{evenement.date}}</td>
-                    <td>
+                        <td>{{evenement.nomActivite}}</td>
+                        <td>
                             <a> <input type="button" value="Modifier" (click)="edit(evenement.id)"></a>
                             <a> <input type="button" value="Supprimer" (click)="remove(evenement.id)"></a>
-                    </td>
+                        </td>
                 </tr>
             </tbody>
 
@@ -46,13 +45,17 @@
             <label for="nom">Libellé:</label> <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="evenementForm.nom"/>
         </div>
         <div>
-            <label for="nomactivite">Activité:</label> <input type="text" class=" form-control" id="nomactivite" name="nomactivite" [(ngModel)]="evenementForm.nomactivite">
+            <label for="nomactivite">Activité:</label> 
+            <select name="nomactivite" id="nomactivite" [(ngModel)]="evenementForm.nomActivite">
+
+                <option [value]="activite" *ngFor="let activite of listActivites()">{{activite}}</option>
+            </select>
         </div>
         <div>
             <label for="lieu">Lieu:</label> <input type="text"  [(ngModel)]="evenementForm.lieu" />
         </div>
         <div>
-            <label for="date">Date:</label> <input type="date" class="form-control" id="date" name="date" [(ngModel)]="evenementForm.date" />
+            <label for="date">Date:</label> <input type="date" class="form-control" id="date" name="date" [(ngModel)]="evenementForm.dateEvent" />
         </div>
     </div>
     <div>

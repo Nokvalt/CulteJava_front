@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class EvenementHttpService {
 
-  private evenements: Array<Evenement> = new Array<Evenement>();
+  evenements: Array<Evenement> = new Array<Evenement>();
   private evenementApiPath: string;
 
   constructor(private http: HttpClient) {
@@ -20,7 +20,6 @@ export class EvenementHttpService {
   }
 
   findAll(): Array<Evenement> {
-    
     return this.evenements;
     
   }

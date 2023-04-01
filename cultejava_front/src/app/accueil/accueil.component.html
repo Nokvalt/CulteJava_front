@@ -1,1 +1,10 @@
-<p>accueil works!</p>
+Culte de Java
+
+<form #loginForm="ngForm" (ngSubmit)="connexion()">
+    <input type="text" id="login" name="login" class="form-control" [(ngModel)]="connexionForm.login"/><br>
+
+    <input type="password" id="password" name="paswword" class="form-control" [(ngModel)]="connexionForm.password"/><br>
+    
+    <input type="submit" value="Connexion" />
+    <div *ngIf="wrongPassword">Login ou mot de passe incorrect</div>
+</form>

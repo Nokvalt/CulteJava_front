@@ -20,11 +20,7 @@ export class AccueilComponent {
     console.log ("test" + this.connexionForm);
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
       this.connected = resp;})
-    
-      if(this.connected != null){
-        this.router.navigate(['/tapoteur']);
-      }else{
-        this.wrongPassword = true;
-      }
+      
+      this.connected != null ? this.router.navigate(['/tapoteur']) : this.wrongPassword = true;
   }
 }

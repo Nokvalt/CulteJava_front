@@ -8,6 +8,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TapoteurComponent } from './tapoteur/tapoteur.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TopContentComponent } from './top-content/top-content.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     AccueilComponent,
     NavBarComponent,
-    TapoteurComponent
+    TapoteurComponent,
+    TopContentComponent
   ],
   imports: [
     BrowserModule,

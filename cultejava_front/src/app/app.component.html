@@ -1,5 +1,17 @@
-<nav-bar></nav-bar>
+    <div id="body">
 
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+        <div>
+            <top-content id="topContent"></top-content>
+        </div>
+
+
+        <div id="bottomContent">
+            <div id="nav">
+               <nav-bar></nav-bar>
+            </div>
+
+            <div class="body">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>

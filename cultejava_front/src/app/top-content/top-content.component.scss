@@ -1,0 +1,19 @@
+body{
+    margin:0;
+    display: flex;
+}
+
+#logo, #welcomeBar{
+    background-color: #2f2f2f;
+    margin-bottom: 10px;
+}
+
+#logo{
+    width: 25%;
+    margin-right: 10px;
+}
+
+#welcomeBar{
+    width: 75%;
+    color: white;
+}

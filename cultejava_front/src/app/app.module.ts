@@ -7,9 +7,7 @@ import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TapoteurComponent } from './tapoteur/tapoteur.component';
-import { EvenementComponent } from './evenement/evenement.component';
-import { InscriptionComponent } from './inscription/inscription.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({

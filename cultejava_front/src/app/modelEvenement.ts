@@ -1,26 +1,19 @@
-enum Activite {
-  'feteCreation', 
-  'naissanceProphete', 
-  'fetePopups', 
-  'rassemblement', 
-  'pelerinnage', 
-  'promotion'
-  }
+
 
 export class Evenement {
     id: number;
     nom: string;
-    date: Date;
+    date: string;
     lieu: string;
-    activite : Activite;
+    nomactivite : string;
 
 
-    constructor(id?: number, nom?: string,date?: Date, lieu?:string, activite?:Activite) {
+    constructor(id?: number, nom?: string,date?: string, lieu?:string, nomactivite?:string) {
         this.id = id;
         this.nom = nom;
         this.date= date;
         this.lieu = lieu;
-        this.activite = this.activite
+        this.nomactivite = nomactivite;
     }
 
 }

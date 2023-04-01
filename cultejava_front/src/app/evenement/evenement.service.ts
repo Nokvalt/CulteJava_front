@@ -10,19 +10,20 @@ export class EvenementService {
 
   private evenements: Array<Evenement> = new Array<Evenement>();
   start = new Date(Date.now());
-  
+
   constructor() { 
-    this.evenements.push(new Evenement(1,"baba", this.start ,"lalaland", ));
   }
 
   findAll(): Array<Evenement> {
+    
     return this.evenements;
   }
 
   findById(id: number): Evenement {
+    console.log(this.evenements);
     return this.evenements.find(f => f.id == id);
   }
-
+//
   create(evenement: Evenement): void {
     let maxId = 0;
 

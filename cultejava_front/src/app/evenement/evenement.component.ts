@@ -22,6 +22,7 @@ export class EvenementComponent {
   }
 
   edit(id: number): void {
+    
     this.evenementService.findById(id).subscribe(resp => {
       this.evenementForm = resp;
     });

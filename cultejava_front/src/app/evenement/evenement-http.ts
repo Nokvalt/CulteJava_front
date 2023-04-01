@@ -20,16 +20,18 @@ export class EvenementHttpService {
   }
 
   findAll(): Array<Evenement> {
-    console.log(this.evenements)
+    
     return this.evenements;
     
   }
 
   findById(id: number): Observable<Evenement> {
+    console.log(this.evenements);
     return this.http.get<Evenement>(this.evenementApiPath + "/" + id);
   }
 
   create(evenement: Evenement): void {
+  
     this.http.post<Evenement>(this.evenementApiPath, evenement).subscribe(resp => {
       this.load();
     });

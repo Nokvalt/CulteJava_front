@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Evenement } from '../modelEvenement';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +14,15 @@ export class EvenementHttpService {
   private evenementApiPath: string;
 
   constructor(private http: HttpClient) {
-   /* this.evenementApiPath = environment.apiUrl + "/evenement";
-    this.load();*/
+    this.evenementApiPath = environment.apiUrl + "/evenement"; //global
+    this.load();
+    
   }
 
   findAll(): Array<Evenement> {
+    console.log(this.evenements)
     return this.evenements;
+    
   }
 
   findById(id: number): Observable<Evenement> {
@@ -44,7 +49,8 @@ export class EvenementHttpService {
 
   private load(): void {
     this.http.get<Array<Evenement>>(this.evenementApiPath).subscribe(resp => {
-        this.evenements = resp;
+    this.evenements = resp;
+    
     })
   }
 }

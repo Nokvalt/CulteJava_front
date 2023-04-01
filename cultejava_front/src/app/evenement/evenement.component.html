@@ -1,7 +1,7 @@
-<div class="card mt-3">
-    <div class="card-header bg-primary text-white display-6">Liste des evenements</div>
-    <div class="card-body">
-        <table class="table table-striped">
+<div >
+    <div>Liste des evenements</div>
+    <div >
+        <table >
             <thead>
                 <tr>
                     <th>Identifiant</th>
@@ -21,9 +21,9 @@
                     <td>{{evenement.lieu}}</td>
                     <td>{{evenement.activite}}</td>
                     <td>
-                        <div class="btn-group btn-group-sm">
-                            <a class="btn btn-primary" (click)="edit(evenement.id)"><i class="bi bi-pencil-square"></i></a>
-                            <a class="btn btn-danger" (click)="remove(evenement.id)"><i class="bi bi-trash"></i></a>
+                        <div >
+                            <a input type ="button" value = "Editer"(click)="edit(evenement.id)"></a>
+                            <a input type ="button" value = "Effacer"(click)="remove(evenement.id)"></a>
                         </div>
                     </td>
                 </tr>
@@ -31,35 +31,31 @@
 
         </table>
     </div>
-    <div class="card-footer">
-        <a class="btn btn-success btn-lg" (click)="add()"><i
-            class="bi bi-plus-square"></i></a>
+    <div >
+        <a> <input type ="button" value = "Ajouter un nouvel événement" (click)="add()"></a>
     </div>
 </div>
 
-<div class="card mt-3" *ngIf="evenementForm">
-    <div class="card-header bg-primary text-white display-6">Edition d'un evenement</div>
-    <div class="card-body">
-        <div class="form-group">
+
+<div input type ="button" *ngIf="evenementForm">
+    <div>Edition d'un evenement</div>
+    <div>
+        <div>
             <label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" >
         </div>
-        <div class="form-group">
+        <div>
             <label for="nom">Nom:</label> <input type="text" class="form-control" id="nom" name="nom" />
         </div>
-        <div class="form-group">
+        <div>
             <label for="date">Date:</label> <input type="date" class="form-control" id="date" name="date" />
         </div>
-        <div class="form-group">
+        <div>
             <label for="lieu">Lieu:</label> <input type="text" class="form-control" id="lieu" name="lieu" />
         </div>
-        <div class="form-group">
-            <label for="activite">Activité:</label> <input type="text" class="form-control" id="activite" name="activite" />
+        <div>
+            <label for="activite">Activité:</label> <input type="enum" class="form-control" id="activite" name="activite" />
         </div>
     </div>
-    <div class="card-footer">
-        <div class="btn-group btn-group-lg float-right">
-            <a class="btn btn-success" (click)="save()"><i class="bi bi-check-square-fill"></i></a>
-            <a class="btn btn-warning" (click)="cancel()"><i class="bi bi-backspace-fill"></i></a>
-        </div>
-    </div>
+    <a><input type ="button" value = "Ajouter à la liste" (click)="save()"></a>
+    <a><input type ="button" value = "Annuler" (click)="cancel()"></a>
 </div>

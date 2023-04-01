@@ -1,5 +1,10 @@
 enum Activite {
-
+  'feteCreation', 
+  'naissanceProphete', 
+  'fetePopups', 
+  'rassemblement', 
+  'pelerinnage', 
+  'promotion'
   }
 
 export class Evenement {

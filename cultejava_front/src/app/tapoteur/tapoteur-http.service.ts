@@ -24,7 +24,6 @@ export class TapoteurHttpService {
   }
 
   findAll(): Array<TapoteurRequestResponse>{
-    console.log(this.tapoteurs);
     return this.tapoteurs;
   }
 

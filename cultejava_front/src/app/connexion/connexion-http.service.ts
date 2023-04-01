@@ -18,6 +18,7 @@ export class ConnexionHttpService {
   }
 
   findByLogin(tapoteur: Connexion): Observable<TapoteurRequestResponse>{
+    console.log("tapoteur:" + tapoteur.login + tapoteur.password);
     return this.http.post<TapoteurRequestResponse>(this.connexionApiPath, tapoteur);
   }
 }

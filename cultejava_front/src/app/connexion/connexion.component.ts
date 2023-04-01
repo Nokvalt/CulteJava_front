@@ -23,7 +23,9 @@ export class ConnexionComponent {
     console.log ("test" + this.connexionForm.login + this.connexionForm.password);
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
       this.connected = resp;})
+    
+      console.log(this.connected);
       
-      this.connected != null ? this.router.navigate(['/accueil']) : this.wrongPassword = true;
+      this.connected.login != "null" ? this.router.navigate(['/accueil']) : this.wrongPassword = true;
   }
 }

@@ -56,7 +56,6 @@ export class TapoteurHttpService {
         break;
       }
     }
-     
   }
 
   update(tapoteur: TapoteurRequestResponse): void {

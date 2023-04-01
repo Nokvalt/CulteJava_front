@@ -1,9 +1,26 @@
 #body{
-    margin:0;
+    margin:-10px;
     background-color: #515658;
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #topContent{
-    height: 100px;
+    height: 10vh;
+    margin-bottom: 10px;
+}
+
+#bottomContent{
+    display: flex;
+    height: 80vh;
+    width: 100vh;
+}
+
+#nav{
+    margin-left: 35px;
+    width: 20vh;
+}
+
+#content{
+    width: 80vh;
 }

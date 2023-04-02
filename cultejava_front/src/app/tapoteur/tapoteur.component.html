@@ -1,0 +1,77 @@
+<h1>Liste moche des tapoteurs</h1>
+
+<table>
+    <tr>
+        <th>Identifiant</th>
+        <th>Login</th>
+        <th>Mot de passe</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Date d'adhésion</th>
+        <th>Adresse</th>
+        <th>Somme des dons</th>
+        <th>Rang</th>
+        <th></th>
+    </tr>
+
+    <tr *ngFor="let tapoteur of listTapoteurs()">
+        <td>{{tapoteur.id}}</td>
+        <td>{{tapoteur.login}}</td>
+        <td>{{tapoteur.password}}</td>
+        <td>{{tapoteur.nom}}</td>
+        <td>{{tapoteur.prenom}}</td>
+        <td>{{tapoteur.dateAdhesion}}</td>
+        <td>{{tapoteur.numero}}, {{tapoteur.voie | titlecase}} - {{tapoteur.cp}} {{tapoteur.ville | uppercase}}  ({{tapoteur.pays | uppercase}})</td>
+        <td>{{tapoteur.sommeDon}}</td>
+        <td>{{tapoteur.rang}}</td>
+        <td> <button (click)="edit(tapoteur.id)">Modifier</button>
+             <button (click)="remove(tapoteur.id)">Supprimer</button> </td>
+    </tr>
+</table>
+
+<button (click)="add()">Ajouter</button>
+
+
+<div *ngIf="tapoteurForm">
+    <h2 >Edition d'un tapoteur</h2>
+    <label>Identifiant:</label>
+    <input type="number" id="id" name="id" readonly [(ngModel)]="tapoteurForm.id"/><br>
+
+    <label>Rang:</label>
+    <input type="radio" id="rang" name="ran" value="Fidele" [(ngModel)]="tapoteurForm.rang"/>Fidèle
+    <input type="radio" id="rang" name="rang" value="Compileur" [(ngModel)]="tapoteurForm.rang"/>Compileur
+    <input type="radio" id="rang" name="rang" value="Indenteur" [(ngModel)]="tapoteurForm.rang"/>Indenteur
+    <input type="radio" id="rang" name="ran Dev" value="Grand Dev" [(ngModel)]="tapoteurForm.rang"/>Grand Dev<br>
+
+    <label>Login:</label>
+    <input type="text" id="login" name="login" [(ngModel)]="tapoteurForm.login"/><br>
+
+    <label>Mot de passe:</label>
+    <input type="text" id="login" name="login" [(ngModel)]="tapoteurForm.password"/><br>
+
+    <label>Nom:</label>
+    <input type="text" id="nom" name="nom" [(ngModel)]="tapoteurForm.nom"/><br>
+
+    <label>Prénom:</label>
+    <input type="text" id="prenom" name="prenom" [(ngModel)]="tapoteurForm.prenom"/><br>
+
+    <label>Numéro:</label>
+    <input type="text" id="numero" name="numero" [(ngModel)]="tapoteurForm.numero"/><br>
+    <label>Voie:</label>
+    <input type="text" id="voie" name="voie" [(ngModel)]="tapoteurForm.voie"/><br>
+    <label>Cp:</label>
+    <input type="text" id="cp" name="cp" [(ngModel)]="tapoteurForm.cp"/><br>
+    <label>Ville:</label>
+    <input type="text" id="ville" name="ville" [(ngModel)]="tapoteurForm.ville"/><br>
+    <label>Pays:</label>
+    <input type="text" id="pays" name="pays" [(ngModel)]="tapoteurForm.pays"/><br>
+
+    <label>Date d'adhésion:</label>
+    <input type="date" id="dateAdhesion" name="dateAdhesion" [(ngModel)]="tapoteurForm.dateAdhesion"/><br>
+
+    <label>Somme des dons:</label>
+    <input type="number" id="sommeDon" name="sommeDon" [(ngModel)]="tapoteurForm.sommeDon"/><br>
+
+    <button (click)="save()">Confirmer</button>
+    <button (click)="cancel()">Annuler</button>
+</div>

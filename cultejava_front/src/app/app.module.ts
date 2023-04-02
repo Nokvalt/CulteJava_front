@@ -12,6 +12,7 @@ import { EvenementComponent } from './evenement/evenement.component';
 import { TapoteurComponent } from './tapoteur/tapoteur.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 
 @NgModule({
@@ -20,11 +21,15 @@ import { ConnexionComponent } from './connexion/connexion.component';
     AccueilComponent,
     NavBarComponent,
     TapoteurComponent,
+    InscriptionComponent,
     ConnexionComponent
     EvenementComponent,
   ],
+  
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,

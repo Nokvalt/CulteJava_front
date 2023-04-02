@@ -20,9 +20,19 @@
     </div>
   
     <div>
-      <label for="adresse">Adresse :</label>
-      <input type="text" id="adresse" formControlName="adresse" />
+      <label>Adresse :</label><br>
+      <label>Numéro:</label>
+      <input type="text" id="numero" name="numero" formControlName="numero"/><br>
+      <label>Voie:</label>
+      <input type="text" id="voie" name="voie" formControlName="voie"/><br>
+      <label>Cp:</label>
+      <input type="text" id="cp" name="cp" formControlName="cp"/><br>
+      <label>Ville:</label>
+      <input type="text" id="ville" name="ville" formControlName="ville"/><br>
+      <label>Pays:</label>
+      <input type="text" id="pays" name="pays" formControlName="pays"/>
     </div>
   
     <a> <input type="button" value="Envoyer" (click)="inscription()"></a>
+   <span *ngIf="inscriptionReussie">Inscription réussie !</span> 
   </form>

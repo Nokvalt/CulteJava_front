@@ -6,10 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { TapoteurComponent } from './tapoteur/tapoteur.component';
 import { EvenementComponent } from './evenement/evenement.component';
-import { InscriptionComponent } from './inscription/inscription.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,22 +16,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     AccueilComponent,
     NavBarComponent,
     EvenementComponent,
-<<<<<<< HEAD
-    TapoteurComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-=======
-    InscriptionComponent
-  ],
-  imports: [
+    HttpClientModule,
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
->>>>>>> FormInscpt
-  ],
+    AppRoutingModule,
+    FormsModule
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })

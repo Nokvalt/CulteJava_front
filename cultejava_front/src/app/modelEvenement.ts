@@ -1,21 +1,20 @@
-enum Activite {
-
-  }
-
 export class Evenement {
     id: number;
     nom: string;
-    date: Date;
+    dateEvent: string;
     lieu: string;
-    activite : Activite;
+    nomActivite : string;
 
 
-    constructor(id?: number, nom?: string,date?: Date, lieu?:string, activite?:Activite) {
+    constructor(id?: number, nom?: string,dateEvent?: string, lieu?:string, nomActivite?:string) {
         this.id = id;
         this.nom = nom;
-        this.date= date;
+        this.dateEvent= dateEvent;
         this.lieu = lieu;
-        this.activite = this.activite
+        this.nomActivite = nomActivite;
     }
+}
 
+export enum Activite{
+    feteCreation, naissanceProphete, fetePopups, rassemblement, pelerinnage, promotion, banissement
 }

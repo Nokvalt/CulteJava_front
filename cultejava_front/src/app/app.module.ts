@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+
+import { EvenementComponent } from './evenement/evenement.component';
+
 import { TapoteurComponent } from './tapoteur/tapoteur.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConnexionComponent } from './connexion/connexion.component';
@@ -18,13 +21,18 @@ import { ConnexionComponent } from './connexion/connexion.component';
     NavBarComponent,
     TapoteurComponent,
     ConnexionComponent
+    EvenementComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
     FormsModule
-  ],
+  ], 
+
   providers: [],
   bootstrap: [AppComponent]
 })

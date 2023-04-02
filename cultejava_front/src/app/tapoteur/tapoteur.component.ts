@@ -6,6 +6,7 @@ import { TapoteurHttpService } from './tapoteur-http.service';
   selector: 'app-tapoteur',
   templateUrl: './tapoteur.component.html',
   styleUrls: ['./tapoteur.component.scss']
+  
 })
 export class TapoteurComponent {
   tapoteurForm: TapoteurRequestResponse = null;
@@ -42,5 +43,5 @@ export class TapoteurComponent {
 
   cancel():void{
     this.tapoteurForm = null;
-  }
+  } 
 }

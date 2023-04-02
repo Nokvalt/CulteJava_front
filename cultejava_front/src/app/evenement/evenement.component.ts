@@ -20,7 +20,7 @@ export class EvenementComponent {
     }
     return this.evenementService.findAll();
   }
-
+ 
   add(): void {
     this.evenementForm = new Evenement();
   }

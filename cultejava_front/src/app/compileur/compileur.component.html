@@ -1,0 +1,74 @@
+<h1>Liste turbo moche des compileurs</h1>
+
+<table>
+    <tr>
+        <th>Identifiant</th>
+        <th>Login</th>
+        <th>Mot de passe</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Date d'adhésion</th>
+        <th>Adresse</th>
+        <th>Somme des dons</th>
+        <th>Rang</th>
+        <th></th>
+    </tr>
+
+    <tr *ngFor="let compileur of listCompileurs()">
+        <td>{{compileur.id}}</td>
+        <td>{{compileur.login}}</td>
+        <td>{{compileur.password}}</td>
+        <td>{{compileur.nom}}</td>
+        <td>{{compileur.prenom}}</td>
+        <td>{{compileur.dateAdhesion}}</td>
+        <td>{{compileur.numero}}, {{compileur.voie | titlecase}} - {{compileur.cp}} {{compileur.ville | uppercase}}  ({{compileur.pays | uppercase}})</td>
+        <td>{{compileur.sommeDon}}</td>
+        <td>{{compileur.rang}}</td>
+        <td> <button (click)="edit(compileur.id)">Modifier</button>
+             <button (click)="remove(compileur.id)">Supprimer</button> </td>
+    </tr>
+</table>
+
+<button (click)="add()">Ajouter</button>
+
+
+<div *ngIf="compileurForm">
+    <h2 >Edition d'un compileur</h2>
+    <label>Identifiant:</label>
+    <input type="number" id="id" name="id" readonly [(ngModel)]="compileurForm.id"/><br>
+
+    <label>Rang:</label>
+    <input type="radio" id="rang" name="rang" value="Compileur" [(ngModel)]="compileurForm.rang"/>Compileur
+
+    <label>Login:</label>
+    <input type="text" id="login" name="login" [(ngModel)]="compileurForm.login"/><br>
+
+    <label>Mot de passe:</label>
+    <input type="text" id="login" name="login" [(ngModel)]="compileurForm.password"/><br>
+
+    <label>Nom:</label>
+    <input type="text" id="nom" name="nom" [(ngModel)]="compileurForm.nom"/><br>
+
+    <label>Prénom:</label>
+    <input type="text" id="prenom" name="prenom" [(ngModel)]="compileurForm.prenom"/><br>
+
+    <label>Numéro:</label>
+    <input type="text" id="numero" name="numero" [(ngModel)]="compileurForm.numero"/><br>
+    <label>Voie:</label>
+    <input type="text" id="voie" name="voie" [(ngModel)]="compileurForm.voie"/><br>
+    <label>Cp:</label>
+    <input type="text" id="cp" name="cp" [(ngModel)]="compileurForm.cp"/><br>
+    <label>Ville:</label>
+    <input type="text" id="ville" name="ville" [(ngModel)]="compileurForm.ville"/><br>
+    <label>Pays:</label>
+    <input type="text" id="pays" name="pays" [(ngModel)]="compileurForm.pays"/><br>
+
+    <label>Date d'adhésion:</label>
+    <input type="date" id="dateAdhesion" name="dateAdhesion" [(ngModel)]="compileurForm.dateAdhesion"/><br>
+
+    <label>Somme des dons:</label>
+    <input type="number" id="sommeDon" name="sommeDon" [(ngModel)]="compileurForm.sommeDon"/><br>
+
+    <button (click)="save()">Confirmer</button>
+    <button (click)="cancel()">Annuler</button>
+</div>

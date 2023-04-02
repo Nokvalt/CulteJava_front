@@ -8,6 +8,8 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TapoteurComponent } from './tapoteur/tapoteur.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+/*import { CompileurComponent } from './compileur/compileur.component';*/
+import { InscriptionComponent } from './inscription/inscription.component';
 
 
 @NgModule({
@@ -15,14 +17,15 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     AccueilComponent,
     NavBarComponent,
-    EvenementComponent,
     TapoteurComponent,
-    InscriptionComponent
+    /*CompileurComponent,*/
+    InscriptionComponent,
   ],
   
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
   ],

@@ -1,26 +1,18 @@
-#body{
-    margin:-10px;
-    background-color: #515658;
+html, body  {
+    margin: -8px;
+
     height: 100vh;
+    
+    background-color: #515658;  
+
     overflow: hidden;
+
 }
 
-#topContent{
-    height: 10vh;
-    margin-bottom: 10px;
-}
+.page {
+    
+    font-family: monospace;
+    font-size: large;
+    
 
-#bottomContent{
-    display: flex;
-    height: 80vh;
-    width: 100vh;
-}
-
-#nav{
-    margin-left: 35px;
-    width: 20vh;
-}
-
-#content{
-    width: 80vh;
 }

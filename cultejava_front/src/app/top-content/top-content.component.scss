@@ -1,20 +1,56 @@
-#body{
-    margin:0;
-    display: flex;
-    height: 100%;
+#body {
+   display: flex;
+
+   
+   
+
 }
 
-#logo, #welcomeBar{
+#logo {
+    
     background-color: #2f2f2f;
-    margin-bottom: 10px;
-}
-
-#logo{
-    width: 15%;
-    margin-right: 10px;
-}
-
-#welcomeBar{
-    width: 85%;
+    height: 80px;
+    width: 300px;
     color: white;
+    margin-left: 10px;
+    margin-top: 10px;
+  
+
+
+}
+
+#textlogo {
+    margin-left: 105px;
+    margin-top: 35px;
+}
+
+#welcomeBar {
+    background-color: #2f2f2f;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 80px;
+    width: 2000px;
+
+    
+
+}
+
+#welcomeBox {
+
+    margin-left: 10px;
+    margin-top: 22px;
+    background-color: #515658;
+    width: 200px;
+    height: 50px;
+
+}
+
+#textwelcomeBar {
+    
+    margin-top: -35px;
+    margin-left: 40px;
+    color: white;
+    
+    
+
 }

@@ -3,6 +3,7 @@ body {
     background-color: #060522;
     color: white;
     overflow: hidden;
+    height: 100vh;
 }
 
 #title{
@@ -19,7 +20,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    
 }
 input[type="login"], input[type="password"], input[type="submit"] {
     margin: 10px;
@@ -40,4 +41,16 @@ input[type="login"], input[type="password"], input[type="submit"] {
 input[type="submit"] {
     margin-top: 20px;
     color: white;
+}
+
+#inscription{
+    text-align: center;
+    font-family: monospace;
+}
+
+#inscription button{
+    margin: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
 }

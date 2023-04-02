@@ -1,8 +1,7 @@
-
-<div>
-    <div>Liste des produits</div>
-    <div>
-        <table>
+<body>
+    
+    <h1>Liste des Evenements</h1>
+        <table id="table">
             <thead>
                 <tr>
                     <th>Identifiant</th>
@@ -30,17 +29,15 @@
             </tbody>
 
         </table>
-    </div>
-        <a> <input type="button" value="Ajouter un événement" (click)="add()"></a>
-</div>
+        <a> <input type="button" value="Ajouter un événement" (click)="add()" id="add"></a>
 
 
 
 <div input type="button" *ngIf="evenementForm">
-    <div>Edition d'un événement</div>
-    <div>
+    <h2>Edition d'un événement</h2>
+    <div id="form">
         <div> 
-            <a><label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" readonly [(ngModel)]="evenementForm.id" min="10" max="100"></a>
+            <a><label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" size="4" readonly [(ngModel)]="evenementForm.id" min="10" max="100"></a>
         </div>
         <div>
             <label for="nom">Libellé:</label> <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="evenementForm.nom"/>
@@ -52,14 +49,15 @@
             </select>
         </div>
         <div>
-            <label for="lieu">Lieu:</label> <input type="text"  [(ngModel)]="evenementForm.lieu" />
+            <label for="lieu">Ville:</label> <input type="text"  [(ngModel)]="evenementForm.lieu" />
         </div>
         <div>
             <label for="date">Date:</label> <input type="date" class="form-control" id="date" name="date" [(ngModel)]="evenementForm.dateEvent" />
         </div>
+        <a><input type="button" value="Ajouter" (click)="save()" id="button"></a>
+        <a><input type="button" value="Annuler" (click)="cancel()" id="button"></a>
     </div>
-    <div>
-            <a><input type="button" value="Ajouter" (click)="save()"></a>
-            <a><input type="button" value="Annuler" (click)="cancel()"></a>
-    </div> 
+        
 </div>
+
+</body>

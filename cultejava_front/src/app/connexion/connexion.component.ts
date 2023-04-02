@@ -47,4 +47,8 @@ export class ConnexionComponent {
         this.router.navigate(['/accueil']);
       }
   }
+
+  inscription():void{
+    this.router.navigate(['/inscription']);
+  }
 }

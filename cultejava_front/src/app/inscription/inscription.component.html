@@ -1,38 +1,31 @@
-<form [formGroup]="inscriptionForm" (ngSubmit)="inscription()">
-    <div>
-      <label for="prenom">Prénom :</label>
-      <input type="text" id="prenom" formControlName="prenom" />
-    </div>
+<body>
+  <h1>Inscription </h1>
+  <form [formGroup]="inscriptionForm" (ngSubmit)="inscription()">
+      <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom"/>
+
+      <input type="text" id="nom" formControlName="nom" placeholder="Nom"/><br>
+ 
   
-    <div>
-      <label for="nom">Nom :</label>
-      <input type="text" id="nom" formControlName="nom" />
-    </div>
+      <input type="text" id="login" formControlName="login" placeholder="Login" />
   
-    <div>
-      <label for="login">Login :</label>
-      <input type="text" id="login" formControlName="login" />
-    </div>
+
+      <input type="password" id="password" formControlName="password" placeholder="Mot de passe"/><br><br>
+
+      <label>Adresse:</label><br>
+        <input type="text" id="numero" name="numero" placeholder="N°" size="4" formControlName="numero"/>
+
+        <input type="text" id="voie" name="voie" placeholder="Voie" formControlName="voie"/>
+
+        <input type="text" id="cp" name="cp" placeholder="CP" size="6" formControlName="cp"/>
+
+        <input type="text" id="ville" name="ville" placeholder="Ville" formControlName="ville"/>
+
+        <input type="text" id="pays" name="pays" placeholder="Pays" size="12" formControlName="pays"/><br>
   
-    <div>
-      <label for="password">Mot de passe :</label>
-      <input type="password" id="password" formControlName="password" />
-    </div>
-  
-    <div>
-      <label>Adresse :</label><br>
-      <label>Numéro:</label>
-      <input type="text" id="numero" name="numero" formControlName="numero"/><br>
-      <label>Voie:</label>
-      <input type="text" id="voie" name="voie" formControlName="voie"/><br>
-      <label>Cp:</label>
-      <input type="text" id="cp" name="cp" formControlName="cp"/><br>
-      <label>Ville:</label>
-      <input type="text" id="ville" name="ville" formControlName="ville"/><br>
-      <label>Pays:</label>
-      <input type="text" id="pays" name="pays" formControlName="pays"/>
-    </div>
-  
-    <a> <input type="button" value="Envoyer" (click)="inscription()"></a>
+    <a> <input type="button" value="S'inscrire" (click)="inscription()" id="add"></a>
+    <a> <input type="button" value="Retour" (click)="retour()" id="retour"></a>
    <span *ngIf="inscriptionReussie">Inscription réussie !</span> 
   </form>
+</body>
+
+

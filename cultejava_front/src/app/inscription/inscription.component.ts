@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { InscriptionHttpService } from '../inscription/inscription-http.service';
 import { TapoteurRequestResponse } from '../modelTapoteur';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription',
@@ -24,7 +25,7 @@ export class InscriptionComponent implements OnInit {
   paysCtrl: FormControl;
 
 
-  constructor(private formBuilder: FormBuilder, private inscriptionService: InscriptionHttpService) {}
+  constructor(private formBuilder: FormBuilder, private inscriptionService: InscriptionHttpService, private router: Router) {}
 
   ngOnInit(): void {
     this.prenomCtrl = this.formBuilder.control('', Validators.required);
@@ -61,5 +62,9 @@ export class InscriptionComponent implements OnInit {
     }
 
     this.inscriptionReussie = true;
+  }
+
+  retour(){
+    this.router.navigate(['']);
   }
   }

@@ -22,7 +22,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
     NavBarComponent,
     TapoteurComponent,
     InscriptionComponent,
-    ConnexionComponent
+    ConnexionComponent,
     EvenementComponent,
   ],
   

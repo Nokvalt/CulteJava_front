@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Activite, Evenement } from '../modelEvenement';
 import { EvenementHttpService } from './evenement-http';
+import { TapoteurRequestResponse } from '../modelTapoteur';
+import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-evenement',
@@ -9,8 +12,15 @@ import { EvenementHttpService } from './evenement-http';
 })
 export class EvenementComponent {
   evenementForm: Evenement = null;
+  connected: TapoteurRequestResponse = null;
 
-  constructor(private evenementService: EvenementHttpService) {
+  constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router) {
+    this.connected = this.loginService.connected;
+
+    if(this.connected == null){
+      this.router.navigate([""]);
+    }
+  
   }
 
   list(): Array<Evenement> {

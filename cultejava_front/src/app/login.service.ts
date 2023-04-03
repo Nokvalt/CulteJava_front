@@ -8,4 +8,8 @@ export class LoginService {
   connected: TapoteurRequestResponse = null;
 
   constructor() { }
+
+  getUserId(): number {
+    return this.connected ? this.connected.id : null;
+  }
 }

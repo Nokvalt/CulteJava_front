@@ -1,0 +1,40 @@
+<div class ="container">
+    <h1>Profil de fidèle, car seuls les vrais savent</h1>
+
+    <label>Identifiant:</label><br>
+    <form>
+        <input type="number" id="id" name="id" size=4 readonly [(ngModel)]="tapoteurForm.id"/><br>
+
+        <input type="text" id="login" name="login" placeholder="Login" [(ngModel)]="tapoteurForm.login"/>
+        <button (click)="editUserLogin()">Modifier</button><br>
+
+        <input type="text" id="password" name="password" placeholder="Mot de passe" [(ngModel)]="tapoteurForm.password"/>
+        <button (click)="editUserPassword()">Modifier</button><br>
+
+        <input type="text" id="nom" name="nom" placeholder="Nom" [(ngModel)]="tapoteurForm.nom"/>
+        <button (click)="editUserNom()">Modifier</button><br>
+
+        <input type="text" id="prenom" name="prenom" placeholder="Prénom" [(ngModel)]="tapoteurForm.prenom"/>
+        <button (click)="editUserPrenom()">Modifier</button><br>
+
+        <label>Adresse:</label><br>
+        <input type="text" id="numero" name="numero" placeholder="N°" size="4" [(ngModel)]="tapoteurForm.numero"/>
+
+        <input type="text" id="voie" name="voie" placeholder="Voie" [(ngModel)]="tapoteurForm.voie"/>
+
+        <input type="text" id="cp" name="cp" placeholder="CP" size="6" [(ngModel)]="tapoteurForm.cp"/>
+
+        <input type="text" id="ville" name="ville" placeholder="Ville" [(ngModel)]="tapoteurForm.ville"/>
+
+        <input type="text" id="pays" name="pays" placeholder="Pays" size="12" [(ngModel)]="tapoteurForm.pays"/>
+        <button (click)="editUserAdresse()">Modifier</button><br><br>
+    </form>
+
+
+    <!--<button (click)="editUserLogin()">Modifier le login</button>
+    <button (click)="editUserPassword()">Modifier le mot de passe</button>
+    <button (click)="editUserNom()">Modifier le nom</button>
+    <button (click)="editUserPrenom()">Modifier le prénom</button>
+    <button (click)="editUserImageProfil()">Modifier l'image de profil</button>
+    <button (click)="editUserAdresse()">Modifier l'adresse</button>-->
+</div>

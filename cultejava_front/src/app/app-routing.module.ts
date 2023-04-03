@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: "tapoteur", component: TapoteurComponent},
   {path: "accueil", component: AccueilComponent},
   {path: "evenement", component: EvenementComponent},
-  { path: 'inscription', component: InscriptionComponent },
+  { path: 'inscription', component: InscriptionComponent }
 ];
 
 @NgModule({

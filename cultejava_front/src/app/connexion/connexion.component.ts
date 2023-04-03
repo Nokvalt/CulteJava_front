@@ -39,13 +39,16 @@ export class ConnexionComponent {
   connexion(): void{
     console.log ("test" + this.connexionForm.login + this.connexionForm.password);
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
-      this.connected = resp;})
-    
+      this.connected = resp;
+
       console.log(this.connected);
 
-      if (this.connected != null){
+      if (this.connected.rang != null){
         this.router.navigate(['/accueil']);
       }
+    });
+    
+      
   }
 
   inscription():void{

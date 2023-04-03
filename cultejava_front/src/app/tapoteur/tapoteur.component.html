@@ -30,10 +30,16 @@
                 <td>{{tapoteur.sommeDon}}</td>
                 <td>{{tapoteur.rang}}</td>
                 <td> <button (click)="edit(tapoteur.id)">Modifier</button>
-                    <button (click)="remove(tapoteur.id)">Supprimer</button> </td>
+                    <button (click)="remove(tapoteur.id)">Supprimer</button> 
+                    <button (click)="demote(tapoteur.id)">Rétrograder</button>
+                    <button (click)="promote(tapoteur.id)">Promouvoir</button>
+                </td>
+                    
             </tr>
         </tbody>
     </table>
+    <span *ngIf="cantDemote"><br>Impossible de rétrograder le tapoteur...</span>
+    <span *ngIf="cantPromote"><br>Impossible de promouvoir le tapoteur...</span>
 
     <button (click)="add()" id="add">Ajouter un tapoteur</button>
 

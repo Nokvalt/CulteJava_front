@@ -10,6 +10,9 @@ import { Observable } from 'rxjs';
 export class TapoteurHttpService {
   tapoteurs: Array<TapoteurRequestResponse>;
 
+  cantPromote: boolean;
+  cantDemote: boolean;
+
   private tapoteurApiPath: string;
 
   constructor(private http: HttpClient) {
@@ -29,6 +32,27 @@ export class TapoteurHttpService {
 
   findById(id: number): Observable<TapoteurRequestResponse>{
     return this.http.get<TapoteurRequestResponse>(this.tapoteurApiPath + "/" + id); 
+  }
+
+  upgradeRang(id: number):void{
+    this.http.get<TapoteurRequestResponse>(this.tapoteurApiPath + "/promouvoir/" + id).subscribe(
+      resp => {
+        this.load();
+      }, error => {
+        if(error.status == 400){
+          alert("Impossible de promouvoir ce tapoteur!")
+        }
+      });
+  }
+
+  degradeRang(id: number): void{
+    this.http.get<TapoteurRequestResponse>(this.tapoteurApiPath + "/retrograder/" + id).subscribe(resp => {
+      this.load();
+    }, error => {
+      if(error.status == 400){
+        alert("Impossible de rétrograder ce tapoteur!")
+      }
+    });
   }
 
   remove(id: number): void {

@@ -14,6 +14,9 @@ export class TapoteurComponent {
   tapoteurForm: TapoteurRequestResponse = null;
   connected: TapoteurRequestResponse =  null;
 
+  cantPromote: boolean;
+  cantDemote: boolean;
+
   constructor(private tapoteurService: TapoteurHttpService, private loginService: LoginService, private router: Router){
     this.connected = this.loginService.connected;
 
@@ -46,8 +49,17 @@ export class TapoteurComponent {
     } else {
       this.tapoteurService.create(this.tapoteurForm);
     }
-
     this.cancel();
+  }
+
+  promote(id: number):void{
+    this.tapoteurService.upgradeRang(id);
+    this.cantPromote = this.tapoteurService.cantPromote;
+  }
+
+  demote(id: number):void{
+    this.tapoteurService.degradeRang(id);
+    this.cantDemote = this.tapoteurService.cantDemote;
   }
 
   cancel():void{

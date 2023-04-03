@@ -16,7 +16,7 @@ export class EvenementComponent {
   }
 
   list(): Array<Evenement> {
-    console.log("FINDALL: ", this.evenementService.findAll());
+    //console.log("FINDALL: ", this.evenementService.findAll());
     for (let i in this.evenementService.findAll()){
       console.log(i);
     }
@@ -25,17 +25,19 @@ export class EvenementComponent {
   }
  
   add(): void {
+    //console.log("ADD ", this.evenementForm);
     this.evenementForm = new Evenement();
   }
 
   edit(id: number): void {
-    
+    //console.log("edit ", this.evenementForm);
     this.evenementService.findById(id).subscribe(resp => {
       this.evenementForm = resp;
     });
   }
 
   remove(id: number): void {
+    //console.log("remove ", this.evenementForm);
     this.evenementService.remove(id);
   }
 
@@ -55,11 +57,12 @@ export class EvenementComponent {
 
   listActivites(): any{
     return Object.keys(Activite).filter((v) => isNaN(Number(v)));
-  }
+  } 
     
   listinscriptionsevenement(): any{
-   //console.log(this.evenementService);
+    //console.log("Avant Listinscriptionsevenement ",this.evenementService);
     this.evenementService.findinscription(1);
+    //console.log("Après Listinscriptionsevenement ",this.evenementService);
   }
 
   addEvenement(): void {

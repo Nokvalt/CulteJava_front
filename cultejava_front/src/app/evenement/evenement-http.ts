@@ -59,10 +59,12 @@ export class EvenementHttpService {
   }
 
   findinscription(id : number): void{
-    //console.log(this.mesevenements);
+    //console.log("Avant findinscription",this.mesevenements);
     this.http.get<Array<Evenement>>("localhost:8080/api/tapoteur/mesInscriptions/"+id).subscribe(resp => {
     this.mesevenements = resp;  
+    //console.log("Après findinscription",this.mesevenements);
   } 
     )
 }
 }
+ 

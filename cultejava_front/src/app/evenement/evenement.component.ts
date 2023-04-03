@@ -20,7 +20,6 @@ export class EvenementComponent {
     if(this.connected == null){
       this.router.navigate([""]);
     }
-  
   }
 
   list(): Array<Evenement> {

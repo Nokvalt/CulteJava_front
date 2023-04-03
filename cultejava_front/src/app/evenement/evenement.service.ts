@@ -50,9 +50,6 @@ export class EvenementService {
     let idx: number = this.evenements.findIndex(f => f.id == id);
 
     this.evenements.splice(idx, 1);
-  }
-
-  /*findinscriptionevent(){
-  this.findinscription(1);
-  }*/
+  } 
+ 
 }

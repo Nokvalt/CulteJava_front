@@ -58,6 +58,7 @@ export class EvenementComponent {
   }
     
   listinscriptionsevenement(): any{
+   //console.log(this.evenementService);
     this.evenementService.findinscription(1);
   }
 

@@ -14,7 +14,6 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopContentComponent } from './top-content/top-content.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
-import { InscriptionresquestComponent } from './inscriptionresquest/inscriptionresquest.component';
 
 
 @NgModule({
@@ -27,8 +26,7 @@ import { InscriptionresquestComponent } from './inscriptionresquest/inscriptionr
     InscriptionComponent,
     ConnexionComponent,
     EvenementComponent,
-    InscriptionresquestComponent,
-  ],
+],
   
   imports: [
     BrowserModule,

@@ -59,9 +59,10 @@ export class EvenementHttpService {
   }
 
   findinscription(id : number): void{
-    this.http.get<Array<Evenement>>(this.evenementApiPath + "/mesInscriptions/" + id).subscribe(resp => {
-    this.mesevenements = resp;
-  }
+    //console.log(this.mesevenements);
+    this.http.get<Array<Evenement>>("localhost:8080/api/tapoteur/mesInscriptions/"+id).subscribe(resp => {
+    this.mesevenements = resp;  
+  } 
     )
 }
 }

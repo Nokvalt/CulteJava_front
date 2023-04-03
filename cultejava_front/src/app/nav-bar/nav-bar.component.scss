@@ -1,32 +1,69 @@
 #nav {
-
+    width: 12%;
+    
+    position:fixed;
+    height: 90%;
     background-color: #2f2f2f;
-    width: 200px;
-    margin-left: 59px;
-    height: 90vh;
+    margin-top: 1%;
+    margin-left: 2%;
 
+    overflow: auto;
+    
+    
 }
 
 #navList a, ul {
+
+    
+
+    font-size: 120%;
     text-decoration: none;
     color: white;
     
     
+    
+}
+
+#hautNav {
+    
+
+    
+    padding-left: 5%;
+   
+
 }
 
 #hautNav li {
-    position: relative;
-    top: 50px;
-    margin-bottom: 50px;
-    list-style-image: url("../../assets/folder2.png");
+    
 
+  
+    list-style-image: url("../../assets/folder2.png");
+    
+    line-height: 500%;
+    
 }
 
 
 
-#basNav li {
 
-    position: relative;
-    top: 340px;
-    line-height: 60px;
+#basNav {
+
+
+   display: flex;
+   flex-direction: column;
+   
+   
+   
+    
+    margin-left: 20%;
+    margin-top: 40%;
+
+}
+
+#basNav a {
+
+    font-size: 120%;
+    text-decoration: none;
+    color: white;
+    padding-top: 40%;
 }

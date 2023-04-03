@@ -10,7 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { LoginService } from '../login.service';
 
 @Component({
-  selector: 'app-connexion',
+  selector: 'connexion',
   templateUrl: './connexion.component.html',
   styleUrls: ['./connexion.component.scss']
 })

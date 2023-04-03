@@ -28,7 +28,9 @@ export class TapoteurComponent {
   }
 
   listTapoteurs(): Array<TapoteurRequestResponse>{
+    console.log(this.tapoteurService.findAll());
     return this.tapoteurService.findAll();
+
   }
 
   add(): void {

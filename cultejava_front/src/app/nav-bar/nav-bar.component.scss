@@ -1,0 +1,32 @@
+#nav {
+
+    background-color: #2f2f2f;
+    width: 200px;
+    margin-left: 59px;
+    height: 90vh;
+
+}
+
+#navList a, ul {
+    text-decoration: none;
+    color: white;
+    
+    
+}
+
+#hautNav li {
+    position: relative;
+    top: 50px;
+    margin-bottom: 50px;
+    list-style-image: url("../../assets/folder2.png");
+
+}
+
+
+
+#basNav li {
+
+    position: relative;
+    top: 340px;
+    line-height: 60px;
+}

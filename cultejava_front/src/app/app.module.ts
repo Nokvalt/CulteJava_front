@@ -11,6 +11,7 @@ import { EvenementComponent } from './evenement/evenement.component';
 
 import { TapoteurComponent } from './tapoteur/tapoteur.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TopContentComponent } from './top-content/top-content.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 
@@ -21,6 +22,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
     AccueilComponent,
     NavBarComponent,
     TapoteurComponent,
+    TopContentComponent
     InscriptionComponent,
     ConnexionComponent,
     EvenementComponent,

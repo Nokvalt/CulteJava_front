@@ -1,11 +1,37 @@
-<ul class="nav nav-pills m-5">
-    <li class="nav-item">
-        <a class="nav-link" [routerLink]="['accueil']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="bi bi-house">Accueil</i></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/tapoteur']" routerLinkActive="active">Tapoteurs</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/evenement']" routerLinkActive="active">Evenements</a>
-    </li>
-</ul>
+
+    <div id="nav">
+        <ul id="navList">
+
+            <div id="hautNav">
+            <li>
+                <a [routerLink]="['/evenement']" routerLinkActive="active">Evenements</a>
+            </li>
+                    
+            <li>
+                <a [routerLink]="['/tapoteur']" routerLinkActive="active">Tapoteurs</a>
+            </li>
+                                
+            <li>
+                <a [routerLink]="['/demandes']" routerLinkActive="active">Demandes</a>
+            </li>
+                                
+            <li>
+                <a [routerLink]="['/faq']" routerLinkActive="active">Forum /FAQ</a>
+            </li>
+                                
+            <li>
+                <a [routerLink]="['/lore']" routerLinkActive="active">Témoins JAVA</a>
+            </li>
+        </div>
+    
+        <div id="basNav">
+            <li>
+                 <a [routerLink]="['accueil']" routerLinkActive="active">Retour Accueil</a>
+            </li>
+    
+            <li>
+                 <a [routerLink]="['']" routerLinkActive="active">Deconnexion</a>
+            </li>
+        </div>
+        </ul>
+    </div>

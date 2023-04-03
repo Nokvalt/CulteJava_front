@@ -33,6 +33,7 @@
                     <button (click)="remove(tapoteur.id)">Supprimer</button> 
                     <button (click)="demote(tapoteur.id)">Rétrograder</button>
                     <button (click)="promote(tapoteur.id)">Promouvoir</button>
+                    <button (click)="banForm(tapoteur.id)">Bannir</button>
                 </td>
                     
             </tr>
@@ -43,6 +44,16 @@
 
     <button (click)="add()" id="add">Ajouter un tapoteur</button>
 
+
+    <div *ngIf="bannisForm" id="form">
+        <h2>Formulaire de bannissement....</h2>
+        <input type="number" id="id" name="id" size=4 readonly [(ngModel)]="bannisForm.id"/><br>
+        <input type="date" id="dateBannissement" ame="dateBannissement" [(ngModel)]="bannisForm.dateBannissement"/><br>
+        Motif:
+        <input type="textarea" name="motif" [(ngModel)]="bannisForm.motif"/>
+
+        <button (click)="ban()">Bannir</button>
+    </div>
 
     <div *ngIf="tapoteurForm" id="form">
         <h2>Formulaire</h2>

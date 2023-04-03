@@ -3,6 +3,7 @@ import { TapoteurRequestResponse } from '../modelTapoteur';
 import { TapoteurHttpService } from './tapoteur-http.service';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
+import { BannissementRequest } from '../modelBannissement';
 
 @Component({
   selector: 'app-tapoteur',
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 export class TapoteurComponent {
   tapoteurForm: TapoteurRequestResponse = null;
   connected: TapoteurRequestResponse =  null;
+  bannisForm: BannissementRequest = null;
 
   cantPromote: boolean;
   cantDemote: boolean;
@@ -54,12 +56,24 @@ export class TapoteurComponent {
 
   promote(id: number):void{
     this.tapoteurService.upgradeRang(id);
-    this.cantPromote = this.tapoteurService.cantPromote;
   }
 
   demote(id: number):void{
     this.tapoteurService.degradeRang(id);
-    this.cantDemote = this.tapoteurService.cantDemote;
+  }
+
+  banForm(id: number): void{
+    this.bannisForm = new BannissementRequest();
+    this.bannisForm.tapoteurId = id;
+  }
+
+  ban():void{
+    if (this.bannisForm.dateBannissement == null){
+      this.bannisForm.dateBannissement = new Date().toJSON().slice(0,10);
+    }
+    console.log(this.bannisForm);
+    this.tapoteurService.ban(this.bannisForm);
+    this.bannisForm = null;
   }
 
   cancel():void{

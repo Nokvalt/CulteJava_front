@@ -3,6 +3,7 @@ import { TapoteurRequestResponse } from '../modelTapoteur';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { BannissementRequest } from '../modelBannissement';
 
 @Injectable({
   providedIn: 'root'
@@ -51,6 +52,16 @@ export class TapoteurHttpService {
     }, error => {
       if(error.status == 400){
         alert("Impossible de rétrograder ce tapoteur!")
+      }
+    });
+  }
+
+  ban(bannisRequest: BannissementRequest):void{
+    this.http.post<BannissementRequest>(this.tapoteurApiPath + "/bannissement", bannisRequest).subscribe(resp => {
+      this.load();
+    }, error => {
+      if(error.status == 400){
+        alert("Impossible de banir ce tapoteur!")
       }
     });
   }

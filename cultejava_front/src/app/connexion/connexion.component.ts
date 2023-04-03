@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { ConnexionHttpService } from './connexion-http.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-connexion',
@@ -18,12 +19,12 @@ export class ConnexionComponent {
   loginCtl : FormControl;
   passwordCtl : FormControl;
 
-
   connexionForm: Connexion = new Connexion();
-  connected: TapoteurRequestResponse;
   wrongPassword: boolean = false;
 
-  constructor(private connexionService: ConnexionHttpService, private router: Router, private formBuilder: FormBuilder){}
+
+
+  constructor(private connexionService: ConnexionHttpService, private loginService: LoginService, private router: Router, private formBuilder: FormBuilder){}
 
   ngOnInit() :void {
     this.loginCtl = this.formBuilder.control('', Validators.required);
@@ -37,15 +38,12 @@ export class ConnexionComponent {
 
 
   connexion(): void{
-    console.log ("test" + this.connexionForm.login + this.connexionForm.password);
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
-      this.connected = resp;
+      this.loginService.connected = resp;
 
-      console.log(this.connected);
+      console.log("ici: " + this.loginService.connected.rang);
 
-      if (this.connected.rang != null){
-        this.router.navigate(['/accueil']);
-      }
+      this.router.navigate(['/accueil']);
     });
     
       

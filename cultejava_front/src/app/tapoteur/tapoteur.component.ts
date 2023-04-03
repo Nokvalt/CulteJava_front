@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { TapoteurRequestResponse } from '../modelTapoteur';
 import { TapoteurHttpService } from './tapoteur-http.service';
+import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tapoteur',
@@ -10,8 +12,15 @@ import { TapoteurHttpService } from './tapoteur-http.service';
 })
 export class TapoteurComponent {
   tapoteurForm: TapoteurRequestResponse = null;
+  connected: TapoteurRequestResponse =  null;
 
-  constructor(private tapoteurService: TapoteurHttpService){}
+  constructor(private tapoteurService: TapoteurHttpService, private loginService: LoginService, private router: Router){
+    this.connected = this.loginService.connected;
+
+    if(this.connected == null){
+      this.router.navigate([""]);
+    }
+  }
 
   listTapoteurs(): Array<TapoteurRequestResponse>{
     return this.tapoteurService.findAll();

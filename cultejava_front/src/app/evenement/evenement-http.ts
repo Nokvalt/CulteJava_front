@@ -3,6 +3,7 @@ import { Injectable, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Evenement } from '../modelEvenement';
 import { environment } from 'src/environments/environment';
+import { TapoteurComponent } from '../tapoteur/tapoteur.component';
 
 
 @Injectable({
@@ -10,8 +11,10 @@ import { environment } from 'src/environments/environment';
 })
 export class EvenementHttpService {
 
+  mesevenements : Array<Evenement> =new Array<Evenement>();
   evenements: Array<Evenement> = new Array<Evenement>();
   private evenementApiPath: string;
+
 
   constructor(private http: HttpClient) {
     this.evenementApiPath = environment.apiUrl + "/evenement"; //global
@@ -54,4 +57,11 @@ export class EvenementHttpService {
     
     })
   }
+
+  findinscription(id : number): void{
+    this.http.get<Array<Evenement>>(this.evenementApiPath + "/mesInscriptions/" + id).subscribe(resp => {
+    this.mesevenements = resp;
+  }
+    )
+}
 }

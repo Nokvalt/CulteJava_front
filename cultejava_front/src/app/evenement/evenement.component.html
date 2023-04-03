@@ -21,11 +21,11 @@
                         <td>{{evenement.dateEvent}}</td>
                         <td>{{evenement.lieu}}</td>
                         <td>{{evenement.nomActivite}}</td>
-                        <td></td>
+                        <td>{{listActivites}}</td>
                         <td>
                             <a> <input type="button" value="Modifier" (click)="edit(evenement.id)"></a>
                             <a> <input type="button" value="Supprimer" (click)="remove(evenement.id)"></a>
-                            <a> <input type="button" value="S'inscrire à l'événement" (click)="listPartipantsEvenement()" ></a>
+                            <a> <input type="button" value="S'inscrire à l'événement" (click)="addEvenement()"></a>
                         </td>
                 </tr>
             </tbody>
@@ -56,10 +56,36 @@
         <div>
             <label for="date">Date:</label> <input type="date" class="form-control" id="date" name="date" [(ngModel)]="evenementForm.dateEvent" />
         </div>
+        
         <a><input type="button" value="Ajouter" (click)="save()" id="button"></a>
         <a><input type="button" value="Annuler" (click)="cancel()" id="button"></a>
     </div>
         
 </div>
 
+
+
+<h1>Liste des participants</h1>
+<table >
+    <thead>
+        <tr>
+            <th>Identifiant</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let evenement of listinscriptionsevenement()">
+                <td>{{evenement.id}}</td>
+                <td>
+                    <a> <input type="button" value="S'inscrire à l'événement" (click)="addEvenement()"></a>
+                </td>
+        </tr>
+    </tbody>
+
+</table>
+
+
 </body>
+
+

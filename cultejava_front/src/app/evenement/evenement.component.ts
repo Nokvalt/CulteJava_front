@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Activite, Evenement } from '../modelEvenement';
 import { EvenementHttpService } from './evenement-http';
+import { TapoteurComponent } from '../tapoteur/tapoteur.component';
+import { InscriptionComponent } from '../inscription/inscription.component';
 
 @Component({
   selector: 'app-evenement',
@@ -18,6 +20,7 @@ export class EvenementComponent {
     for (let i in this.evenementService.findAll()){
       console.log(i);
     }
+
     return this.evenementService.findAll();
   }
  
@@ -53,9 +56,18 @@ export class EvenementComponent {
   listActivites(): any{
     return Object.keys(Activite).filter((v) => isNaN(Number(v)));
   }
+    
+  listinscriptionsevenement(): any{
+    this.evenementService.findinscription(1);
+  }
 
+  addEvenement(): void {
+    /*if (){
 
-  listPartipantsEvenement(): any{
+    }
+    else{
+
+    }*/
 
   }
 }

@@ -17,7 +17,8 @@
         </span>
         
         <input type="submit" value="Connexion" />
-        <div *ngIf="wrongPassword">Login ou mot de passe incorrect</div>
+        <div *ngIf="wrongPassword">Mot de passe incorrect !</div>
+        <div *ngIf="unknownLogin">Login inconnu...</div>
     </form>
     <div id="inscription">
         Vous voulez nous rejoindre ? 

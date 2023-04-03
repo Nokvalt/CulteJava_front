@@ -20,8 +20,8 @@ export class ConnexionComponent {
   passwordCtl : FormControl;
 
   connexionForm: Connexion = new Connexion();
-  wrongPassword: boolean = false;
-
+  wrongPassword: boolean;
+  unknownLogin: boolean;
 
 
   constructor(private connexionService: ConnexionHttpService, private loginService: LoginService, private router: Router, private formBuilder: FormBuilder){}
@@ -38,12 +38,20 @@ export class ConnexionComponent {
 
 
   connexion(): void{
+    this.unknownLogin = false;
+    this.wrongPassword = false;
+
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
       this.loginService.connected = resp;
 
-      console.log("ici: " + this.loginService.connected.rang);
-
       this.router.navigate(['/accueil']);
+    }, error => {
+      console.log(error);
+      if(error.status == 400){
+        this.wrongPassword = true;
+      }else if(error.status == 404){
+        this.unknownLogin = true;
+      }
     });
     
       

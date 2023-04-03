@@ -54,4 +54,8 @@ export class EvenementComponent {
     return Object.keys(Activite).filter((v) => isNaN(Number(v)));
   }
 
+
+  listPartipantsEvenement(): any{
+
+  }
 }

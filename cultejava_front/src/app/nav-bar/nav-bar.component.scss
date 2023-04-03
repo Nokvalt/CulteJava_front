@@ -10,20 +10,23 @@
 #navList a, ul {
     text-decoration: none;
     color: white;
-    list-style-type: none;
+    
     
 }
 
 #hautNav li {
     position: relative;
     top: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    list-style-image: url("../../assets/folder2.png");
 
 }
+
+
 
 #basNav li {
 
     position: relative;
-    top: 650px;
+    top: 340px;
     line-height: 60px;
 }

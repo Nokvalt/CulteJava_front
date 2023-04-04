@@ -86,16 +86,16 @@ export class EvenementComponent {
 
   estInscrit(idEvenement: number):boolean{
   
-    console.log("estInscrit");
+    console.log("estInscrit",idEvenement);
     for( let ev of this.listMesEvents ){
-      console.log(idEvenement+":"+ev.id);
+      console.log("inscrit ou pas",idEvenement+":"+ev.id);
       if (idEvenement == ev.id) {
           return true;
       }
-    }
 
+    }
+    
     return false;
-  
   
     }
    

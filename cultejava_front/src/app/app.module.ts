@@ -28,6 +28,7 @@ import { ProfilComponent } from './profil/profil.component';
     InscriptionComponent,
     ConnexionComponent,
     EvenementComponent,
+    FaireUnDonComponent
   ],
   
   imports: [

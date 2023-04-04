@@ -1,0 +1,71 @@
+h1{
+    margin-top: 10%;
+    color: #bababd;
+    text-align: center;
+    font-family: monospace;
+    font-size: 30px;
+}
+
+body {
+    background-color: #515658;
+    color: white;
+    overflow: hidden;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons, .buttonDon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputs input, .buttons input {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #13131a;
+
+    font-family: monospace;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.inputs input{
+    color: #0b795a;
+}
+
+.labels{
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.buttons input{
+    margin-top: 20px;
+    color: white;
+}
+
+.buttonDon input{
+    margin: 10px;
+    padding: 10px 20px;
+    border: solid #dfca14 1px;
+    color: white;
+    border-radius: 4px;
+    background-color: #060522;
+
+    font-family: monospace;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buttonDon input:hover{
+    color:black;
+    background-color: #dfca14;
+    box-shadow: 0 5px 20px #dfca14;
+    transform: scale(1.2);
+}

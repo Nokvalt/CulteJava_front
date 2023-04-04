@@ -5,6 +5,7 @@ import { EvenementComponent } from './evenement/evenement.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { TapoteurComponent } from './tapoteur/tapoteur.component';
+import { FaireUnDonComponent } from './faire-un-don/faire-un-don.component';
 import { ProfilComponent } from './profil/profil.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: "evenement", component: EvenementComponent},
   { path: 'inscription', component: InscriptionComponent },
   {path: 'profil', component: ProfilComponent}
+  { path: 'faireUnDon', component: FaireUnDonComponent },
 ];
 
 @NgModule({

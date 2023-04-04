@@ -20,13 +20,55 @@ export class ProfilComponent implements OnInit {
     console.log(this.tapoteurForm)
   }
 
+
+  initialLogin: string;
+initialPassword: string;
+initialNom: string;
+initialPrenom: string;
+initialAdresse: {
+  numero: string;
+  voie: string;
+  cp: string;
+  ville: string;
+  pays: string;
+};
+
+  editingLogin: boolean = false;
+  editingPassword: boolean = false;
+  editingNom: boolean = false;
+  editingPrenom: boolean = false;
+  editingAdresse: boolean = false;
+
+
+  
+
+
+
+
+
+  //MODIFICATION LOGIN
   
   LoginEdit_On() {
+    this.initialLogin = this.tapoteurForm.login;
+    this.editingLogin = true;
     const loginInput = document.getElementById('login') as HTMLInputElement;
     loginInput.readOnly = false;
   }
-  
 
+  LoginEdit_Off() {
+    this.editingLogin = false;
+  }
+
+  validerLoginEdit() {
+    this.editUserLogin();
+    this.editingLogin = false;
+  }
+  
+  annulerLoginEdit() {
+    this.tapoteurForm.login = this.initialLogin;
+    this.editingLogin = false;
+  }
+  
   editUserLogin() {
     const id = this.loginService.getUserId();
     const userRequest: UserEditRequest = {
@@ -49,10 +91,30 @@ export class ProfilComponent implements OnInit {
 
 
 
+  //MODIFICATION PASSWORD
+
   PasswordEdit_On() {
+    this.initialPassword = this.tapoteurForm.password;
+    this.editingPassword = true;
     const passwordInput = document.getElementById('password') as HTMLInputElement;
     passwordInput.readOnly = false;
   }
+
+  PasswordEdit_Off() {
+    this.editingPassword = false;
+  }
+
+
+  validerPasswordEdit() {
+    this.editUserPassword();
+    this.editingPassword = false;
+  }
+  
+  annulerPasswordEdit() {
+    this.tapoteurForm.password = this.initialPassword;
+    this.editingPassword = false;
+  }
+
 
   editUserPassword() {
     const id = this.loginService.getUserId(); // getUserId pour récupérer l'ID de l'utilisateur connecté
@@ -75,9 +137,28 @@ export class ProfilComponent implements OnInit {
 
 
 
+
+  //MODIFICATION NOM
+
   NomEdit_On() {
+    this.initialNom = this.tapoteurForm.nom;
+    this.editingNom = true;
     const nomInput = document.getElementById('nom') as HTMLInputElement;
     nomInput.readOnly = false;
+  }
+
+  NomEdit_Off() {
+    this.editingNom = false;
+  }
+
+  validerNomEdit() {
+    this.editUserNom();
+    this.editingNom = false;
+  }
+  
+  annulerNomEdit() {
+    this.tapoteurForm.nom = this.initialNom;
+    this.editingNom = false;
   }
 
   editUserNom() {
@@ -101,9 +182,28 @@ export class ProfilComponent implements OnInit {
 
 
 
+
+  //MODIFICATION PRENOM
+
   PrenomEdit_On() {
+    this.initialPrenom = this.tapoteurForm.prenom;
+    this.editingPrenom = true;
     const prenomInput = document.getElementById('prenom') as HTMLInputElement;
     prenomInput.readOnly = false;
+  }
+
+  PrenomEdit_Off() {
+    this.editingPrenom = false;
+  }
+
+  validerPrenomEdit() {
+    this.editUserPrenom();
+    this.editingPrenom = false;
+  }
+  
+  annulerPrenomEdit() {
+    this.tapoteurForm.prenom = this.initialPrenom;
+    this.editingPrenom = false;
   }
 
   editUserPrenom() {
@@ -123,6 +223,12 @@ export class ProfilComponent implements OnInit {
       }
     );
   }
+
+
+
+
+
+  // MODIFICATION IMAGE DE PROFIL
 
   editUserImageProfil() {
     const id = this.loginService.getUserId();
@@ -146,8 +252,17 @@ export class ProfilComponent implements OnInit {
 
 
 
+  // MODIFICATION ADRESSE
 
   AdresseEdit_On() {
+    this.initialAdresse = {
+      numero: this.tapoteurForm.numero,
+      voie: this.tapoteurForm.voie,
+      cp: this.tapoteurForm.cp,
+      ville: this.tapoteurForm.ville,
+      pays: this.tapoteurForm.pays,
+    };
+    this.editingAdresse = true;
     const numeroInput = document.getElementById('numero') as HTMLInputElement;
     const voieInput = document.getElementById('voie') as HTMLInputElement;
     const cpInput = document.getElementById('cp') as HTMLInputElement;
@@ -159,6 +274,24 @@ export class ProfilComponent implements OnInit {
     cpInput.readOnly = false;
     villeInput.readOnly = false;
     paysInput.readOnly = false;
+  }
+
+  AdresseEdit_Off() {
+    this.editingAdresse = false;
+  }
+
+  validerAdresseEdit() {
+    this.editUserAdresse();
+    this.editingAdresse = false;
+  }
+  
+  annulerAdresseEdit() {
+    this.tapoteurForm.numero = this.initialAdresse.numero;
+    this.tapoteurForm.voie = this.initialAdresse.voie;
+    this.tapoteurForm.cp = this.initialAdresse.cp;
+    this.tapoteurForm.ville = this.initialAdresse.ville;
+    this.tapoteurForm.pays = this.initialAdresse.pays;
+    this.editingAdresse = false;
   }
 
   editUserAdresse() {
@@ -178,4 +311,7 @@ export class ProfilComponent implements OnInit {
       }
     );
   }
+ 
+
+
 }

@@ -4,29 +4,64 @@
     <label>Identifiant:</label><br>
     <form>
 
-        <input type="text" id="login" name="login" [(ngModel)]="tapoteurForm.login" readonly/>
-        <button (click)="LoginEdit_On()">Modifier</button><br>
+        <input type="text" id="login" name="login" [(ngModel)]="tapoteurForm.login" [readonly]="!editingLogin" />
+    <ng-container *ngIf="!editingLogin">
+      <button (click)="LoginEdit_On()">Modifier</button>
+    </ng-container>
+    <ng-container *ngIf="editingLogin">
+      <button (click)="validerLoginEdit()">Valider</button>
+      <button (click)="annulerLoginEdit()">Annuler</button>
+    </ng-container>
+    <br>
 
-        <input type="text" id="password" name="password" [(ngModel)]="tapoteurForm.password" readonly/>
-        <button (click)="PasswordEdit_On()">Modifier</button><br>
+        <input type="text" id="password" name="password" [(ngModel)]="tapoteurForm.password" [readonly]="!editingPassword"/>
+    <ng-container *ngIf="!editingPassword">
+      <button (click)="PasswordEdit_On()">Modifier</button>
+    </ng-container>
+    <ng-container *ngIf="editingPassword">
+      <button (click)="validerPasswordEdit()">Valider</button>
+      <button (click)="annulerPasswordEdit()">Annuler</button>
+    </ng-container>
+    <br>
 
-        <input type="text" id="nom" name="nom" [(ngModel)]="tapoteurForm.nom" readonly/>
-        <button (click)="NomEdit_On()">Modifier</button><br>
+        <input type="text" id="nom" name="nom" [(ngModel)]="tapoteurForm.nom" [readonly]="!editingNom"/>
+        <ng-container *ngIf="!editingNom">
+            <button (click)="NomEdit_On()">Modifier</button>
+          </ng-container>
+          <ng-container *ngIf="editingNom">
+            <button (click)="validerNomEdit()">Valider</button>
+            <button (click)="annulerNomEdit()">Annuler</button>
+          </ng-container>
+          <br>
 
-        <input type="text" id="prenom" name="prenom" [(ngModel)]="tapoteurForm.prenom" readonly/>
-        <button (click)="PrenomEdit_On()">Modifier</button><br>
+        <input type="text" id="prenom" name="prenom" [(ngModel)]="tapoteurForm.prenom" [readonly]="!editingPrenom"/>
+        <ng-container *ngIf="!editingPrenom">
+            <button (click)="PrenomEdit_On()">Modifier</button>
+          </ng-container>
+          <ng-container *ngIf="editingPrenom">
+            <button (click)="validerPrenomEdit()">Valider</button>
+            <button (click)="annulerPrenomEdit()">Annuler</button>
+          </ng-container>
+          <br>
 
         <label>Adresse:</label><br>
-<input type="text" id="numero" name="numero" size="4" [(ngModel)]="tapoteurForm.numero" readonly/>
+<input type="text" id="numero" name="numero" size="4" [(ngModel)]="tapoteurForm.numero" [readonly]="!editingAdresse"/>
 
-<input type="text" id="voie" name="voie" [(ngModel)]="tapoteurForm.voie" readonly/>
+<input type="text" id="voie" name="voie" [(ngModel)]="tapoteurForm.voie" [readonly]="!editingAdresse"/>
 
-<input type="text" id="cp" name="cp" placeholder="CP" size="6" [(ngModel)]="tapoteurForm.cp" readonly/>
+<input type="text" id="cp" name="cp" placeholder="CP" size="6" [(ngModel)]="tapoteurForm.cp" [readonly]="!editingAdresse"/>
 
-<input type="text" id="ville" name="ville" [(ngModel)]="tapoteurForm.ville" readonly/>
+<input type="text" id="ville" name="ville" [(ngModel)]="tapoteurForm.ville" [readonly]="!editingAdresse"/>
 
-<input type="text" id="pays" name="pays" placeholder="Pays" size="12" [(ngModel)]="tapoteurForm.pays" readonly/>
-<button (click)="AdresseEdit_On()">Modifier</button><br><br>
+<input type="text" id="pays" name="pays" placeholder="Pays" size="12" [(ngModel)]="tapoteurForm.pays" [readonly]="!editingAdresse"/>
+<ng-container *ngIf="!editingAdresse">
+    <button (click)="AdresseEdit_On()">Modifier</button>
+  </ng-container>
+  <ng-container *ngIf="editingAdresse">
+    <button (click)="validerAdresseEdit()">Valider</button>
+    <button (click)="annulerAdresseEdit()">Annuler</button>
+  </ng-container>
+  <br>
     </form>
 </div>
 

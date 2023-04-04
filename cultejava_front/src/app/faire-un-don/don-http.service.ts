@@ -8,12 +8,13 @@ import { environment } from 'src/environments/environment';
 })
 export class DonHttpService {
   private donApiPath: string;
+  dons:Array<Don>;
 
   constructor(private http: HttpClient) {
     this.donApiPath = environment.apiUrl + "/don";
   }
 
   create(don: Don):void{
-    this.http.post<Don>(this.donApiPath + "/addDon/", don);
+    this.http.post<Don>(this.donApiPath + "/addDon", don).subscribe(resp => console.log(resp));
   }
 }

@@ -10,7 +10,7 @@
       <div class="form"> 
         <h1>FAIRE UN DON - Votre argent sera utilisé à bon escient</h1>
         
-        <form method="POST">
+        <form (ngSubmit)="makeDonation()">
         <div class="inputs">
             <input type="text" name="number" placeholder="montant" pattern="[0-9.,]+" [(ngModel)]="donForm.montant">
         </div> 
@@ -36,7 +36,7 @@
             </table>
         </div>    
         <div class="buttonDon bounce">
-            <input type="submit" value="Faire un don" (click)="makeDonation()">
+            <input type="submit" value="Faire un don">
         </div> 
            
 

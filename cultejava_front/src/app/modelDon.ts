@@ -1,5 +1,3 @@
-import { TapoteurRequestResponse } from "./modelTapoteur";
-
 export class Don{
     id: number;
     montant: number;

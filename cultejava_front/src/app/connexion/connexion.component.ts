@@ -18,10 +18,8 @@ export class ConnexionComponent {
   userForm: FormGroup;
   loginCtl : FormControl;
   passwordCtl : FormControl;
-
-  connexionForm: Connexion = new Connexion();
+  connexionForm: Connexion;
   error: boolean;
-
 
   constructor(private connexionService: ConnexionHttpService, private loginService: LoginService, private router: Router, private formBuilder: FormBuilder){}
 
@@ -39,12 +37,12 @@ export class ConnexionComponent {
   connexion(): void{
     this.error = false;
 
+    this.connexionForm = this.userForm.value;
+
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
       this.loginService.connected = resp;
-      console.log("connecté::::", this.loginService.connected);
       this.router.navigate(['/accueil']);
     }, error => {
-      console.log(error);
       if(error.status == 400 || error.status == 404){
         this.error = true;
       }

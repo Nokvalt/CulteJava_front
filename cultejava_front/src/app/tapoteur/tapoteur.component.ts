@@ -27,7 +27,6 @@ export class TapoteurComponent {
   }
 
   listTapoteurs(): Array<TapoteurRequestResponse>{
-    console.log(this.tapoteurService.findAll());
     return this.tapoteurService.findAll();
 
   }
@@ -72,7 +71,6 @@ export class TapoteurComponent {
     if (this.bannisForm.dateBannissement == null){
       this.bannisForm.dateBannissement = new Date().toJSON().slice(0,10);
     }
-    console.log(this.bannisForm);
     this.tapoteurService.ban(this.bannisForm);
     this.bannisForm = null;
   }

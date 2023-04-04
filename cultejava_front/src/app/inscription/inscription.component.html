@@ -7,14 +7,29 @@
 
   <form [formGroup]="inscriptionForm" (ngSubmit)="inscription()">
       <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom"/>
+      <span *ngIf="prenomCtrl.dirty && prenomCtrl.hasError('required')">
+        Le prénom est obligatoire
+    </span>
 
       <input type="text" id="nom" formControlName="nom" placeholder="Nom"/><br>
- 
+      <span *ngIf="nomCtrl.dirty && nomCtrl.hasError('required')">
+        Le nom est obligatoire
+    </span>
   
       <input type="text" id="login" formControlName="login" placeholder="Login" />
+      <span *ngIf="loginCtrl.dirty && loginCtrl.hasError('required')">
+        Le login est obligatoire
+    </span>
   
 
-      <input type="password" id="password" formControlName="password" placeholder="Mot de passe"/><br><br>
+      <input type="password" id="password" formControlName="password" placeholder="Mot de passe"/>
+      <span *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('required')">
+        Le mot de passe est obligatoire
+      </span>
+      <span *ngIf="passwordCtrl.hasError('minlength')">
+        Le mot de passe doit avoir 8 caractères minimum
+    </span><br><br>
+
 
       <label>Adresse:</label><br>
         <input type="text" id="numero" name="numero" placeholder="N°" size="4" formControlName="numero"/>
@@ -25,10 +40,17 @@
 
         <input type="text" id="ville" name="ville" placeholder="Ville" formControlName="ville"/>
 
-        <input type="text" id="pays" name="pays" placeholder="Pays" size="12" formControlName="pays"/><br>
+        <input type="text" id="pays" name="pays" placeholder="Pays" size="12" formControlName="pays"/>
+        <span *ngIf="(numeroCtrl.dirty && numeroCtrl.hasError('required')) || 
+                     (voieCtrl.dirty && voieCtrl.hasError('required')) ||
+                     (cpCtrl.dirty && cpCtrl.hasError('required')) ||
+                     (villeCtrl.dirty && villeCtrl.hasError('required')) ||
+                     (paysCtrl.dirty && paysCtrl.hasError('required'))">
+          L'adresse est obligatoire
+      </span><br>
   
-    <a> <input type="button" value="S'inscrire" (click)="inscription()" id="add"></a>
-    <a> <input type="button" value="Retour" (click)="retour()" id="retour"></a>
+    <input [disabled]='inscriptionForm.invalid' type="button" value="S'inscrire" (click)="inscription()" id="add">
+    <input type="button" value="Retour" (click)="retour()" id="retour">
    <span *ngIf="inscriptionReussie">Inscription réussie !</span> 
   </form>
 </body>

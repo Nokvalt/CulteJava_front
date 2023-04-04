@@ -4,14 +4,16 @@ export class Evenement {
     dateEvent: string;
     lieu: string;
     nomActivite : string;
+    inscrit: boolean;
 
 
-    constructor(id?: number, nom?: string,dateEvent?: string, lieu?:string, nomActivite?:string) {
+    constructor(id?: number, nom?: string,dateEvent?: string, lieu?:string, nomActivite?:string, inscrit?: boolean) {
         this.id = id;
         this.nom = nom;
         this.dateEvent= dateEvent;
         this.lieu = lieu;
         this.nomActivite = nomActivite;
+        this.inscrit = inscrit;
     }
 }
 

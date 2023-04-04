@@ -23,8 +23,8 @@
                         <td>
                             <a> <input type="button" value="Modifier" (click)="edit(evenement.id)"></a>
                             <a> <input type="button" value="Supprimer"  (click)="remove(evenement.id)"></a>
-                            <a> <input *ngIf="!estInscrit(evenement.id)" type="button" value="S'inscrire à l'événement"></a>
-                            <span *ngIf="estInscrit(evenement.id)">Inscrit</span>
+                            <a> <input *ngIf="!evenement.inscrit" type="button" value="S'inscrire à l'événement"></a>
+                            <span *ngIf="evenement.inscrit">Inscrit</span>
                         </td>
 
                 </tr>
@@ -62,6 +62,7 @@
     </div>
 </div>
 
+<!--
 
 <h1>Mes événements:</h1>
 
@@ -87,3 +88,4 @@
     </tbody>
 
 </table>
+ -->

@@ -6,6 +6,7 @@ import { InscriptionComponent } from '../inscription/inscription.component';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { TapoteurRequestResponse } from '../modelTapoteur';
+import { InscriptionEvenement } from '../modelInscriptionEvenement';
 
 //import { LoginService } from './chemin/vers/login.service';
 
@@ -16,6 +17,7 @@ import { TapoteurRequestResponse } from '../modelTapoteur';
 })
 export class EvenementComponent {
   evenementForm: Evenement = null;
+  inscription: InscriptionEvenement = null;
 
   constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router) {
     if(this.loginService.connected == null){
@@ -63,6 +65,10 @@ export class EvenementComponent {
     return this.evenementService.findInscriptions();
   }*/
 
+  inscriptionEvenement(eventId: number):void{
+    this.inscription = new InscriptionEvenement(eventId);
+    this.evenementService.addInscription(this.inscription);
+  }
    
   }
 

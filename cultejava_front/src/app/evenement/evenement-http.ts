@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { TapoteurComponent } from '../tapoteur/tapoteur.component';
 import { LoginService } from '../login.service';
 import { TapoteurRequestResponse } from '../modelTapoteur';
+import { InscriptionEvenement } from '../modelInscriptionEvenement';
 
 
 @Injectable({
@@ -66,10 +67,16 @@ export class EvenementHttpService {
   findInscriptions(): Array<Evenement>{
     //console.log("Avant findinscription",this.mesEvenements);
     return this.mesEvenements;
-}
+  }
 
-connected():TapoteurRequestResponse{
-  return this.loginService.connected;
-}
+  addInscription(inscription: InscriptionEvenement): void{
+    this.http.put<InscriptionEvenement>(environment.apiUrl + "/tapoteur/inscriptionEvenement/" + this.connected().id, inscription).subscribe(resp => {
+      this.load();
+    });
+  }
+
+  connected():TapoteurRequestResponse{
+    return this.loginService.connected;
+  }
 }
  

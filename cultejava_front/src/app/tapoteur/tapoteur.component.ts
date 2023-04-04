@@ -13,18 +13,17 @@ import { BannissementRequest } from '../modelBannissement';
 })
 export class TapoteurComponent {
   tapoteurForm: TapoteurRequestResponse = null;
-  connected: TapoteurRequestResponse =  null;
   bannisForm: BannissementRequest = null;
 
   cantPromote: boolean;
   cantDemote: boolean;
 
   constructor(private tapoteurService: TapoteurHttpService, private loginService: LoginService, private router: Router){
-    this.connected = this.loginService.connected;
 
-    if(this.connected == null || this.connected.rang == "Fidele"){
+    if(loginService.connected == null || loginService.connected.rang == "Fidele"){
       this.router.navigate([""]);
     }
+
   }
 
   listTapoteurs(): Array<TapoteurRequestResponse>{

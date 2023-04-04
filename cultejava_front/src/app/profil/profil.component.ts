@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService, UserEditRequest,} from 'src/app/user.service';
 import { LoginService } from 'src/app/login.service';
 import { TapoteurRequestResponse } from '../modelTapoteur';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profil',
@@ -13,7 +14,11 @@ export class ProfilComponent implements OnInit {
   tapoteurForm: TapoteurRequestResponse = null;
 
 
-  constructor(private userService: UserService, private loginService: LoginService) {}
+  constructor(private userService: UserService, private loginService: LoginService, router: Router) {
+    if(loginService.connected == null){
+      router.navigate([""]);
+    }
+  }
 
   ngOnInit(): void {
     this.tapoteurForm = this.loginService.connected;

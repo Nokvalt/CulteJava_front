@@ -15,14 +15,11 @@ import { TapoteurRequestResponse } from '../modelTapoteur';
   styleUrls: ['./evenement.component.scss']
 })
 export class EvenementComponent {
-  connected: TapoteurRequestResponse = null;
   evenementForm: Evenement = null;
 
   constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router) {
-    this.connected = this.loginService.connected;
-
-    if(this.connected == null){
-       this.router.navigate([""]);
+    if(this.loginService.connected == null){
+      this.router.navigate([""]);
     }
   }
 

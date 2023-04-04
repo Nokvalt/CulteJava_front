@@ -16,11 +16,9 @@ export class EvenementHttpService {
   mesEvenements : Array<Evenement> =new Array<Evenement>();
   evenements: Array<Evenement> = new Array<Evenement>();
   private evenementApiPath: string;
-  connected: TapoteurRequestResponse;
 
   constructor(private http: HttpClient, private loginService: LoginService) {
     this.evenementApiPath = environment.apiUrl + "/evenement"; //global
-    this.connected = loginService.connected;
     this.load();
   }
 
@@ -52,7 +50,7 @@ export class EvenementHttpService {
   }
 
   private load(): void {
-    this.http.get<Array<Evenement>>(this.evenementApiPath + "/by-fidele/" + this.connected.id).subscribe(resp => {
+    this.http.get<Array<Evenement>>(this.evenementApiPath + "/by-fidele/" + this.connected().id).subscribe(resp => {
     this.evenements = resp;
     });
 /*
@@ -68,6 +66,10 @@ export class EvenementHttpService {
   findInscriptions(): Array<Evenement>{
     //console.log("Avant findinscription",this.mesEvenements);
     return this.mesEvenements;
+}
+
+connected():TapoteurRequestResponse{
+  return this.loginService.connected;
 }
 }
  

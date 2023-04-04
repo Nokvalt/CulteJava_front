@@ -11,12 +11,10 @@ import { LoginService } from '../login.service';
   styleUrls: ['./accueil.component.scss']
 })
 export class AccueilComponent {
-  connected: TapoteurRequestResponse;
 
   constructor(private loginService: LoginService, private router: Router){
-    this.connected = this.loginService.connected;
 
-    if(this.connected == null){
+    if(this.loginService.connected == null){
       this.router.navigate([""]);
     }
   }

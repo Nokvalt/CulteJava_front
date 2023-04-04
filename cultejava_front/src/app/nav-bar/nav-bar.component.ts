@@ -8,13 +8,15 @@ import { TapoteurRequestResponse } from '../modelTapoteur';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
-  connected: TapoteurRequestResponse;
 
   constructor(private loginService: LoginService){
-    this.connected = loginService.connected;
   }
 
   deconnexion(){
     this.loginService.connected = null;
+  }
+
+  connected(): TapoteurRequestResponse{
+    return this.loginService.connected;
   }
 }

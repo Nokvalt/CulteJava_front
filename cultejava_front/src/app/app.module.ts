@@ -14,6 +14,7 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopContentComponent } from './top-content/top-content.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { FaireUnDonComponent } from './faire-un-don/faire-un-don.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
     InscriptionComponent,
     ConnexionComponent,
     EvenementComponent,
+    FaireUnDonComponent,
   ],
   
   imports: [

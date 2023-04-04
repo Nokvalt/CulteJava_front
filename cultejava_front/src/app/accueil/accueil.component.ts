@@ -18,4 +18,8 @@ export class AccueilComponent {
       this.router.navigate([""]);
     }
   }
+
+  faireUnDon(){
+    this.router.navigate(["/faireUnDon"]);
+  }
 }

@@ -22,7 +22,7 @@ export class TapoteurComponent {
   constructor(private tapoteurService: TapoteurHttpService, private loginService: LoginService, private router: Router){
     this.connected = this.loginService.connected;
 
-    if(this.connected == null){
+    if(this.connected == null || this.connected.rang == "Fidele"){
       this.router.navigate([""]);
     }
   }

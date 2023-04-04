@@ -8,11 +8,11 @@
                 <a [routerLink]="['/evenement']" routerLinkActive="active">Evenements</a>
             </li>
                     
-            <li>
+            <li *ngIf="connected.rang != 'Fidele'">
                 <a [routerLink]="['/tapoteur']" routerLinkActive="active">Tapoteurs</a>
             </li>
                                 
-            <li>
+            <li *ngIf="connected.rang != 'Indenteur' && connected.rang != 'Grand Dev'" >
                 <a [routerLink]="['/demandes']" routerLinkActive="active">Demandes</a>
             </li>
                                 
@@ -32,7 +32,7 @@
             
     
             
-                 <a [routerLink]="['']" routerLinkActive="active">Deconnexion</a>
+                 <a [routerLink]="['']" routerLinkActive="active" (click)="deconnexion()">Deconnexion</a>
             
         </div>
         

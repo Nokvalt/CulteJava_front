@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { Activite, Evenement } from '../modelEvenement';
 import { EvenementHttpService } from './evenement-http';
-import { TapoteurRequestResponse } from '../modelTapoteur';
+import { TapoteurComponent } from '../tapoteur/tapoteur.component';
+import { InscriptionComponent } from '../inscription/inscription.component';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
+import { TapoteurRequestResponse } from '../modelTapoteur';
+
+//import { LoginService } from './chemin/vers/login.service';
 
 @Component({
   selector: 'app-evenement',
@@ -11,22 +15,18 @@ import { LoginService } from '../login.service';
   styleUrls: ['./evenement.component.scss']
 })
 export class EvenementComponent {
-  evenementForm: Evenement = null;
   connected: TapoteurRequestResponse = null;
+  evenementForm: Evenement = null;
 
   constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router) {
     this.connected = this.loginService.connected;
 
     if(this.connected == null){
-      this.router.navigate([""]);
+       this.router.navigate([""]);
     }
   }
 
   list(): Array<Evenement> {
-    console.log("FINDALL: ", this.evenementService.findAll());
-    for (let i in this.evenementService.findAll()){
-      console.log(i);
-    }
     return this.evenementService.findAll();
   }
  
@@ -35,7 +35,6 @@ export class EvenementComponent {
   }
 
   edit(id: number): void {
-    
     this.evenementService.findById(id).subscribe(resp => {
       this.evenementForm = resp;
     });
@@ -61,6 +60,11 @@ export class EvenementComponent {
 
   listActivites(): any{
     return Object.keys(Activite).filter((v) => isNaN(Number(v)));
+  } 
+    
+  /*listMesInscriptions(): Array<Evenement>{
+    return this.evenementService.findInscriptions();
+  }*/
+   
   }
 
-}

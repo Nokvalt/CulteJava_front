@@ -15,6 +15,7 @@ import { TopContentComponent } from './top-content/top-content.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FaireUnDonComponent } from './faire-un-don/faire-un-don.component';
+import { ProfilComponent } from './profil/profil.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { FaireUnDonComponent } from './faire-un-don/faire-un-don.component';
     ConnexionComponent,
     EvenementComponent,
     FaireUnDonComponent,
+    ProfilComponent
   ],
   
   imports: [
@@ -37,9 +39,7 @@ import { FaireUnDonComponent } from './faire-un-don/faire-un-don.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    FormsModule
+    AppRoutingModule
   ], 
 
   providers: [],

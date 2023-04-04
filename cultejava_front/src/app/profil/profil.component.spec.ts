@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FaireUnDonComponent } from './faire-un-don.component';
+import { ProfilComponent } from './profil.component';
 
-describe('FaireUnDonComponent', () => {
-  let component: FaireUnDonComponent;
-  let fixture: ComponentFixture<FaireUnDonComponent>;
+describe('ProfilComponent', () => {
+  let component: ProfilComponent;
+  let fixture: ComponentFixture<ProfilComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FaireUnDonComponent ]
+      declarations: [ ProfilComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FaireUnDonComponent);
+    fixture = TestBed.createComponent(ProfilComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

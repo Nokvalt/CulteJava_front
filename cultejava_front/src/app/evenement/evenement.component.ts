@@ -5,6 +5,7 @@ import { TapoteurComponent } from '../tapoteur/tapoteur.component';
 import { InscriptionComponent } from '../inscription/inscription.component';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
+import { TapoteurRequestResponse } from '../modelTapoteur';
 
 //import { LoginService } from './chemin/vers/login.service';
 
@@ -14,17 +15,17 @@ import { LoginService } from '../login.service';
   styleUrls: ['./evenement.component.scss']
 })
 export class EvenementComponent {
-  connected: any; // si tu met boolean ça ne marche pas 
+  connected: TapoteurRequestResponse; // si tu met boolean ça ne marche pas le constructeur se met :/ 
   evenementForm: Evenement = null;
- 
+  listMesEvents : Array<Evenement> = new Array<Evenement>;
 
   constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router) {
     this.connected = this.loginService.connected;
 
     if(this.connected == null){
-      this.router.navigate([""]);
+      this.router.navigate(["/evenement"]);
     } else {
-      evenementService.mesEvenements;
+      this.listMesEvents = evenementService.evenements;
       // recherche ses évemenments pour la personne connectée et stocké dans une variable
     }
   }
@@ -83,13 +84,20 @@ export class EvenementComponent {
     //console.log("Après Listinscriptionsevenement ",this.evenementService);
   }
 
-  estInscrit(idEvenement: number, idTapoteur: number):boolean{
-    if (idEvenement == idTapoteur){
-      return true ;
+  estInscrit(idEvenement: number):boolean{
+  
+    console.log("estInscrit");
+    for( let ev of this.listMesEvents ){
+      console.log(idEvenement+":"+ev.id);
+      if (idEvenement == ev.id) {
+          return true;
+      }
     }
-    else{
-      return false;
+
+    return false;
+  
+  
     }
+   
   }
   
-}

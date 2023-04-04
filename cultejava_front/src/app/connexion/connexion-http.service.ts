@@ -10,7 +10,7 @@ import { Connexion } from '../modelConnexion';
 })
 export class ConnexionHttpService {
   private connexionApiPath: string;
-
+  connected: Boolean;
   tapoteur: TapoteurRequestResponse;
 
   constructor(private http: HttpClient) {

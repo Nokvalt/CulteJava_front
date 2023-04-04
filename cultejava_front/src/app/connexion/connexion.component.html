@@ -1,8 +1,23 @@
 <body>
-    <div id="title">
-        <h1>Les témoins de Java</h1>
-        <img src="assets/logo.png" alt=""> <!-- penser a modifier le lien de l'image-->
-    </div>
+
+    <div id="fond">
+
+        <div id="title">
+            
+            
+                <div id="temoin">
+                    <img class="arabesqueG" src="assets/arabesqueGauche.png">
+                
+                    <p>Témoins de Java</p>
+                
+                    <img class="arabesqueD" src="assets/arabesqueDroite.png">
+                    
+                </div>
+            
+            <img src="assets/logo.png" alt=""> <!-- penser a modifier le lien de l'image-->
+
+        </div>
+        
     
 
     <form #loginForm="ngForm" (ngSubmit)="connexion()">
@@ -24,5 +39,6 @@
         <button (click)="inscription()">S'inscrire</button>
     </div>
     
+</div>
 
 </body>

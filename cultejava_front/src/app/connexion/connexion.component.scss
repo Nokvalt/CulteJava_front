@@ -5,15 +5,48 @@ body {
     overflow: hidden;
     height: 100vh;
     
+    
 }
 
 #title{
+    
     justify-content: center;
     text-align: center;
+    font-size: 200%;
+    margin-top: 5%;
+    
+    
 }
 
+#temoin {
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+}
+
+#temoin img{
+
+    width: 150px;
+}
+
+// .arabesqueG {
+//     width: 150px;
+//     position: absolute;
+//     top: 10%;
+//     left: 35%;
+
+// }
+
+// .arabesqueD {
+//     width: 150px;
+//     position: absolute;
+//     top: 10%;
+//     left: 57%;
+// }
+
 img{
-    width: 200px;
+    width: 400px;
+    margin-bottom: 2%;
 }
 
 form {
@@ -36,7 +69,7 @@ input[type="login"], input[type="password"], input[type="submit"] {
 }
 
   input[type="login"], input[type="password"]{
-    color: #0b795a;
+    color: white;
 }
 
 input[type="submit"] {

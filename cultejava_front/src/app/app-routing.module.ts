@@ -7,7 +7,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { TapoteurComponent } from './tapoteur/tapoteur.component';
 
 const routes: Routes = [
-  {path: "", component: TapoteurComponent, pathMatch: "full"},
+  {path: "", component: ConnexionComponent, pathMatch: "full"},
   {path: "tapoteur", component: TapoteurComponent},
   {path: "accueil", component: AccueilComponent},
   {path: "evenement", component: EvenementComponent},

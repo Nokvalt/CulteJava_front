@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService, UserEditRequest,} from 'src/app/user.service';
 import { LoginService } from 'src/app/login.service';
 import { TapoteurRequestResponse } from '../modelTapoteur';
@@ -8,11 +8,24 @@ import { TapoteurRequestResponse } from '../modelTapoteur';
   templateUrl: './profil.component.html',
   styleUrls: ['./profil.component.scss']
 })
-export class ProfilComponent {
+export class ProfilComponent implements OnInit {
 
   tapoteurForm: TapoteurRequestResponse = null;
 
+
   constructor(private userService: UserService, private loginService: LoginService) {}
+
+  ngOnInit(): void {
+    this.tapoteurForm = this.loginService.connected;
+    console.log(this.tapoteurForm)
+  }
+
+  
+  LoginEdit_On() {
+    const loginInput = document.getElementById('login') as HTMLInputElement;
+    loginInput.readOnly = false;
+  }
+  
 
   editUserLogin() {
     const id = this.loginService.getUserId();
@@ -30,6 +43,15 @@ export class ProfilComponent {
         console.error('Erreur lors de la modification du login', error);
       }
     );
+  }
+
+
+
+
+
+  PasswordEdit_On() {
+    const passwordInput = document.getElementById('password') as HTMLInputElement;
+    passwordInput.readOnly = false;
   }
 
   editUserPassword() {
@@ -50,6 +72,14 @@ export class ProfilComponent {
     );
   }
 
+
+
+
+  NomEdit_On() {
+    const nomInput = document.getElementById('nom') as HTMLInputElement;
+    nomInput.readOnly = false;
+  }
+
   editUserNom() {
     const id = this.loginService.getUserId();
     const userRequest: UserEditRequest = {
@@ -66,6 +96,14 @@ export class ProfilComponent {
         console.error('Erreur lors de la modification du nom', error);
       }
     );
+  }
+
+
+
+
+  PrenomEdit_On() {
+    const prenomInput = document.getElementById('prenom') as HTMLInputElement;
+    prenomInput.readOnly = false;
   }
 
   editUserPrenom() {
@@ -102,6 +140,25 @@ export class ProfilComponent {
         console.error('Erreur lors de la modification de l\'image de profil', error);
       }
     );
+  }
+
+
+
+
+
+
+  AdresseEdit_On() {
+    const numeroInput = document.getElementById('numero') as HTMLInputElement;
+    const voieInput = document.getElementById('voie') as HTMLInputElement;
+    const cpInput = document.getElementById('cp') as HTMLInputElement;
+    const villeInput = document.getElementById('ville') as HTMLInputElement;
+    const paysInput = document.getElementById('pays') as HTMLInputElement;
+  
+    numeroInput.readOnly = false;
+    voieInput.readOnly = false;
+    cpInput.readOnly = false;
+    villeInput.readOnly = false;
+    paysInput.readOnly = false;
   }
 
   editUserAdresse() {

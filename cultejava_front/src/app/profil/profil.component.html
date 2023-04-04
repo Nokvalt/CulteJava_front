@@ -3,32 +3,32 @@
 
     <label>Identifiant:</label><br>
     <form>
-        <input type="number" id="id" name="id" size=4 readonly [(ngModel)]="tapoteurForm.id"/><br>
 
-        <input type="text" id="login" name="login" placeholder="Login" [(ngModel)]="tapoteurForm.login"/>
-        <button (click)="editUserLogin()">Modifier</button><br>
+        <input type="text" id="login" name="login" [(ngModel)]="tapoteurForm.login" readonly/>
+        <button (click)="LoginEdit_On()">Modifier</button><br>
 
-        <input type="text" id="password" name="password" placeholder="Mot de passe" [(ngModel)]="tapoteurForm.password"/>
-        <button (click)="editUserPassword()">Modifier</button><br>
+        <input type="text" id="password" name="password" [(ngModel)]="tapoteurForm.password" readonly/>
+        <button (click)="PasswordEdit_On()">Modifier</button><br>
 
-        <input type="text" id="nom" name="nom" placeholder="Nom" [(ngModel)]="tapoteurForm.nom"/>
-        <button (click)="editUserNom()">Modifier</button><br>
+        <input type="text" id="nom" name="nom" [(ngModel)]="tapoteurForm.nom" readonly/>
+        <button (click)="NomEdit_On()">Modifier</button><br>
 
-        <input type="text" id="prenom" name="prenom" placeholder="Prénom" [(ngModel)]="tapoteurForm.prenom"/>
-        <button (click)="editUserPrenom()">Modifier</button><br>
+        <input type="text" id="prenom" name="prenom" [(ngModel)]="tapoteurForm.prenom" readonly/>
+        <button (click)="PrenomEdit_On()">Modifier</button><br>
 
         <label>Adresse:</label><br>
-        <input type="text" id="numero" name="numero" placeholder="N°" size="4" [(ngModel)]="tapoteurForm.numero"/>
+<input type="text" id="numero" name="numero" size="4" [(ngModel)]="tapoteurForm.numero" readonly/>
 
-        <input type="text" id="voie" name="voie" placeholder="Voie" [(ngModel)]="tapoteurForm.voie"/>
+<input type="text" id="voie" name="voie" [(ngModel)]="tapoteurForm.voie" readonly/>
 
-        <input type="text" id="cp" name="cp" placeholder="CP" size="6" [(ngModel)]="tapoteurForm.cp"/>
+<input type="text" id="cp" name="cp" placeholder="CP" size="6" [(ngModel)]="tapoteurForm.cp" readonly/>
 
-        <input type="text" id="ville" name="ville" placeholder="Ville" [(ngModel)]="tapoteurForm.ville"/>
+<input type="text" id="ville" name="ville" [(ngModel)]="tapoteurForm.ville" readonly/>
 
-        <input type="text" id="pays" name="pays" placeholder="Pays" size="12" [(ngModel)]="tapoteurForm.pays"/>
-        <button (click)="editUserAdresse()">Modifier</button><br><br>
+<input type="text" id="pays" name="pays" placeholder="Pays" size="12" [(ngModel)]="tapoteurForm.pays" readonly/>
+<button (click)="AdresseEdit_On()">Modifier</button><br><br>
     </form>
+</div>
 
 
     <!--<button (click)="editUserLogin()">Modifier le login</button>
@@ -37,4 +37,4 @@
     <button (click)="editUserPrenom()">Modifier le prénom</button>
     <button (click)="editUserImageProfil()">Modifier l'image de profil</button>
     <button (click)="editUserAdresse()">Modifier l'adresse</button>-->
-</div>
+

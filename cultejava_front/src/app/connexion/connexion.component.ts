@@ -44,7 +44,7 @@ export class ConnexionComponent {
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
       this.loginService.connected = resp;
 
-      this.router.navigate(['/tapoteur']);
+      this.router.navigate(['/profil']);
     }, error => {
       console.log(error);
       if(error.status == 400){

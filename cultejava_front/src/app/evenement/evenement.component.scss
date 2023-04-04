@@ -74,8 +74,9 @@ input[type="number"], input[type="text"], input[type="date"], select{
     font-size: 16px;
 }
 
-#add{
-    text-align: center;
+#ajouter {
+    display: flex;
+    justify-content: center;
 }
 
 #form{

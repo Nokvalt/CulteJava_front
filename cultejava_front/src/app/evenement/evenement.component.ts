@@ -3,6 +3,10 @@ import { Activite, Evenement } from '../modelEvenement';
 import { EvenementHttpService } from './evenement-http';
 import { TapoteurComponent } from '../tapoteur/tapoteur.component';
 import { InscriptionComponent } from '../inscription/inscription.component';
+import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
+
+//import { LoginService } from './chemin/vers/login.service';
 
 @Component({
   selector: 'app-evenement',
@@ -10,8 +14,9 @@ import { InscriptionComponent } from '../inscription/inscription.component';
   styleUrls: ['./evenement.component.scss']
 })
 export class EvenementComponent {
+  connected: any; // si tu met boolean ça ne marche pas 
   evenementForm: Evenement = null;
-  
+ 
 
   constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router) {
     this.connected = this.loginService.connected;
@@ -19,7 +24,7 @@ export class EvenementComponent {
     if(this.connected == null){
       this.router.navigate([""]);
     } else {
-      evenementService.listemesevenetms;
+      evenementService.mesEvenements;
       // recherche ses évemenments pour la personne connectée et stocké dans une variable
     }
   }

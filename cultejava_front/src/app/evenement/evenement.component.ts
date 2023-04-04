@@ -63,4 +63,10 @@ export class EvenementComponent {
     return Object.keys(Activite).filter((v) => isNaN(Number(v)));
   }
 
+  estInscrit(id: number):boolean{
+    
+
+    return false;
+  }
+
 }

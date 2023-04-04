@@ -27,7 +27,7 @@ import { FaireUnDonComponent } from './faire-un-don/faire-un-don.component';
     InscriptionComponent,
     ConnexionComponent,
     EvenementComponent,
-    FaireUnDonComponent,
+    FaireUnDonComponent
   ],
   
   imports: [

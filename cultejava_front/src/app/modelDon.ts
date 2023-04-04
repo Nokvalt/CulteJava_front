@@ -2,14 +2,24 @@ import { TapoteurRequestResponse } from "./modelTapoteur";
 
 export class Don{
     id: number;
-    tapoteur : TapoteurRequestResponse;
     montant: number;
-    date: Date;
+    dateDon: string;
+    tapoteurId : number;
+    tapoteurNom : string;
+    numCarte: string;
+	moisExp: string;
+	anneeExp: string;
+	cvv: string;
 
-    constructor(id?: number, tapoteur?: TapoteurRequestResponse, montant?: number, date?: Date){
+    constructor(id?: number, montant?: number, dateDon?: string, tapoteurId?: number, tapoteurNom?: string, numCarte?: string, moisExp?: string, anneeExp?: string, cvv?: string){
         this.id = id;
-        this.tapoteur = tapoteur;
         this.montant = montant;
-        this.date = date;
+        this.dateDon = dateDon;
+        this.tapoteurId = tapoteurId;
+        this.tapoteurNom = tapoteurNom;
+        this.numCarte = numCarte;
+        this.moisExp = moisExp;
+        this.anneeExp = anneeExp;
+        this.cvv = cvv;
     }
 }

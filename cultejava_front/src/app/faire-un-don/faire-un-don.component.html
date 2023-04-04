@@ -1,1 +1,47 @@
-<p>faire-un-don works!</p>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Faire un don</title>
+    </head>
+
+    <body>
+
+      <div class="form"> 
+        <h1>FAIRE UN DON - Votre argent sera utilisé à bon escient</h1>
+        
+        <form method="POST">
+        <div class="inputs">
+            <input type="text" name="number" placeholder="montant" pattern="[0-9.,]+" [(ngModel)]="donForm.montant">
+        </div> 
+            
+        <div class="inputs">
+            <table>
+                <tr>
+                    <td class="labels">Nom sur la carte<br>
+                    <input type="text" name="name" placeholder="Doe" [(ngModel)]="donForm.tapoteurNom"></td>
+                </tr>
+                <tr>
+                    <td class="labels">Numéro de carte<br>
+                    <input type="text" name="cardNb" placeholder="xxxx xxxx xxxx xxxx" maxlength="19" pattern="[0-9\s]+" [(ngModel)]="donForm.numCarte"></td>
+                </tr>
+                <tr>
+                    <td class="labels">Date d'expiration <br>
+                    <input type="text" name="expireMonth" placeholder="mm" size="2" maxlength="2" pattern="[0-9]+"  [(ngModel)]="donForm.moisExp"> / <input type="text" name="expireYear" placeholder="YY" size="2" maxlength="2" pattern="[0-9]+"  [(ngModel)]="donForm.anneeExp"></td>
+                </tr>
+                <tr>
+                    <td class="labels">CVV <br>
+                    <input type="text" name="password" placeholder="xxx" size="3" maxlength="3" pattern="[0-9]+"  [(ngModel)]="donForm.cvv"></td>
+                </tr>
+            </table>
+        </div>    
+        <div class="buttonDon bounce">
+            <input type="submit" value="Faire un don" (click)="makeDonation()">
+        </div> 
+           
+
+        </form>
+       </div> 
+    </body>
+
+</html>

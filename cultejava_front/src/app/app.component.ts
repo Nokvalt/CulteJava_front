@@ -10,10 +10,12 @@ import { TapoteurRequestResponse } from './modelTapoteur';
 export class AppComponent {
   title = 'cultejava_front';
 
-  connected: TapoteurRequestResponse;
+  constructor(private loginService: LoginService){
+   
+  }
 
-  constructor(loginService: LoginService){
-    this.connected = loginService.connected;
+  connected(): TapoteurRequestResponse {
+    return this.loginService.connected;
   }
 }
  

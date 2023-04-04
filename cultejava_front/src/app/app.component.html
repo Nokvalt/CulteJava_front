@@ -1,18 +1,17 @@
 <html>
     <body>
-    
-        <top-content *ngIf="connected != null"></top-content>
+    <top-content *ngIf="connected() != null"></top-content>
    
 
     <div class="page">
         <div id="nav">
-            <nav-bar *ngIf="connected != null"></nav-bar>
+            <nav-bar *ngIf="connected() != null"></nav-bar>
         </div>
         
 
-            <div id="content">
-                <router-outlet></router-outlet>
-            </div>
+        <div id="content">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 
 </body>

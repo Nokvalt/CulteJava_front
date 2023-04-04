@@ -20,18 +20,18 @@
         
     
 
-    <form #loginForm="ngForm" (ngSubmit)="connexion()">
-        <input type="login" id="login" name="login" required [(ngModel)]="connexionForm.login"/><br>
-        <span *ngIf="loginCtl.dirty && loginCtl?.hasError('required')" class="text-danger">
+    <form [formGroup]="userForm" (ngSubmit)="connexion()">
+        <input type="login" id="login" name="login" formControlName="login" /><br>
+        <span *ngIf="loginCtl.dirty && loginCtl.hasError('required')">
             Le login est obligatoire
         </span>
 
-        <input type="password" id="password" name="password" required [(ngModel)]="connexionForm.password"/><br>
-        <span *ngIf="passwordCtl.dirty && passwordCtl?.hasError('required')" class="text-danger">
+        <input type="password" id="password" name="password" formControlName="password" /><br>
+        <span *ngIf="passwordCtl.dirty && passwordCtl.hasError('required')">
             Le mot de passe est obligatoire
         </span>
         
-        <input type="submit" value="Connexion" />
+        <input type="submit" value="Connexion" [disabled]='userForm.invalid'/>
         <div *ngIf="error">Login ou mot de passe incorrect </div>
           </form>
     <div id="inscription">

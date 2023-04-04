@@ -21,8 +21,8 @@
                         <td>{{evenement.lieu}}</td>
                         <td>{{evenement.nomActivite}}</td>
                         <td>
-                            <input type="button" value="Modifier" (click)="edit(evenement.id)">
-                            <input type="button" value="Supprimer"  (click)="remove(evenement.id)">
+                            <input *ngIf="connected().rang != 'Fidele'" type="button" value="Modifier" (click)="edit(evenement.id)">
+                            <input *ngIf="connected().rang != 'Fidele'" type="button" value="Supprimer"  (click)="remove(evenement.id)">
                             <input *ngIf="!evenement.inscrit" type="button" value="S'inscrire à l'événement" (click)="inscriptionEvenement(evenement.id)">
                             <span *ngIf="evenement.inscrit">Inscrit</span>
                             

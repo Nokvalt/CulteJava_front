@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { InscriptionEvenement } from '../modelInscriptionEvenement';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { TapoteurRequestResponse } from '../modelTapoteur';
 
 @Component({
   selector: 'app-evenement',
@@ -20,6 +21,10 @@ export class EvenementComponent {
     if(this.loginService.connected == null){
       this.router.navigate([""]);
     }
+  }
+
+  connected():TapoteurRequestResponse{
+    return this.loginService.connected;
   }
 
   list(): Array<Evenement> {

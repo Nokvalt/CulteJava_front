@@ -62,6 +62,7 @@ export class EvenementComponent {
   /*listMesInscriptions(): Array<Evenement>{
     return this.evenementService.findInscriptions();
   }*/
+
    
   }
 

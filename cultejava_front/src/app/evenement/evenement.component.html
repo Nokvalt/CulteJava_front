@@ -23,8 +23,9 @@
                         <td>
                             <a> <input type="button" value="Modifier" (click)="edit(evenement.id)"></a>
                             <a> <input type="button" value="Supprimer"  (click)="remove(evenement.id)"></a>
-                            <a> <input *ngIf="!evenement.inscrit" type="button" value="S'inscrire à l'événement"></a>
+                            <a> <input *ngIf="!evenement.inscrit" type="button" value="S'inscrire à l'événement" (click)="evenement.inscrit"></a>
                             <span *ngIf="evenement.inscrit">Inscrit</span>
+                            
                         </td>
 
                 </tr>

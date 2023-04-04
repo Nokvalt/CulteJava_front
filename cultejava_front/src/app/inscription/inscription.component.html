@@ -1,5 +1,10 @@
+<html>
 <body>
   <h1>Inscription </h1>
+
+<p><img id="logoCulte" src="asset/logo.png" alt=""></p>
+
+
   <form [formGroup]="inscriptionForm" (ngSubmit)="inscription()">
       <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom"/>
 
@@ -27,5 +32,5 @@
    <span *ngIf="inscriptionReussie">Inscription réussie !</span> 
   </form>
 </body>
-
+</html>
 

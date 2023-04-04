@@ -28,7 +28,7 @@ export class TapoteurHttpService {
   }
 
   findAll(): Array<TapoteurRequestResponse>{
-    return this.tapoteurs;
+    return this.tapoteurs.sort((t1, t2) => (t1.sommeDon < t2.sommeDon) ? 1 : -1);
   }
 
   findById(id: number): Observable<TapoteurRequestResponse>{

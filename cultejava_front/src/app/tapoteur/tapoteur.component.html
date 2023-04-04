@@ -91,7 +91,7 @@
         <label>Somme des dons:</label><br>
         <input type="number" id="sommeDon" name="sommeDon" size=6 [(ngModel)]="tapoteurForm.sommeDon"/><br>
 
-        <button (click)="save()">Confirmer</button>
+        <button [disabled]="tapoteurForm.rang == null || tapoteurForm.login == null || tapoteurForm.password== null || tapoteurForm.nom == null || tapoteurForm.prenom == null || tapoteurForm.nom == null || tapoteurForm.voie == null || tapoteurForm.cp  == null || tapoteurForm.numero == null || tapoteurForm.ville == null || tapoteurForm.pays == null || tapoteurForm.dateAdhesion== null || tapoteurForm.sommeDon == null"(click)="save()">Confirmer</button>
         <button (click)="cancel()">Annuler</button>
     </div>
 

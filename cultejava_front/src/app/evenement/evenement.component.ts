@@ -17,9 +17,11 @@ export class EvenementComponent {
 
   list(): Array<Evenement> {
     //console.log("FINDALL: ", this.evenementService.findAll());
-    for (let i in this.evenementService.findAll()){
+    /*for (let i in this.evenementService.findAll()){
       console.log(i);
-    }
+    }*/
+
+    console.log("EVENEMETS:::::" + this.evenementService.findAll());
 
     return this.evenementService.findAll();
   }
@@ -59,9 +61,11 @@ export class EvenementComponent {
     return Object.keys(Activite).filter((v) => isNaN(Number(v)));
   } 
     
-  listinscriptionsevenement(): any{
-    //console.log("Avant Listinscriptionsevenement ",this.evenementService);
-    this.evenementService.findinscription(1);
+  listMesInscriptions(): Array<Evenement>{
+
+    console.log("INSCRIPTIONS:::::" + this.evenementService.findInscriptions());
+
+    return this.evenementService.findInscriptions();
     //console.log("Après Listinscriptionsevenement ",this.evenementService);
   }
 

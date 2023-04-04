@@ -23,7 +23,8 @@
                         <td>
                             <a> <input type="button" value="Modifier" (click)="edit(evenement.id)"></a>
                             <a> <input type="button" value="Supprimer" (click)="remove(evenement.id)"></a>
-                            <a> <input type="button" value="S'inscrire à l'événement" (click)="addEvenement()"></a>
+                            <a> <input type="button" value="S'inscrire à l'événement" (click)="addEvenement()"></a> <!-- ngIf l'utilisateur n'est pas inscrit à l'evenement-->
+                            <span>Inscrit</span> <!-- ngIf l'utilisateur est inscrit-->
                         </td>
                 </tr>
             </tbody>
@@ -62,24 +63,27 @@
 
 
 
-<h1>Liste des participants</h1>
-<table >
+<h1>Mes événements:</h1>
+
+<table id="table">
     <thead>
         <tr>
             <th>Identifiant</th>
-            <th></th>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Lieu</th>
+            <th>Activité</th>
         </tr>
     </thead>
 
     <tbody>
-        <tr *ngFor="let inscriptionevenements of listinscriptionsevenement()">
-                <td>{{inscriptionevenements.evenementId}}</td>
-                <td></td>
+        <tr *ngFor="let evenement of listMesInscriptions()">
+                <td>{{evenement.id}}</td>
+                <td>{{evenement.nom}}</td>
+                <td>{{evenement.dateEvent}}</td>
+                <td>{{evenement.lieu}}</td>
+                <td>{{evenement.nomActivite}}</td>
         </tr>
     </tbody>
 
 </table>
-
-
-
-

@@ -11,7 +11,7 @@ import { TapoteurComponent } from '../tapoteur/tapoteur.component';
 })
 export class EvenementHttpService {
 
-  mesevenements : Array<Evenement> =new Array<Evenement>();
+  mesEvenements : Array<Evenement> =new Array<Evenement>();
   evenements: Array<Evenement> = new Array<Evenement>();
   private evenementApiPath: string;
 
@@ -28,7 +28,6 @@ export class EvenementHttpService {
   }
 
   findById(id: number): Observable<Evenement> {
-    console.log(this.evenements);
     return this.http.get<Evenement>(this.evenementApiPath + "/" + id);
   }
 
@@ -52,19 +51,24 @@ export class EvenementHttpService {
   }
 
   private load(): void {
+    //liste des événements
     this.http.get<Array<Evenement>>(this.evenementApiPath).subscribe(resp => {
     this.evenements = resp;
     
     })
+
+    //liste des inscriptions de la personne connectée
+    this.http.get<Array<Evenement>>("http://localhost:8080/api/tapoteur/mesInscriptions/8").subscribe(resp => {
+      this.mesEvenements = resp;  
+      //console.log("Après findinscription",this.mesevenements);
+    } 
+      )
+
   }
 
-  findinscription(id : number): void{
-    //console.log("Avant findinscription",this.mesevenements);
-    this.http.get<Array<Evenement>>("localhost:8080/api/tapoteur/mesInscriptions/"+id).subscribe(resp => {
-    this.mesevenements = resp;  
-    //console.log("Après findinscription",this.mesevenements);
-  } 
-    )
+  findInscriptions(): Array<Evenement>{
+    //console.log("Avant findinscription",this.mesEvenements);
+    return this.mesEvenements;
 }
 }
  

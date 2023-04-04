@@ -21,12 +21,12 @@
     
 
     <form [formGroup]="userForm" (ngSubmit)="connexion()">
-        <input type="login" id="login" name="login" formControlName="login" /><br>
+        <input type="login" id="login" name="login" formControlName="login" placeholder="login"/><br>
         <span *ngIf="loginCtl.dirty && loginCtl.hasError('required')">
             Le login est obligatoire
         </span>
 
-        <input type="password" id="password" name="password" formControlName="password" /><br>
+        <input type="password" id="password" name="password" formControlName="password" placeholder="mot de passe" /><br>
         <span *ngIf="passwordCtl.dirty && passwordCtl.hasError('required')">
             Le mot de passe est obligatoire
         </span>

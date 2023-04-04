@@ -1,0 +1,75 @@
+<div class ="container">
+    <h1>Profil de fidèle, car seuls les vrais savent</h1>
+
+    <label>Identifiant:</label><br>
+    <form>
+
+        <input type="text" id="login" name="login" [(ngModel)]="tapoteurForm.login" [readonly]="!editingLogin" />
+    <ng-container *ngIf="!editingLogin">
+      <button (click)="LoginEdit_On()">Modifier</button>
+    </ng-container>
+    <ng-container *ngIf="editingLogin">
+      <button (click)="validerLoginEdit()">Valider</button>
+      <button (click)="annulerLoginEdit()">Annuler</button>
+    </ng-container>
+    <br>
+
+        <input type="text" id="password" name="password" [(ngModel)]="tapoteurForm.password" [readonly]="!editingPassword"/>
+    <ng-container *ngIf="!editingPassword">
+      <button (click)="PasswordEdit_On()">Modifier</button>
+    </ng-container>
+    <ng-container *ngIf="editingPassword">
+      <button (click)="validerPasswordEdit()">Valider</button>
+      <button (click)="annulerPasswordEdit()">Annuler</button>
+    </ng-container>
+    <br>
+
+        <input type="text" id="nom" name="nom" [(ngModel)]="tapoteurForm.nom" [readonly]="!editingNom"/>
+        <ng-container *ngIf="!editingNom">
+            <button (click)="NomEdit_On()">Modifier</button>
+          </ng-container>
+          <ng-container *ngIf="editingNom">
+            <button (click)="validerNomEdit()">Valider</button>
+            <button (click)="annulerNomEdit()">Annuler</button>
+          </ng-container>
+          <br>
+
+        <input type="text" id="prenom" name="prenom" [(ngModel)]="tapoteurForm.prenom" [readonly]="!editingPrenom"/>
+        <ng-container *ngIf="!editingPrenom">
+            <button (click)="PrenomEdit_On()">Modifier</button>
+          </ng-container>
+          <ng-container *ngIf="editingPrenom">
+            <button (click)="validerPrenomEdit()">Valider</button>
+            <button (click)="annulerPrenomEdit()">Annuler</button>
+          </ng-container>
+          <br>
+
+        <label>Adresse:</label><br>
+<input type="text" id="numero" name="numero" size="4" [(ngModel)]="tapoteurForm.numero" [readonly]="!editingAdresse"/>
+
+<input type="text" id="voie" name="voie" [(ngModel)]="tapoteurForm.voie" [readonly]="!editingAdresse"/>
+
+<input type="text" id="cp" name="cp" placeholder="CP" size="6" [(ngModel)]="tapoteurForm.cp" [readonly]="!editingAdresse"/>
+
+<input type="text" id="ville" name="ville" [(ngModel)]="tapoteurForm.ville" [readonly]="!editingAdresse"/>
+
+<input type="text" id="pays" name="pays" placeholder="Pays" size="12" [(ngModel)]="tapoteurForm.pays" [readonly]="!editingAdresse"/>
+<ng-container *ngIf="!editingAdresse">
+    <button (click)="AdresseEdit_On()">Modifier</button>
+  </ng-container>
+  <ng-container *ngIf="editingAdresse">
+    <button (click)="validerAdresseEdit()">Valider</button>
+    <button (click)="annulerAdresseEdit()">Annuler</button>
+  </ng-container>
+  <br>
+    </form>
+</div>
+
+
+    <!--<button (click)="editUserLogin()">Modifier le login</button>
+    <button (click)="editUserPassword()">Modifier le mot de passe</button>
+    <button (click)="editUserNom()">Modifier le nom</button>
+    <button (click)="editUserPrenom()">Modifier le prénom</button>
+    <button (click)="editUserImageProfil()">Modifier l'image de profil</button>
+    <button (click)="editUserAdresse()">Modifier l'adresse</button>-->
+

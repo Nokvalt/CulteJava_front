@@ -28,7 +28,8 @@ import { ProfilComponent } from './profil/profil.component';
     InscriptionComponent,
     ConnexionComponent,
     EvenementComponent,
-    FaireUnDonComponent
+    FaireUnDonComponent,
+    ProfilComponent
   ],
   
   imports: [
@@ -38,9 +39,7 @@ import { ProfilComponent } from './profil/profil.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    FormsModule
+    AppRoutingModule
   ], 
 
   providers: [],

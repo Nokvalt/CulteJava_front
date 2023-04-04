@@ -52,7 +52,7 @@ export class EvenementHttpService {
   }
 
   private load(): void {
-    this.http.get<Array<Evenement>>(this.evenementApiPath + "/by-fidele/8").subscribe(resp => {
+    this.http.get<Array<Evenement>>(this.evenementApiPath + "/by-fidele/" + this.connected.id).subscribe(resp => {
     this.evenements = resp;
     });
 /*

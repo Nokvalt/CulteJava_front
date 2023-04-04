@@ -22,10 +22,10 @@ export class ProfilComponent implements OnInit {
 
 
   initialLogin: string;
-initialPassword: string;
-initialNom: string;
-initialPrenom: string;
-initialAdresse: {
+  initialPassword: string;
+  initialNom: string;
+  initialPrenom: string;
+  initialAdresse: {
   numero: string;
   voie: string;
   cp: string;

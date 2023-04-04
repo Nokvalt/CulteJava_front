@@ -15,19 +15,15 @@ import { TapoteurRequestResponse } from '../modelTapoteur';
   styleUrls: ['./evenement.component.scss']
 })
 export class EvenementComponent {
-  connected: TapoteurRequestResponse; // si tu met boolean ça ne marche pas le constructeur se met :/ 
-  evenementForm: Evenement = null;
   connected: TapoteurRequestResponse = null;
+  evenementForm: Evenement = null;
 
   constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router) {
     this.connected = this.loginService.connected;
 
-    //if(this.connected == null){
-     // this.router.navigate([""]);
-    //} else {
-      this.listMesEvents = evenementService.evenements;
-      // recherche ses évemenments pour la personne connectée et stocké dans une variable
-    //}
+    if(this.connected == null){
+       this.router.navigate([""]);
+    }
   }
 
   list(): Array<Evenement> {
@@ -71,6 +67,4 @@ export class EvenementComponent {
   }*/
    
   }
-  
 
-}

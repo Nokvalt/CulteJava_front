@@ -31,10 +31,10 @@
                 <td>{{tapoteur.sommeDon}}</td>
                 <td>{{tapoteur.rang}}</td>
                 <td> <button (click)="edit(tapoteur.id)">Modifier</button>
-                    <button (click)="remove(tapoteur.id)">Supprimer</button> 
-                    <button (click)="demote(tapoteur.id)">Rétrograder</button>
-                    <button (click)="promote(tapoteur.id)">Promouvoir</button>
-                    <button (click)="banForm(tapoteur.id)">Bannir</button>
+                    <button *ngIf="tapoteur.rang !='Grand Dev'" (click)="remove(tapoteur.id)">Supprimer</button> 
+                    <button *ngIf="tapoteur.rang != 'Fidele' && tapoteur.rang !='Grand Dev'" (click)="demote(tapoteur.id)">Rétrograder</button>
+                    <button *ngIf="tapoteur.rang != 'Compileur' && tapoteur.rang !='Grand Dev'" (click)="promote(tapoteur.id)">Promouvoir</button>
+                    <button *ngIf="tapoteur.rang !='Grand Dev'" (click)="banForm(tapoteur.id)">Bannir</button>
                 </td>
                     
             </tr>

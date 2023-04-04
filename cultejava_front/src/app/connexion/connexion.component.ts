@@ -20,8 +20,7 @@ export class ConnexionComponent {
   passwordCtl : FormControl;
 
   connexionForm: Connexion = new Connexion();
-  wrongPassword: boolean;
-  unknownLogin: boolean;
+  error: boolean;
 
 
   constructor(private connexionService: ConnexionHttpService, private loginService: LoginService, private router: Router, private formBuilder: FormBuilder){}
@@ -38,8 +37,7 @@ export class ConnexionComponent {
 
 
   connexion(): void{
-    this.unknownLogin = false;
-    this.wrongPassword = false;
+    this.error = false;
 
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
       this.loginService.connected = resp;
@@ -47,10 +45,8 @@ export class ConnexionComponent {
       this.router.navigate(['/tapoteur']);
     }, error => {
       console.log(error);
-      if(error.status == 400){
-        this.wrongPassword = true;
-      }else if(error.status == 404){
-        this.unknownLogin = true;
+      if(error.status == 400 || error.status == 404){
+        this.error = true;
       }
     });
     

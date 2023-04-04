@@ -41,7 +41,17 @@ export class ConnexionComponent {
 
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
       this.loginService.connected = resp;
-      this.router.navigate(['/accueil']);
+      switch (this.loginService.connected.punition){
+        case "aucune":{
+          this.router.navigate(['/accueil']);
+          break;
+        }
+        case "dactylo":{
+          this.router.navigate(['/punitionDactylo']);
+          break;
+        }
+      }
+      
     }, error => {
       if(error.status == 400 || error.status == 404){
         this.error = true;

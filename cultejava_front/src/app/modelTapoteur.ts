@@ -15,8 +15,9 @@ export class TapoteurRequestResponse{
     sommeDon: number;
     imageProfil: string;
     rang: string;
+    punition: string;
 
-    constructor(id?: number, nom?: string, prenom?: string, numero?: string, voie?: string, cp?: string, ville?: string, pays?: string, dateAdhesion?: string, login?: string, password?: string, sommeDon?: number, imageProfil?: string, rang?: string){
+    constructor(id?: number, nom?: string, prenom?: string, numero?: string, voie?: string, cp?: string, ville?: string, pays?: string, dateAdhesion?: string, login?: string, password?: string, sommeDon?: number, imageProfil?: string, rang?: string, punition?: string){
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -31,6 +32,7 @@ export class TapoteurRequestResponse{
         this.sommeDon = sommeDon;
         this.imageProfil = imageProfil;
         this.rang = rang;
+        this.punition = punition;
     }
 }
 

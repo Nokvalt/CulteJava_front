@@ -11,8 +11,17 @@ import { InscriptionComponent } from '../inscription/inscription.component';
 })
 export class EvenementComponent {
   evenementForm: Evenement = null;
+  
 
-  constructor(private evenementService: EvenementHttpService) {
+  constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router) {
+    this.connected = this.loginService.connected;
+
+    if(this.connected == null){
+      this.router.navigate([""]);
+    } else {
+      evenementService.listemesevenetms;
+      // recherche ses évemenments pour la personne connectée et stocké dans une variable
+    }
   }
 
   list(): Array<Evenement> {
@@ -63,19 +72,19 @@ export class EvenementComponent {
     
   listMesInscriptions(): Array<Evenement>{
 
-    console.log("INSCRIPTIONS:::::" + this.evenementService.findInscriptions());
+    //console.log("INSCRIPTIONS:::::" + this.evenementService.findInscriptions());
 
     return this.evenementService.findInscriptions();
     //console.log("Après Listinscriptionsevenement ",this.evenementService);
   }
 
-  addEvenement(): void {
-    /*if (){
-
+  estInscrit(idEvenement: number, idTapoteur: number):boolean{
+    if (idEvenement == idTapoteur){
+      return true ;
     }
     else{
-
-    }*/
-
+      return false;
+    }
   }
+  
 }

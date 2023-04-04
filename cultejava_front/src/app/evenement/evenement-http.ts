@@ -58,7 +58,7 @@ export class EvenementHttpService {
     })
 
     //liste des inscriptions de la personne connectée
-    this.http.get<Array<Evenement>>("http://localhost:8080/api/tapoteur/mesInscriptions/8").subscribe(resp => {
+    this.http.get<Array<Evenement>>("http://localhost:8080/api/tapoteur/mesInscriptions/3").subscribe(resp => {
       this.mesEvenements = resp;  
       //console.log("Après findinscription",this.mesevenements);
     } 

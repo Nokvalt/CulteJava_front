@@ -24,6 +24,8 @@ export class TapoteurComponent {
       this.router.navigate([""]);
     }
 
+    console.log(loginService.connected.rang)
+
   }
 
   listTapoteurs(): Array<TapoteurRequestResponse>{
@@ -75,7 +77,32 @@ export class TapoteurComponent {
     this.bannisForm = null;
   }
 
+  passationPouvoir(idTapoteur: number):void{
+    if(confirm("Etes vous sur de vouloir nommer un nouveau Grand Dev ?")){
+      if(confirm("Etes vous VRAIMENT sur de vouloir nommer un nouveau Grand Dev ?")){
+        if(confirm("Pensez à tout ce que vous avez accompli. Est-ce que cela en vaut vraiment la peine ?")){
+          if (confirm("...Cette action est irreversible. Avez-vous bien réfléchi aux conséquences de vos actions ?")){
+            if(confirm("Vous serez éliminé de la secte. Etes-vous sur de vouloir poursuivre ?")){
+              this.tapoteurService.passationPouvoir(idTapoteur);
+              alert("Vous avez désigné un nouveau GrandDev. Vous allez être déconnecté et ne pourrez plus vous connecter. Merci pour vos bons et loyaux services.");
+              this.loginService.connected = null;
+              this.router.navigate([""]);
+            }
+          }
+        }
+      }
+
+      alert("Vous n'avez pas cédé votre pouvoir.");
+    };
+    
+    
+  }
+
   cancel():void{
     this.tapoteurForm = null;
   } 
+
+  connected():TapoteurRequestResponse{
+    return this.loginService.connected;
+  }
 }

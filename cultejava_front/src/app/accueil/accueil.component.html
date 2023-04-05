@@ -2,7 +2,8 @@
     <div id="bodyContainer">
         <p *ngIf="connected().rang != 'Grand Dev'"><img id="boutonFaireUnDon" src="/assets/boutonFaireUnDon.PNG" alt="bouton faire un don" (click)="faireUnDon()"></p>
         <p *ngIf="connected().rang == 'Grand Dev'"><img id="boutonVolerUnDon" src="/assets/boutonFaireUnDon.PNG" alt="voler la cagnotte" (click)="volerLaCagnotte()"></p>
-        Somme cagnotte : {{connected().sommeDon}};
+        <p>Somme cagnotte totale: {{connected().allDons}} <br>
+        L'argent que j'ai volé: {{connected().argentVole}}</p>
        
         <p id="EvenementDuMois"><span class="orange">public </span>
                                 <span class="orange">class </span>

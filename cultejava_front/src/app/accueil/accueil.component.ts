@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Connexion } from '../modelConnexion';
 import { AccueilHttpService } from './accueil-http.service';
 import { Router } from '@angular/router';
 import { TapoteurRequestResponse } from '../modelTapoteur';
@@ -12,11 +11,13 @@ import { LoginService } from '../login.service';
 })
 export class AccueilComponent {
 
-  constructor(private loginService: LoginService, private router: Router){
+  constructor(private serviceHttp: AccueilHttpService, private loginService: LoginService, private router: Router){
 
     if(this.loginService.connected == null){
       this.router.navigate([""]);
     }
+
+    this.loginService.connected.allDons = 120;
   }
 
   faireUnDon(){
@@ -24,7 +25,12 @@ export class AccueilComponent {
   }
 
   volerLaCagnotte(): void{
-
+    this.serviceHttp.steal().subscribe(resp => {
+      this.connected().argentVole = this.connected().allDons;
+      this.connected().allDons = 0;
+      alert("Merci pour votre vol, " + this.connected().login);
+      this.router.navigate(["/accueil"]);
+    });
   }
 
   connected(): TapoteurRequestResponse{

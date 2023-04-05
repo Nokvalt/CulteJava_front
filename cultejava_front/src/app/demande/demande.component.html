@@ -36,11 +36,12 @@
 
         <div input type="button" *ngIf="demandeForm">
             <h2>Edition d'une demande</h2>
+            <h3>Votre demande sera traitée dans les meilleurs délais</h3> 
             <div id="form">
                 <div> <label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" size="4" readonly [(ngModel)]="demandeForm.id"></div>
                 <div> <label for="nom">Montant:</label> <input type="number" class="form-control" id="montant" name="montant" [(ngModel)]="demandeForm.montant"></div>
                 <div><label for="descriptif">Descriptif:</label> <input type="text" class="form-control" id="descriptif" name="descriptif" [(ngModel)]="demandeForm.descriptif"></div>
-
+                <div><label for="descriptif">Statut:</label> <input type="text" class="form-control" id="statut" name="statut" [(ngModel)]="demandeForm.statut"></div>
 
                 <input type="button" value="Ajouter" (click)="save()" id="button">
                 <input type="button" value="Annuler" (click)="cancel()" id="button">

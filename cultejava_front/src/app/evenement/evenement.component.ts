@@ -70,5 +70,9 @@ export class EvenementComponent {
     this.evenementService.addInscription(this.inscription);
   }
    
+
+  connected(): TapoteurRequestResponse{
+    return this.loginService.connected;
+  }
   }
 

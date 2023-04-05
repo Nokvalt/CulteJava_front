@@ -91,8 +91,6 @@ export class TapoteurComponent {
           }
         }
       }
-
-      alert("Vous n'avez pas cédé votre pouvoir.");
     };
     
     

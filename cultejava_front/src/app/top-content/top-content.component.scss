@@ -45,7 +45,7 @@ color: white;
 
 }
 
-#welcomeBox {
+/*#welcomeBox {
 
     display: flex;
     align-items: center;
@@ -62,7 +62,7 @@ color: white;
     background-color: #515658;
 
 
-}
+}*/
 
 
 
@@ -95,3 +95,32 @@ height: 8vh;
 
 
 }
+
+
+#welcomeBox{
+    display: inline-block;
+    justify-content: center;
+}
+
+#welcomeBox p {
+    overflow: hidden;
+    font-family: monospace;
+    letter-spacing: 5px;
+    white-space: nowrap;
+    border-right: 5px solid rgb(24, 233, 24); 
+    animation: writing 5s steps(16), /* steps: remplacer par le nombre de caractères dans "bienvenue login" */
+               blink-caret 1.5s step-end infinite;
+}
+  
+@keyframes writing { /* writing effect */
+    from {
+        width: 0
+      }to{
+        width: 100%;
+      }
+}
+
+@keyframes blink-caret { /* cursor effect */
+    from, to { border-color: transparent }
+    50% { border-color: rgb(24, 233, 24); }
+  }

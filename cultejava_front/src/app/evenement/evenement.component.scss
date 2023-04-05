@@ -79,8 +79,34 @@ input[type="number"], input[type="text"], input[type="date"], select{
     justify-content: center;
 }
 
+
+
+
 #form{
     text-align: center;
     font-family: monospace;
     font-size: 16px;
 }
+
+#form div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align : left;
+}
+
+
+/*#form  {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: right;
+    
+}
+
+#form div  {
+    display: flex;
+    flex-basis: 150px; /* ajuster la largeur selon vos besoins 
+    flex-shrink: 0;
+    text-align: right;
+    margin-right: 10px; /* espace entre l'étiquette et le champ d'entrée 
+}*/

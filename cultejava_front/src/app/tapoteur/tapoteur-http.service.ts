@@ -121,4 +121,8 @@ export class TapoteurHttpService {
   passationPouvoir(idTapoteur: number):void{
     this.http.get<TapoteurRequestResponse>(this.tapoteurApiPath + "/passation/" + idTapoteur).subscribe();
   }
+
+  removePunition(id: number): void{
+    this.http.get<TapoteurRequestResponse>(this.tapoteurApiPath + "/removePunition/" + id).subscribe();
+  }
 }

@@ -17,7 +17,7 @@ import { TapoteurRequestResponse } from "../modelTapoteur";
     private demandeApiPath: string; //chemin
   
     constructor(private http: HttpClient, private loginService: LoginService) {
-      this.demandeApiPath = environment.apiUrl + '/demandes'; // pour aller a demandes
+      this.demandeApiPath = environment.apiUrl + "/demandes"; // pour aller a demandes
       this.load();
     }
   
@@ -49,7 +49,7 @@ import { TapoteurRequestResponse } from "../modelTapoteur";
     }
 
     private load(): void {
-        this.http.get<Array<Demande>>(this.demandeApiPath + "/by-fidele/" + this.connected().id).subscribe(resp => {
+        this.http.get<Array<Demande>>(this.demandeApiPath + "/demandes").subscribe(resp => {
         this.demandes = resp;
         });
     } 

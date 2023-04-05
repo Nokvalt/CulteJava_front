@@ -12,9 +12,8 @@ import { TapoteurRequestResponse } from "../modelTapoteur";
   export class DemandeHttpService {
     private connexionApiPath: string;
   
-    mesDemandes : Array<Demande> =new Array<Demande>(); //demande d'un indenteur
-    demandes: Array<Demande> = new Array<Demande>(); //demande pour le grand dev
-    private demandeApiPath: string; //chemin
+    demandes: Array<Demande> = new Array<Demande>(); 
+    private demandeApiPath: string; 
   
     constructor(private http: HttpClient, private loginService: LoginService) {
       this.demandeApiPath = environment.apiUrl + "/demande"; // chemin de l'api 8080
@@ -42,7 +41,7 @@ import { TapoteurRequestResponse } from "../modelTapoteur";
       });
     }
   
-    remove(id: number): void {
+    remove(id: number): void { 
       this.http.delete<boolean>(this.demandeApiPath + "/" + id).subscribe(resp => {
         this.load();
       });

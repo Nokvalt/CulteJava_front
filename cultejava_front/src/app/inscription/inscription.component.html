@@ -1,31 +1,7 @@
-<body>
-  <h1>Inscription </h1>
-  <form [formGroup]="inscriptionForm" (ngSubmit)="inscription()">
-      <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom"/>
+<div id="container">
+  <img src="assets/logo.png" alt="Logo Les Témoins de Java" class="logo">
+</div>
 
-      <input type="text" id="nom" formControlName="nom" placeholder="Nom"/><br>
- 
-  
-      <input type="text" id="login" formControlName="login" placeholder="Login" />
-  
 
-      <input type="password" id="password" formControlName="password" placeholder="Mot de passe"/><br><br>
-
-      <label>Adresse:</label><br>
-        <input type="text" id="numero" name="numero" placeholder="N°" size="4" formControlName="numero"/>
-
-        <input type="text" id="voie" name="voie" placeholder="Voie" formControlName="voie"/>
-
-        <input type="text" id="cp" name="cp" placeholder="CP" size="6" formControlName="cp"/>
-
-        <input type="text" id="ville" name="ville" placeholder="Ville" formControlName="ville"/>
-
-        <input type="text" id="pays" name="pays" placeholder="Pays" size="12" formControlName="pays"/><br>
-  
-    <a> <input type="button" value="S'inscrire" (click)="inscription()" id="add"></a>
-    <a> <input type="button" value="Retour" (click)="retour()" id="retour"></a>
-   <span *ngIf="inscriptionReussie">Inscription réussie !</span> 
-  </form>
-</body>
 
 

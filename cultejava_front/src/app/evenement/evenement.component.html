@@ -21,10 +21,10 @@
                         <td>{{evenement.lieu}}</td>
                         <td>{{evenement.nomActivite}}</td>
                         <td>
-                            <input type="button" value="Modifier" (click)="edit(evenement.id)">
-                            <input type="button" value="Supprimer"  (click)="remove(evenement.id)">
-                            <input *ngIf="!evenement.inscrit" type="button" value="S'inscrire à l'événement" (click)="inscriptionEvenement(evenement.id)">
-                            <span *ngIf="evenement.inscrit">Inscrit</span>
+                            <input *ngIf="connected().rang == 'Indenteur' || connected().rang == 'Grand Dev'" type="button" value="Modifier" (click)="edit(evenement.id)">
+                            <input *ngIf="connected().rang == 'Indenteur' || connected().rang == 'Grand Dev'" type="button" value="Supprimer" (click)="remove(evenement.id)">
+                            <input *ngIf="!evenement.inscrit &&  connected().rang == 'Fidele'" type="button" value="S'inscrire à l'événement" (click)="inscriptionEvenement(evenement.id)">
+                            <span *ngIf="evenement.inscrit &&  connected().rang == 'Fidele'">Inscrit</span>
                             
                         </td>
 
@@ -42,7 +42,7 @@
     <h2>Edition d'un événement</h2>
     <div id="form">
         <div> 
-            <a><label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" size="4" readonly [(ngModel)]="evenementForm.id" min="10" max="100"></a>
+            <a><label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" size="4" readonly [(ngModel)]="evenementForm.id" ></a>
         </div>
         <div>
             <label for="nom">Libellé:</label> <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="evenementForm.nom"/>

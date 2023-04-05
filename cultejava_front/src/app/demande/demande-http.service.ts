@@ -49,7 +49,7 @@ import { TapoteurRequestResponse } from "../modelTapoteur";
     }
 
     private load(): void {
-        this.http.get<Array<Demande>>(this.demandeApiPath + "/demandes").subscribe(resp => {
+        this.http.get<Array<Demande>>(this.demandeApiPath).subscribe(resp => {
         this.demandes = resp;
         });
     } 

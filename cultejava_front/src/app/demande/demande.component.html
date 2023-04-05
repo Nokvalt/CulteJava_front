@@ -1,7 +1,9 @@
 <body>
     
-    <h1 >Liste des Demandes </h1>
-    <h3>Vos demandes seront bien prises en considération</h3> 
+    <h1 *ngIf="connected().rang == 'Indenteur'" >Liste des Demandes </h1>
+    <h3 *ngIf="connected().rang == 'Indenteur'" >Vos demandes seront bien prises en considération</h3> 
+    <h1 *ngIf="connected().rang == 'Grand Dev'" >Liste des Demandes des pigeons </h1>
+    <h3 *ngIf="connected().rang == 'Grand Dev'" >Les demandes seront toujours refusées </h3> 
         <table id="table">
             <thead>
                 <tr>
@@ -20,8 +22,8 @@
                         <td>{{demande.descriptif}}</td>
                         <td>{{demande.statut}}</td>
                         <td>
-                            <input type="button" value="Modifier la demande" (click)="edit(demande.id)">
-                            <input *ngIf="connected().rang == 'Grand Dev'" type="button" value="Modifier le statut">
+                            <input *ngIf="connected().rang == 'Indenteur'" type="button" value="Modifier la demande" (click)="edit(demande.id)">
+                            <input *ngIf="connected().rang == 'Grand Dev'" type="button" value="Modifier le statut"  (click)="edit(demande.id)">
                             <input type="button" value="Supprimer"  (click)="remove(demande.id)">                           
                         </td>
 
@@ -44,7 +46,6 @@
                 <div> <label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" size="4" readonly [(ngModel)]="demandeForm.id"></div>
                 <div> <label for="nom">Montant:</label> <input type="number" class="form-control" id="montant" name="montant" [(ngModel)]="demandeForm.montant" step="0.01"></div>
                 <div><label for="descriptif">Descriptif:</label> <input type="text" class="form-control" id="descriptif" name="descriptif" [(ngModel)]="demandeForm.descriptif"></div>
-                <div><label for="descriptif">Statut:</label> <input type="text" class="form-control" id="statut" name="statut" [(ngModel)]="demandeForm.statut"></div>
 
                 <input type="button" value="Ajouter" (click)="save()" id="button">
                 <input type="button" value="Annuler" (click)="cancel()" id="button">

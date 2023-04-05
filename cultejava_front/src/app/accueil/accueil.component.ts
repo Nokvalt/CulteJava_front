@@ -17,7 +17,6 @@ export class AccueilComponent {
       this.router.navigate([""]);
     }
 
-    this.loginService.connected.allDons = 120;
   }
 
   faireUnDon(){

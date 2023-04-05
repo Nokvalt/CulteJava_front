@@ -2,14 +2,40 @@
     width: 12%;
     
     position:fixed;
-    height: 90%;
+
+    top: 0;
+    bottom: 0;
+    
     background-color: #2f2f2f;
-    margin-top: 1%;
+    
     margin-left: 2%;
 
     overflow: auto;
     
     
+}
+
+#logo{
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
+   
+}
+
+#logo img{
+    width: 80%;
+}
+
+#sousTitre{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+#sousTitre img{
+    width: 100%;
+    margin-left: -2%;
+    margin-top: -8%;
 }
 
 #navList a, ul {
@@ -27,8 +53,10 @@
 #hautNav {
     
 
+    text-align: center;
     
     padding-left: 5%;
+    margin-top: 20%;
    
 
 }
@@ -51,12 +79,9 @@
 
    display: flex;
    flex-direction: column;
-   
-   
-   
-    
+   justify-content: flex-end;
     margin-left: 20%;
-    margin-top: 40%;
+  
 
 }
 
@@ -65,5 +90,5 @@
     font-size: 120%;
     text-decoration: none;
     color: white;
-    padding-top: 40%;
+    padding-top: 20%;
 }

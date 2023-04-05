@@ -16,6 +16,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FaireUnDonComponent } from './faire-un-don/faire-un-don.component';
 import { ProfilComponent } from './profil/profil.component';
+import { PunitionDactyloComponent } from './punition-dactylo/punition-dactylo.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ProfilComponent } from './profil/profil.component';
     ConnexionComponent,
     EvenementComponent,
     FaireUnDonComponent,
-    ProfilComponent
+    ProfilComponent,
+    PunitionDactyloComponent
   ],
   
   imports: [

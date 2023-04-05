@@ -45,19 +45,15 @@ export class ProfilComponent implements OnInit {
   editingAdresse: boolean = false;
 
 
-  
 
 
-
-
+  //---------------------------------------------------------------------------------------
 
   //MODIFICATION LOGIN
   
   LoginEdit_On() {
     this.initialLogin = this.tapoteurForm.login;
     this.editingLogin = true;
-    const loginInput = document.getElementById('login') as HTMLInputElement;
-    loginInput.readOnly = false;
   }
 
   LoginEdit_Off() {
@@ -94,15 +90,13 @@ export class ProfilComponent implements OnInit {
 
 
 
-
+//--------------------------------------------------------------------------------------------------------------------
 
   //MODIFICATION PASSWORD
 
   PasswordEdit_On() {
     this.initialPassword = this.tapoteurForm.password;
     this.editingPassword = true;
-    const passwordInput = document.getElementById('password') as HTMLInputElement;
-    passwordInput.readOnly = false;
   }
 
   PasswordEdit_Off() {
@@ -141,15 +135,13 @@ export class ProfilComponent implements OnInit {
 
 
 
-
+//-------------------------------------------------------------------------------------------------------------
 
   //MODIFICATION NOM
 
   NomEdit_On() {
     this.initialNom = this.tapoteurForm.nom;
     this.editingNom = true;
-    const nomInput = document.getElementById('nom') as HTMLInputElement;
-    nomInput.readOnly = false;
   }
 
   NomEdit_Off() {
@@ -193,8 +185,6 @@ export class ProfilComponent implements OnInit {
   PrenomEdit_On() {
     this.initialPrenom = this.tapoteurForm.prenom;
     this.editingPrenom = true;
-    const prenomInput = document.getElementById('prenom') as HTMLInputElement;
-    prenomInput.readOnly = false;
   }
 
   PrenomEdit_Off() {
@@ -268,17 +258,6 @@ export class ProfilComponent implements OnInit {
       pays: this.tapoteurForm.pays,
     };
     this.editingAdresse = true;
-    const numeroInput = document.getElementById('numero') as HTMLInputElement;
-    const voieInput = document.getElementById('voie') as HTMLInputElement;
-    const cpInput = document.getElementById('cp') as HTMLInputElement;
-    const villeInput = document.getElementById('ville') as HTMLInputElement;
-    const paysInput = document.getElementById('pays') as HTMLInputElement;
-  
-    numeroInput.readOnly = false;
-    voieInput.readOnly = false;
-    cpInput.readOnly = false;
-    villeInput.readOnly = false;
-    paysInput.readOnly = false;
   }
 
   AdresseEdit_Off() {

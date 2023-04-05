@@ -1,58 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mat test des trucs</title>
+</head>
 <body>
-  <h1>Inscription </h1>
-
-<p><img id="logoCulte" src="asset/logo.png" alt=""></p>
-
-
-  <form [formGroup]="inscriptionForm" (ngSubmit)="inscription()">
-      <input type="text" id="prenom" formControlName="prenom" placeholder="Prénom"/>
-      <span *ngIf="prenomCtrl.dirty && prenomCtrl.hasError('required')">
-        Le prénom est obligatoire
-    </span>
-
-      <input type="text" id="nom" formControlName="nom" placeholder="Nom"/><br>
-      <span *ngIf="nomCtrl.dirty && nomCtrl.hasError('required')">
-        Le nom est obligatoire
-    </span>
-  
-      <input type="text" id="login" formControlName="login" placeholder="Login" />
-      <span *ngIf="loginCtrl.dirty && loginCtrl.hasError('required')">
-        Le login est obligatoire
-    </span>
-  
-
-      <input type="password" id="password" formControlName="password" placeholder="Mot de passe"/>
-      <span *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('required')">
-        Le mot de passe est obligatoire
-      </span>
-      <span *ngIf="passwordCtrl.hasError('minlength')">
-        Le mot de passe doit avoir 8 caractères minimum
-    </span><br><br>
-
-
-      <label>Adresse:</label><br>
-        <input type="text" id="numero" name="numero" placeholder="N°" size="4" formControlName="numero"/>
-
-        <input type="text" id="voie" name="voie" placeholder="Voie" formControlName="voie"/>
-
-        <input type="text" id="cp" name="cp" placeholder="CP" size="6" formControlName="cp"/>
-
-        <input type="text" id="ville" name="ville" placeholder="Ville" formControlName="ville"/>
-
-        <input type="text" id="pays" name="pays" placeholder="Pays" size="12" formControlName="pays"/>
-        <span *ngIf="(numeroCtrl.dirty && numeroCtrl.hasError('required')) || 
-                     (voieCtrl.dirty && voieCtrl.hasError('required')) ||
-                     (cpCtrl.dirty && cpCtrl.hasError('required')) ||
-                     (villeCtrl.dirty && villeCtrl.hasError('required')) ||
-                     (paysCtrl.dirty && paysCtrl.hasError('required'))">
-          L'adresse est obligatoire
-      </span><br>
-  
-    <input [disabled]='inscriptionForm.invalid' type="button" value="S'inscrire" (click)="inscription()" id="add">
-    <input type="button" value="Retour" (click)="retour()" id="retour">
-   <span *ngIf="inscriptionReussie">Inscription réussie !</span> 
-  </form>
+  <div class="container">
+    <img class="logo" src="assets/logo.png" alt="Logo">
+    <form [formGroup]="inscriptionForm" (ngSubmit)="inscription()" class="form-container">
+      <div class="input-container" *ngFor="let field of fields">
+        <span class="label">{{field.label}}</span>
+        <input [type]="field.type" [placeholder]="field.placeholder" [formControlName]="field.name">
+      </div>
+      <label for="cardNumber" class="labelCarteB">Numéro de carte bancaire :</label>
+      <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" formControlName="cardNumber" class="carteB">
+      <button type="submit" [disabled]="inscriptionForm.invalid"class="submit-button">S'inscrire</button>
+      <button class="retour">Retour</button>
+    </form>
+  </div>
 </body>
 </html>
+
+
+
 

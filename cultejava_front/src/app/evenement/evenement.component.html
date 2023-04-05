@@ -32,7 +32,7 @@
             </tbody>
 
         </table>
-        <div id="ajouter">
+        <div *ngIf="connected().rang != 'Fidele'" id="ajouter">
         <input type="button" value="Ajouter un événement" (click)="add()" id="add">
         </div>
 

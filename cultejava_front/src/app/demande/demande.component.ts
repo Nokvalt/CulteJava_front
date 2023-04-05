@@ -14,7 +14,7 @@ export class DemandeComponent {
 
   constructor(private demandeService: DemandeHttpService, private loginService: LoginService, private router: Router) {
     if(this.loginService.connected == null){
-      this.router.navigate(["/demandes"]);
+      this.router.navigate([""]);
     }
   }
 

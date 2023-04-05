@@ -1,6 +1,7 @@
 <body>
     
     <h1 >Liste des Demandes </h1>
+    <h3>Vos demandes seront bien prises en considération</h3> 
         <table id="table">
             <thead>
                 <tr>
@@ -34,12 +35,15 @@
 
 
         <div input type="button" *ngIf="demandeForm">
-            <h2>Edition d'un événement</h2>
+            <h2>Edition d'une demande</h2>
             <div id="form">
                 <div> <label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" size="4" readonly [(ngModel)]="demandeForm.id"></div>
                 <div> <label for="nom">Montant:</label> <input type="number" class="form-control" id="montant" name="montant" [(ngModel)]="demandeForm.montant"></div>
                 <div><label for="descriptif">Descriptif:</label> <input type="text" class="form-control" id="descriptif" name="descriptif" [(ngModel)]="demandeForm.descriptif"></div>
-                <div><label for="statut">Descriptif:</label> <input type="text"  [(ngModel)]="demandeForm.statut" /></div>
+
+
+                <input type="button" value="Ajouter" (click)="save()" id="button">
+                <input type="button" value="Annuler" (click)="cancel()" id="button">
             </div>
         </div>
    

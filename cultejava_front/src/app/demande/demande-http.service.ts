@@ -17,7 +17,7 @@ import { TapoteurRequestResponse } from "../modelTapoteur";
     private demandeApiPath: string; //chemin
   
     constructor(private http: HttpClient, private loginService: LoginService) {
-      this.demandeApiPath = environment.apiUrl + "/demandes"; // pour aller a demandes
+      this.demandeApiPath = environment.apiUrl + "/demande"; // chemin de l'api 8080
       this.load();
     }
   

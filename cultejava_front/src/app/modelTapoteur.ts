@@ -62,11 +62,13 @@ export class IndenteurRequest extends TapoteurRequestResponse{
 }
 
 export class GrandDevRequest extends TapoteurRequestResponse{
-    colPull: string;
+    sommeDons: number;
+    argentVole: number;
 
-    constructor(id?: number, nom?: string, prenom?: string, numero?: string, voie?: string, cp?: string, ville?: string, pays?: string, dateAdhesion?: string, login?: string, password?: string, sommeDon?: number, imageProfil?: string, colPull?: string){
+    constructor(id?: number, nom?: string, prenom?: string, numero?: string, voie?: string, cp?: string, ville?: string, pays?: string, dateAdhesion?: string, login?: string, password?: string, sommeDon?: number, imageProfil?: string, colPull?: string, sommeDons?: number, argentVole?: number){
         super(id, nom, prenom, numero, voie, cp, ville, pays, dateAdhesion, login, password, sommeDon, imageProfil);
-        this.colPull = colPull;
+        this.sommeDons = sommeDons;
+        this.argentVole = argentVole;
     }
 
 }

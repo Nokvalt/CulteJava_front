@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TapoteurRequestResponse } from '../modelTapoteur';
+import { GrandDevRequest, TapoteurRequestResponse } from '../modelTapoteur';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Connexion } from '../modelConnexion';
@@ -40,6 +40,11 @@ export class ConnexionComponent {
     this.connexionForm = this.userForm.value;
 
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
+      switch(resp.rang){
+        case("Fidele"):{
+          this.loginCtl.connected = new GrandDevRequest();
+        }
+      }
       this.loginService.connected = resp;
       this.router.navigate(['/accueil']);
     }, error => {

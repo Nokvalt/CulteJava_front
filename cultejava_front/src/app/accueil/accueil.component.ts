@@ -22,4 +22,12 @@ export class AccueilComponent {
   faireUnDon(){
     this.router.navigate(["/faireUnDon"]);
   }
+
+  volerLaCagnotte(): void{
+
+  }
+
+  connected(): TapoteurRequestResponse{
+    return this.loginService.connected;
+  }
 }

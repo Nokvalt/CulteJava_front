@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-punition-dactylo',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./punition-dactylo.component.scss']
 })
 export class PunitionDactyloComponent {
+  constructor(private loginService: LoginService, private router: Router){
 
+    if(loginService.connected == null){
+      this.router.navigate([""]);
+    }
+
+  }
 }

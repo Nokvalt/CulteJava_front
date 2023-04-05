@@ -16,7 +16,7 @@
       <label for="cardNumber" class="labelCarteB">Numéro de carte bancaire :</label>
       <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" formControlName="cardNumber" class="carteB">
       <button type="submit" [disabled]="inscriptionForm.invalid"class="submit-button">S'inscrire</button>
-      <button class="retour">Retour</button>
+      <button class="retour" (click)="retour()">Retour</button>
     </form>
   </div>
 </body>

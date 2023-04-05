@@ -24,10 +24,14 @@ export class TapoteurHttpService {
   private load(): void{
     this.http.get<Array<TapoteurRequestResponse>>(this.tapoteurApiPath).subscribe(resp =>{
       this.tapoteurs = resp;
+      console.log("reponse::::", resp)
+      console.log("liste1:", this.tapoteurs);
+
     })
   }
 
   findAll(): Array<TapoteurRequestResponse>{
+    console.log(this.tapoteurs);
     return this.tapoteurs.sort((t1, t2) => (t1.sommeDon < t2.sommeDon) ? 1 : -1);
   }
 
@@ -112,5 +116,9 @@ export class TapoteurHttpService {
         break;
       }
     }
+  }
+  
+  passationPouvoir(idTapoteur: number):void{
+    this.http.get<TapoteurRequestResponse>(this.tapoteurApiPath + "/passation/" + idTapoteur).subscribe();
   }
 }

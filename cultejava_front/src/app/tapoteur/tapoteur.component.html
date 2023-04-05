@@ -30,18 +30,17 @@
                 <td>{{tapoteur.numero}}, {{tapoteur.voie | titlecase}} - {{tapoteur.cp}} {{tapoteur.ville | uppercase}}  ({{tapoteur.pays | uppercase}})</td>
                 <td>{{tapoteur.sommeDon}}</td>
                 <td>{{tapoteur.rang}}</td>
-                <td> <button (click)="edit(tapoteur.id)">Modifier</button>
-                    <button *ngIf="tapoteur.rang !='Grand Dev'" (click)="remove(tapoteur.id)">Supprimer</button> 
-                    <button *ngIf="tapoteur.rang != 'Fidele' && tapoteur.rang !='Grand Dev'" (click)="demote(tapoteur.id)">Rétrograder</button>
-                    <button *ngIf="tapoteur.rang != 'Compileur' && tapoteur.rang !='Grand Dev'" (click)="promote(tapoteur.id)">Promouvoir</button>
-                    <button *ngIf="tapoteur.rang !='Grand Dev'" (click)="banForm(tapoteur.id)">Bannir</button>
+                <td> <button *ngIf="connected().rang =='Compileur'" (click)="edit(tapoteur.id)">Modifier</button>
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev'" (click)="remove(tapoteur.id)">Supprimer</button> 
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang != 'Fidele' && tapoteur.rang !='Grand Dev'" (click)="demote(tapoteur.id)">Rétrograder</button>
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang != 'Compileur' && tapoteur.rang !='Grand Dev'" (click)="promote(tapoteur.id)">Promouvoir</button>
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev'" (click)="banForm(tapoteur.id)">Bannir</button>
+                    <button *ngIf="connected().rang =='Grand Dev'" (click)="passationPouvoir(tapoteur.id)">Passation</button> 
                 </td>
                     
             </tr>
         </tbody>
     </table>
-    <span *ngIf="cantDemote"><br>Impossible de rétrograder le tapoteur...</span>
-    <span *ngIf="cantPromote"><br>Impossible de promouvoir le tapoteur...</span>
 
     <button (click)="add()" id="add">Ajouter un tapoteur</button>
 

@@ -51,8 +51,6 @@ initialAdresse: {
   LoginEdit_On() {
     this.initialLogin = this.tapoteurForm.login;
     this.editingLogin = true;
-    const loginInput = document.getElementById('login') as HTMLInputElement;
-    loginInput.readOnly = false;
   }
 
   LoginEdit_Off() {

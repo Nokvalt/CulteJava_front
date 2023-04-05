@@ -57,7 +57,7 @@ export class InscriptionComponent implements OnInit {
     tapoteur.dateAdhesion = new Date().toJSON().slice(0,10);
     console.log('Données du formulaire :', tapoteur);
 
-    if (this.inscriptionService.create(tapoteur)){ //VERIFIER SI YA PAS EU D'ERREURS
+    if (this.inscriptionService.create(tapoteur)){ 
       this.inscriptionReussie = false;
     }
 

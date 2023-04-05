@@ -4,7 +4,7 @@
     <label>Identifiant:</label><br>
     <form>
 
-        <input type="text" id="login" name="login" [(ngModel)]="tapoteurForm.login" [readonly]="!editingLogin" />
+       <input type="text" id="login" name="login" [(ngModel)]="tapoteurForm.login" [readonly]="!editingLogin" />
     <ng-container *ngIf="!editingLogin">
       <button (click)="LoginEdit_On()">Modifier</button>
     </ng-container>

@@ -1,1 +1,29 @@
-<p>demande works!</p>
+<body>
+    
+<h1>Liste des Demandes</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Identifiant</th>
+                    <th>Montant (en euros)</th>
+                    <th>Descriptif</th>
+                    <th>Statut</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let demande of list()">
+                        <td>{{demande.id}}</td>
+                        <td>{{demande.montant}}</td>
+                        <td>{{demande.descriptif}}</td>
+                        <td>{{demande.statut}}</td>
+                        <td>
+                            <input type="button" value="Modifier" (click)="edit(demande.id)">
+                            <input type="button" value="Supprimer"  (click)="remove(demande.id)">                           
+                        </td>
+
+                </tr>
+            </tbody>
+
+        </table>

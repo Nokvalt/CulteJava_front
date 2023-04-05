@@ -45,15 +45,16 @@
           <br>
 
         <label>Adresse:</label><br>
-<input type="text" id="numero" name="numero" size="4" [(ngModel)]="tapoteurForm.numero" [readonly]="!editingAdresse"/>
+        <input id="numero" [(ngModel)]="tapoteurForm.numero" [readonly]="!editingAdresse">
 
-<input type="text" id="voie" name="voie" [(ngModel)]="tapoteurForm.voie" [readonly]="!editingAdresse"/>
+        <input id="voie" [(ngModel)]="tapoteurForm.voie" [readonly]="!editingAdresse">
 
-<input type="text" id="cp" name="cp" placeholder="CP" size="6" [(ngModel)]="tapoteurForm.cp" [readonly]="!editingAdresse"/>
+        <input id="cp" [(ngModel)]="tapoteurForm.cp" [readonly]="!editingAdresse">
 
-<input type="text" id="ville" name="ville" [(ngModel)]="tapoteurForm.ville" [readonly]="!editingAdresse"/>
-
-<input type="text" id="pays" name="pays" placeholder="Pays" size="12" [(ngModel)]="tapoteurForm.pays" [readonly]="!editingAdresse"/>
+        <input id="ville" [(ngModel)]="tapoteurForm.ville" [readonly]="!editingAdresse">
+        
+        <input id="pays" [(ngModel)]="tapoteurForm.pays" [readonly]="!editingAdresse">
+        
 <ng-container *ngIf="!editingAdresse">
     <button (click)="AdresseEdit_On()">Modifier</button>
   </ng-container>

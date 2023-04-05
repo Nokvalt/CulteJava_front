@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
-  styleUrls: ['./inscription.component.scss'],
+  styleUrls: ['./inscription.component.scss']
 })
 export class InscriptionComponent implements OnInit {
   inscriptionReussie: boolean = false;
@@ -24,6 +24,21 @@ export class InscriptionComponent implements OnInit {
   villeCtrl: FormControl;
   paysCtrl: FormControl;
 
+  cardNumberCtrl: FormControl;
+  
+
+  fields = [
+    { name: 'nom', label: 'Nom', type: 'text', placeholder: 'Nom' },
+    { name: 'prenom', label: 'Prénom', type: 'text', placeholder: 'Prénom' },
+    { name: 'login', label: 'Login', type: 'text', placeholder: 'Login' },
+    { name: 'password', label: 'Password', type: 'password', placeholder: 'Password' },
+    { name: 'numero', label: 'Numéro', type: 'number', placeholder: 'Numéro'},
+    { name: 'voie', label: 'Voie', type: 'text', placeholder: 'Voie' },
+    { name: 'ville', label: 'Ville', type: 'text', placeholder: 'Ville' },
+    { name: 'cp', label: 'CP', type: 'text', placeholder: 'CP' },
+    { name: 'pays', label: 'Pays', type: 'text', placeholder: 'Pays' }
+  ];
+
 
   constructor(private formBuilder: FormBuilder, private inscriptionService: InscriptionHttpService, private router: Router) {}
 
@@ -38,6 +53,8 @@ export class InscriptionComponent implements OnInit {
     this.cpCtrl = new FormControl('', Validators.required);
     this.paysCtrl = new FormControl('', Validators.required);
 
+    this.cardNumberCtrl = new FormControl('', Validators.required);
+
     this.inscriptionForm = this.formBuilder.group({
       prenom: this.prenomCtrl,
       nom: this.nomCtrl,
@@ -47,7 +64,8 @@ export class InscriptionComponent implements OnInit {
       voie: this.voieCtrl,
       ville: this.villeCtrl,
       cp: this.cpCtrl,
-      pays: this.paysCtrl
+      pays: this.paysCtrl,
+      cardNumber: this.cardNumberCtrl
     });
   }
 
@@ -56,6 +74,7 @@ export class InscriptionComponent implements OnInit {
     tapoteur.rang = "Fidele";
     tapoteur.dateAdhesion = new Date().toJSON().slice(0,10);
     console.log('Données du formulaire :', tapoteur);
+
 
     if (this.inscriptionService.create(tapoteur)){ 
       this.inscriptionReussie = false;

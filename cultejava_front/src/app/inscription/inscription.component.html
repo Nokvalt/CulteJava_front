@@ -1,6 +1,26 @@
-<div id="container">
-  <img src="assets/logo.png" alt="Logo Les Témoins de Java" class="logo">
-</div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mat test des trucs</title>
+</head>
+<body>
+  <div class="container">
+    <img class="logo" src="assets/logo.png" alt="Logo">
+    <form [formGroup]="inscriptionForm" (ngSubmit)="inscription()" class="form-container">
+      <div class="input-container" *ngFor="let field of fields">
+        <span class="label">{{field.label}}</span>
+        <input [type]="field.type" [placeholder]="field.placeholder" [formControlName]="field.name">
+      </div>
+      <label for="cardNumber" class="labelCarteB">Numéro de carte bancaire :</label>
+      <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" formControlName="cardNumber" class="carteB">
+      <button type="submit" [disabled]="inscriptionForm.invalid"class="submit-button">S'inscrire</button>
+      <button class="retour">Retour</button>
+    </form>
+  </div>
+</body>
+</html>
 
 
 

@@ -1,7 +1,119 @@
+// Couleurs
+$background-color: #383938;
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $background-color;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .logo {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    
+  max-width: 100%;
+  height: auto;
+
+}
+
+.form-container {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+}
+
+.input-container {
+  margin-top: 20%;
+  position: absolute;
+  width: 150px;
+  text-align: center;
+}
+
+
+
+$input-angles: (0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180);
+
+
+$translation-value: -650%;
+
+@for $i from 1 through length($input-angles) {
+  .input-container:nth-child(#{$i}) {
+    $angle: nth($input-angles, $i);
+    transform: rotate(#{$angle - 90}deg) translateY($translation-value) rotate(-#{$angle + 270}deg);
   }
+}
+
+.input-container:nth-child(5) {
+  $angle: nth($input-angles, 5);
+  transform: rotate(#{$angle - 90}deg) translateY(calc(#{$translation-value} - 40px)) rotate(-#{$angle + 270}deg);
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  position: relative;
+  color:azure;
+}
+
+
+
+@for $i from 1 through length($input-angles) {
+  .input-container:nth-child(#{$i}) .label {
+    @if $i <= 4 {
+      margin-right: 80px;
+    } @else if $i >= 6 {
+      margin-left: 100px;
+    }
+  }
+}
+
+.submit-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.labelCarteB {
+  position: absolute;
+  display: block;
+  margin-bottom: 5px;
+  color: #FFD700;
+  bottom: -10px;
+}
+
+.carteB {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  background-color: #FFD700;
+  color: #707070;
+}
+
+.retour{
+  position: absolute;
+  bottom: 600px;
+  left: - 400px;
+
+
+}
+
+
+
+
+

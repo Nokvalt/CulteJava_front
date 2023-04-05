@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { Demande } from '../modelDemande';
 import { DemandeHttpService } from './demande-http.service';
+import { TapoteurRequestResponse } from '../modelTapoteur';
 
 @Component({
   selector: 'app-demande',
@@ -48,5 +49,9 @@ export class DemandeComponent {
 
   cancel(): void {
     this.demandeForm = null;
+  }
+
+  connected(): TapoteurRequestResponse{
+    return this.loginService.connected;
   }
 }

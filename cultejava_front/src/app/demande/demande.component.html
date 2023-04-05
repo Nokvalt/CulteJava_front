@@ -20,7 +20,8 @@
                         <td>{{demande.descriptif}}</td>
                         <td>{{demande.statut}}</td>
                         <td>
-                            <input type="button" value="Modifier" (click)="edit(demande.id)">
+                            <input type="button" value="Modifier la demande" (click)="edit(demande.id)">
+                            <input *ngIf="connected().rang == 'Grand Dev'" type="button" value="Modifier le statut">
                             <input type="button" value="Supprimer"  (click)="remove(demande.id)">                           
                         </td>
 
@@ -29,8 +30,10 @@
 
         </table>
         <div id="ajouter">
-        <input type="button" value="Ajouter un événement" (click)="add()" id="add">
+        <input *ngIf="connected().rang == 'Indenteur'" type="button" value="Ajouter une demande" (click)="add()" id="add">
         </div>
+ 
+        
 
 
 
@@ -39,7 +42,7 @@
             <h3>Votre demande sera traitée dans les meilleurs délais</h3> 
             <div id="form">
                 <div> <label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" size="4" readonly [(ngModel)]="demandeForm.id"></div>
-                <div> <label for="nom">Montant:</label> <input type="number" class="form-control" id="montant" name="montant" [(ngModel)]="demandeForm.montant"></div>
+                <div> <label for="nom">Montant:</label> <input type="number" class="form-control" id="montant" name="montant" [(ngModel)]="demandeForm.montant" step="0.01"></div>
                 <div><label for="descriptif">Descriptif:</label> <input type="text" class="form-control" id="descriptif" name="descriptif" [(ngModel)]="demandeForm.descriptif"></div>
                 <div><label for="descriptif">Statut:</label> <input type="text" class="form-control" id="statut" name="statut" [(ngModel)]="demandeForm.statut"></div>
 

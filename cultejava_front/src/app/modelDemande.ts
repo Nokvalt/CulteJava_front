@@ -13,7 +13,7 @@ export class Demande{
 
 }
 
-enum Statut{
+export enum Statut{
     enAttente, 
     refusé
 }

@@ -4,6 +4,7 @@ import { TapoteurHttpService } from './tapoteur-http.service';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
 import { BannissementRequest } from '../modelBannissement';
+import { Punition, TypePunition } from '../modelPunition';
 
 @Component({
   selector: 'app-tapoteur',
@@ -14,6 +15,9 @@ import { BannissementRequest } from '../modelBannissement';
 export class TapoteurComponent {
   tapoteurForm: TapoteurRequestResponse = null;
   bannisForm: BannissementRequest = null;
+  punitionForm: Punition = null;
+
+  idPunition: number;
 
   cantPromote: boolean;
   cantDemote: boolean;
@@ -23,8 +27,6 @@ export class TapoteurComponent {
     if(loginService.connected == null || loginService.connected.rang == "Fidele"){
       this.router.navigate([""]);
     }
-
-    console.log(loginService.connected.rang)
 
   }
 
@@ -96,9 +98,32 @@ export class TapoteurComponent {
     
   }
 
+  addPunition(idTapoteur:number): void{
+    this.punitionForm = new Punition();
+    this.idPunition = idTapoteur;
+  }
+
+  punish():void{
+    this.tapoteurService.punish(this.idPunition, this.punitionForm);
+    this.idPunition = null;
+    this.punitionForm = null;
+  }
+
+  listTypesPunitions():any{
+    return Object.keys(TypePunition).filter((v) => isNaN(Number(v)));
+  }
+
   cancel():void{
     this.tapoteurForm = null;
   } 
+
+  cancelBan():void{
+  this.bannisForm = null;
+  }
+
+  cancelPunish():void{
+    this.punitionForm = null;
+  }
 
   connected():TapoteurRequestResponse{
     return this.loginService.connected;

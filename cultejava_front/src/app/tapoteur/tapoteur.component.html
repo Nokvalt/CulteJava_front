@@ -36,13 +36,24 @@
                     <button *ngIf="connected().rang =='Compileur' && tapoteur.rang != 'Compileur' && tapoteur.rang !='Grand Dev'" (click)="promote(tapoteur.id)">Promouvoir</button>
                     <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev'" (click)="banForm(tapoteur.id)">Bannir</button>
                     <button *ngIf="connected().rang =='Grand Dev'" (click)="passationPouvoir(tapoteur.id)">Passation</button> 
-                </td>
-                    
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev'" (click)="addPunition(tapoteur.id)">Punir</button> 
+                </td> 
             </tr>
         </tbody>
     </table>
 
     <button (click)="add()" id="add">Ajouter un tapoteur</button>
+
+    <div *ngIf="punitionForm" id="form">
+        <h2>Choisissez une punition : </h2>
+        <select name="punition" id="punition" [(ngModel)]="punitionForm.punition">
+            <option [value]="punition" *ngFor="let punition of listTypesPunitions()">{{punition}}</option>
+        </select><br>
+
+        <button (click)="punish()">Punir</button>
+        <button (click)="cancel()">Annuler</button>
+        <button (click)="cancelPunish()">Annuler</button>
+    </div>
 
 
     <div *ngIf="bannisForm" id="form">
@@ -53,6 +64,7 @@
         <input type="textarea" name="motif" [(ngModel)]="bannisForm.motif"/>
 
         <button (click)="ban()">Bannir</button>
+        <button (click)="cancelBan()">Annuler</button>
     </div>
 
     <div *ngIf="tapoteurForm" id="form">

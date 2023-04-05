@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { BannissementRequest } from '../modelBannissement';
+import { Punition } from '../modelPunition';
 
 @Injectable({
   providedIn: 'root'
@@ -122,7 +123,11 @@ export class TapoteurHttpService {
     this.http.get<TapoteurRequestResponse>(this.tapoteurApiPath + "/passation/" + idTapoteur).subscribe();
   }
 
-  removePunition(id: number): void{
-    this.http.get<TapoteurRequestResponse>(this.tapoteurApiPath + "/removePunition/" + id).subscribe();
+  removePunition(tapoteurId: number): void{
+    this.http.get<TapoteurRequestResponse>(this.tapoteurApiPath + "/removePunition/" + tapoteurId).subscribe();
+  }
+
+  punish(tapoteurId: number, punition: Punition): void{
+    this.http.put<TapoteurRequestResponse>(this.tapoteurApiPath + "/punition/" + tapoteurId, punition).subscribe();
   }
 }

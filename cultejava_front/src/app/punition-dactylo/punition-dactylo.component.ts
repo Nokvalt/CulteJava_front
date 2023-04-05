@@ -30,6 +30,10 @@ export class PunitionDactyloComponent {
     }
   }
 
+  retour():void{
+    this.router.navigate(['']);
+  }
+
   connected(): TapoteurRequestResponse{
     return this.loginService.connected;
   }

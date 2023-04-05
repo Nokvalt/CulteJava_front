@@ -15,7 +15,7 @@ export class InscriptionHttpService {
   private inscriptionApiPath: string;
   private tapoteurApiPath: string;
 
-  error: any;
+  error: boolean;
 
   constructor(private http: HttpClient) {
     this.inscriptionApiPath = environment.apiUrl+'/tapoteur';
@@ -27,15 +27,15 @@ export class InscriptionHttpService {
     })
   }
 
-  create(tapoteur: TapoteurRequestResponse): any {
+  create(tapoteur: TapoteurRequestResponse): boolean {
     this.http.post<TapoteurRequestResponse>(this.inscriptionApiPath + "/addFidele", tapoteur).subscribe(
           resp => {
-            console.log('Réponse de l\'API :', resp); // affiche la réponse de l'API dans la console
             this.load();
           },
           error => {
-            this.error = error;
-            console.error('Erreur lors de l\'envoi de la requête :', error); // affiche l'erreur dans la console
+            if(error.status == 400){
+              this.error = true;
+            }
           }
         ); 
       return this.error;

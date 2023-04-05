@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
 import { Activite, Evenement } from '../modelEvenement';
 import { EvenementHttpService } from './evenement-http';
-import { TapoteurComponent } from '../tapoteur/tapoteur.component';
-import { InscriptionComponent } from '../inscription/inscription.component';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
-import { TapoteurRequestResponse } from '../modelTapoteur';
 import { InscriptionEvenement } from '../modelInscriptionEvenement';
-
-//import { LoginService } from './chemin/vers/login.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { TapoteurRequestResponse } from '../modelTapoteur';
 
 @Component({
   selector: 'app-evenement',
@@ -18,11 +15,16 @@ import { InscriptionEvenement } from '../modelInscriptionEvenement';
 export class EvenementComponent {
   evenementForm: Evenement = null;
   inscription: InscriptionEvenement = null;
+  incomplete: boolean = false;
 
-  constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router) {
+  constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router, private formBuilder: FormBuilder) {
     if(this.loginService.connected == null){
       this.router.navigate([""]);
     }
+  }
+
+  connected():TapoteurRequestResponse{
+    return this.loginService.connected;
   }
 
   list(): Array<Evenement> {
@@ -49,7 +51,6 @@ export class EvenementComponent {
     } else {
       this.evenementService.create(this.evenementForm);
     }
-
     this.cancel();
   }
 

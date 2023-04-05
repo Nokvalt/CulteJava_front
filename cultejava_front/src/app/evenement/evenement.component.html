@@ -21,8 +21,8 @@
                         <td>{{evenement.lieu}}</td>
                         <td>{{evenement.nomActivite}}</td>
                         <td>
-                            <input type="button" value="Modifier" (click)="edit(evenement.id)">
-                            <input type="button" value="Supprimer"  (click)="remove(evenement.id)">
+                            <input *ngIf="connected().rang != 'Fidele'" type="button" value="Modifier" (click)="edit(evenement.id)">
+                            <input *ngIf="connected().rang != 'Fidele'" type="button" value="Supprimer"  (click)="remove(evenement.id)">
                             <input *ngIf="!evenement.inscrit" type="button" value="S'inscrire à l'événement" (click)="inscriptionEvenement(evenement.id)">
                             <span *ngIf="evenement.inscrit">Inscrit</span>
                             
@@ -40,29 +40,28 @@
 
 <div input type="button" *ngIf="evenementForm">
     <h2>Edition d'un événement</h2>
-    <div id="form">
-        <div> 
-            <a><label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" size="4" readonly [(ngModel)]="evenementForm.id" min="10" max="100"></a>
-        </div>
-        <div>
-            <label for="nom">Libellé:</label> <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="evenementForm.nom"/>
-        </div>
-        <div>
+    <form id="form" name="eventForm">
+            <label for="id">Identifiant:</label> 
+            <input type="number" id="id" name="id" size="4" readonly [(ngModel)]="evenementForm.id" min="10" max="100"><br>
+
+            <label for="nom">Libellé:</label> 
+            <input type="text" id="libelle" name="libelle" [(ngModel)]="evenementForm.nom" required/><br>
+
             <label for="nomactivite">Activité:</label> 
             <select name="nomactivite" id="nomactivite" [(ngModel)]="evenementForm.nomActivite">
                 <option [value]="activite" *ngFor="let activite of listActivites()">{{activite}}</option>
-            </select>
-        </div>
-        <div>
-            <label for="lieu">Ville:</label> <input type="text"  [(ngModel)]="evenementForm.lieu" />
-        </div>
-        <div>
-            <label for="date">Date:</label> <input type="date" class="form-control" id="date" name="date" [(ngModel)]="evenementForm.dateEvent" />
-        </div>
+            </select><br>
+
+            <label for="lieu">Ville:</label>
+            <input type="text" name="lieu"  [(ngModel)]="evenementForm.lieu" /><br>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" [(ngModel)]="evenementForm.dateEvent" /><br>
+
         
-        <a><input type="button" value="Ajouter" (click)="save()" id="button"></a>
-        <a><input type="button" value="Annuler" (click)="cancel()" id="button"></a>
-    </div>
+        <input [disabled]="evenementForm.nom == null || evenementForm.lieu == null || evenementForm.nomActivite == null || evenementForm.dateEvent == null" type="button" value="Confirmer" id="button" (click)="save()">
+        <input type="button" value="Annuler" (click)="cancel()" id="button">
+    </form>
 </div>
 
 <!--

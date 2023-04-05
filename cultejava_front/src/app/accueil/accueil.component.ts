@@ -25,12 +25,17 @@ export class AccueilComponent {
   }
 
   volerLaCagnotte(): void{
-    this.serviceHttp.steal().subscribe(resp => {
-      this.connected().argentVole = this.connected().allDons;
-      this.connected().allDons = 0;
-      alert("Merci pour votre vol, " + this.connected().login);
-      this.router.navigate(["/accueil"]);
-    });
+    if (this.connected().allDons != 0){
+      this.serviceHttp.steal().subscribe(resp => {
+        this.connected().argentVole = this.connected().allDons + this.connected().argentVole;
+        this.connected().allDons = 0;
+        alert("Merci pour votre vol, " + this.connected().login);
+        this.router.navigate(["/accueil"]);
+      });
+    }else{
+      alert("Vous ne pouvez pas voler une cagnotte vide, " + this.connected().login);
+    }
+    
   }
 
   connected(): TapoteurRequestResponse{

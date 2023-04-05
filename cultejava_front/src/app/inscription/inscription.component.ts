@@ -55,6 +55,8 @@ export class InscriptionComponent implements OnInit {
     const tapoteur: TapoteurRequestResponse = this.inscriptionForm.value;
     tapoteur.rang = "Fidele";
     tapoteur.dateAdhesion = new Date().toJSON().slice(0,10);
+    tapoteur.imageProfil = "/assets/Photos/Default.PNG"
+    console.log('Données du formulaire :', tapoteur);
 
     if (this.inscriptionService.create(tapoteur)){ //VERIFIER SI YA PAS EU D'ERREURS
       this.inscriptionReussie = false;

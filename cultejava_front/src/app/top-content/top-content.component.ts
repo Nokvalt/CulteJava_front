@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoginService } from '../login.service';
+import { TapoteurRequestResponse } from '../modelTapoteur';
 
 @Component({
   selector: 'top-content',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./top-content.component.scss']
 })
 export class TopContentComponent {
+
+constructor(private loginService: LoginService) {
+
+}
+
+connected(): TapoteurRequestResponse {
+  return this.loginService.connected;
+}
+
 
 }

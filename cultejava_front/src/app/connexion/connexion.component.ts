@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import { TapoteurRequestResponse } from '../modelTapoteur';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Connexion } from '../modelConnexion';
-import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { ConnexionHttpService } from './connexion-http.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';

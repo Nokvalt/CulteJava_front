@@ -47,8 +47,8 @@
                 <div> <label for="nom" *ngIf="connected().rang == 'Indenteur'">Montant:</label> <input *ngIf="connected().rang == 'Indenteur'" type="number" class="form-control" id="montant" name="montant" [(ngModel)]="demandeForm.montant" step="0.01"></div>
                 <div><label for="descriptif" *ngIf="connected().rang == 'Indenteur'" >Descriptif:</label> <input *ngIf="connected().rang == 'Indenteur'"type="text" class="form-control" id="descriptif" name="descriptif" [(ngModel)]="demandeForm.descriptif"></div>
                 
-                <label for="statut" *ngIf="connected().rang == 'Grand Dev'">Activité:</label> 
-                <select name="nomactivite" *ngIf="connected().rang == 'Grand Dev'" id="nomactivite" [(ngModel)]="demandeForm.statut">
+                <label for="statut" *ngIf="connected().rang == 'Grand Dev'">Statut:</label> 
+                <select name="liste statut" *ngIf="connected().rang == 'Grand Dev'" id="liste statut" [(ngModel)]="demandeForm.statut">
                     <option [value]="statut" *ngFor="let statut of listStatut()">{{statut}}</option>
                 </select>
                 

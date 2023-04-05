@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
-import { Demande } from '../modelDemande';
+import { Demande, Statut } from '../modelDemande';
 import { DemandeHttpService } from './demande-http.service';
 import { TapoteurRequestResponse } from '../modelTapoteur';
 
@@ -56,7 +56,8 @@ export class DemandeComponent {
   }
 
   listStatut(): any{
-    return Object.keys(Demande).filter((v) => isNaN(Number(v)));
+    return Object.keys(Statut).filter((v) => isNaN(Number(v)));
   } 
 
 }
+ 

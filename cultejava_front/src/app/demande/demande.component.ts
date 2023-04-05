@@ -54,4 +54,9 @@ export class DemandeComponent {
   connected(): TapoteurRequestResponse{
     return this.loginService.connected;
   }
+
+  listStatut(): any{
+    return Object.keys(Demande).filter((v) => isNaN(Number(v)));
+  } 
+
 }

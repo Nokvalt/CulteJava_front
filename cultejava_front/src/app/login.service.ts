@@ -6,6 +6,7 @@ import { TapoteurRequestResponse } from './modelTapoteur';
 })
 export class LoginService {
   private connected: TapoteurRequestResponse = null;
+  private id: number;
 
   constructor() { }
 
@@ -22,6 +23,14 @@ export class LoginService {
     }
 
     return null;
+  }
+
+  setId(id: number){
+    this.id = id;
+  }
+
+  getId(){
+    return this.id;
   }
 
   getUserId(): number {

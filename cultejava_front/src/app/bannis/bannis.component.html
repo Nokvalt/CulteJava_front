@@ -1,0 +1,26 @@
+<body>
+
+    <h1>LES BANNIS DU CULTE</h1>
+
+    <table id="table">
+        <thead>
+            <tr>
+                <th><span class="indigo">Identifiant</span> </th>
+                <th><span class="indigo">Nom</span></th>
+                <th><span class="indigo">Prénom</span></th>
+                <th><span class="indigo">Date du banissement</span></th>
+                <th><span class="rose">Motif</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let bannis of listBannis()">
+                <td>{{bannis.id}}</td>
+                <td>{{bannis.nom}}</td>
+                <td>{{bannis.prenom}}</td>
+                <td>{{bannis.dateBannissement}}</td>
+                <td>{{bannis.motif}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

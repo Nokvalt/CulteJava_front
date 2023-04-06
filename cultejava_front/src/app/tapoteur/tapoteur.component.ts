@@ -42,8 +42,8 @@ export class TapoteurComponent {
     this.tapoteurForm = new TapoteurRequestResponse();
   }
 
-  edit(id: number): void{
-    this.tapoteurService.findById(id).subscribe(resp => {
+  edit(bannisId: number): void{
+    this.tapoteurService.findById(bannisId).subscribe(resp => {
       this.tapoteurForm = resp;
     })
   }

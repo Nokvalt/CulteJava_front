@@ -1,4 +1,4 @@
-export class Banis{
+export class Bannis{
     id: number;
 	nom: string;
 	prenom: string;

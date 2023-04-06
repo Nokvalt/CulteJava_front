@@ -18,6 +18,7 @@ import { FaireUnDonComponent } from './faire-un-don/faire-un-don.component';
 import { ProfilComponent } from './profil/profil.component';
 import { PunitionDactyloComponent } from './punition-dactylo/punition-dactylo.component';
 import { TapoteurFilterPipe } from './tapoteur-filter.pipe';
+import { BannisComponent } from './bannis/bannis.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { TapoteurFilterPipe } from './tapoteur-filter.pipe';
     FaireUnDonComponent,
     ProfilComponent,
     PunitionDactyloComponent,
-    TapoteurFilterPipe
+    TapoteurFilterPipe,
+    BannisComponent
   ],
   
   imports: [

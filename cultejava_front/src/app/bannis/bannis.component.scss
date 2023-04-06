@@ -4,7 +4,7 @@ body{
     height: 100%;
 }
 
-h1, h2{
+h1{
     text-align: center;
     font-family: monospace;
     color: rgb(255, 255, 255);
@@ -15,9 +15,10 @@ h1, h2{
     margin: 25px 0;
     font-size: 0.9em;
     font-family: monospace;
+    min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin-left: auto;
-    margin-right: 3%;
+    margin-right: auto;
 }
 
 #table thead tr {
@@ -46,10 +47,6 @@ tbody {
     border-bottom: 2px solid #01350a;
 }
 
-#table thead th:last-of-type, #table tbody th:last-of-type {
-    min-width: 300px;
-}
-
 
 
 
@@ -67,11 +64,11 @@ input[type="number"], input[type="text"], input[type="date"] {
 }
 
 input[type="number"], input[type="text"], input[type="date"]{
-    color: rgb(215, 217, 221);
+    color: #0b795a;
 }
 
 button {
-    color: rgb(215, 217, 221);
+    color: #0b795a;
     margin: 5px;
     padding: 3px 5px;
     border: none;
@@ -81,16 +78,10 @@ button {
     font-size: 16px;
 }
 
-#add{
-    text-align: center;
-    margin-bottom: 50px;
-}
-
 #form{
     text-align: center;
     font-family: monospace;
     font-size: 16px;
-    margin-bottom: 100px;
 }
 
 .indigo {

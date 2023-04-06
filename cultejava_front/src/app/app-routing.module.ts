@@ -8,10 +8,12 @@ import { TapoteurComponent } from './tapoteur/tapoteur.component';
 import { FaireUnDonComponent } from './faire-un-don/faire-un-don.component';
 import { ProfilComponent } from './profil/profil.component';
 import { PunitionDactyloComponent } from './punition-dactylo/punition-dactylo.component';
+import { BannisComponent } from './bannis/bannis.component';
 
 const routes: Routes = [
   {path: "", component: ConnexionComponent, pathMatch: "full"},
   {path: "tapoteur", component: TapoteurComponent},
+  {path: 'bannis', component: BannisComponent},
   {path: "accueil", component: AccueilComponent},
   {path: "evenement", component: EvenementComponent},
   {path: 'inscription', component: InscriptionComponent},

@@ -33,7 +33,7 @@
 
         </table>
         <div id="ajouter">
-        <input *ngIf="connected().rang != 'Fidele'" type="button" value="Ajouter un événement" (click)="add()" id="add">
+        <input *ngIf="connected().rang == 'Indenteur'" type="button" value="Ajouter un événement" (click)="add()" id="add">
         </div>
 
 

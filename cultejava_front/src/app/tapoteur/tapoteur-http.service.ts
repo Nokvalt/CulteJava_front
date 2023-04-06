@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { BannissementRequest } from '../modelBannissement';
+import { Punition } from '../modelPunition';
 
 @Injectable({
   providedIn: 'root'
@@ -24,14 +25,10 @@ export class TapoteurHttpService {
   private load(): void{
     this.http.get<Array<TapoteurRequestResponse>>(this.tapoteurApiPath).subscribe(resp =>{
       this.tapoteurs = resp;
-      console.log("reponse::::", resp)
-      console.log("liste1:", this.tapoteurs);
-
     })
   }
 
   findAll(): Array<TapoteurRequestResponse>{
-    console.log(this.tapoteurs);
     return this.tapoteurs.sort((t1, t2) => (t1.sommeDon < t2.sommeDon) ? 1 : -1);
   }
 
@@ -120,5 +117,13 @@ export class TapoteurHttpService {
   
   passationPouvoir(idTapoteur: number):void{
     this.http.get<TapoteurRequestResponse>(this.tapoteurApiPath + "/passation/" + idTapoteur).subscribe();
+  }
+
+  removePunition(tapoteurId: number): void{
+    this.http.get<TapoteurRequestResponse>(this.tapoteurApiPath + "/removePunition/" + tapoteurId).subscribe();
+  }
+
+  punish(tapoteurId: number, punition: Punition): void{
+    this.http.put<TapoteurRequestResponse>(this.tapoteurApiPath + "/punition/" + tapoteurId, punition).subscribe();
   }
 }

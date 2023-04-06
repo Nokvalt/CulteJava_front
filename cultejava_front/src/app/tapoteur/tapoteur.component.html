@@ -20,7 +20,25 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let tapoteur of listTapoteurs()">
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th><input type="text" [(ngModel)]="nameSearch" placeholder="recherche par nom"></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>
+                    <input type="radio" id="rang" name="rang" value="Tapoteur" [(ngModel)]="rangSearch"/>Tapoteurs
+                    <input type="radio" id="rang" name="rang" value="Fidele" [(ngModel)]="rangSearch"/>Fidèle
+                    <input type="radio" id="rang" name="rang" value="Compileur" [(ngModel)]="rangSearch"/>Compileur
+                    <input type="radio" id="rang" name="rang" value="Indenteur" [(ngModel)]="rangSearch"/>Indenteur
+                    <input type="radio" id="rang" name="rang" value="Grand Dev" [(ngModel)]="rangSearch"/>Grand Dev
+                </th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let tapoteur of listTapoteurs() | tapoteurFilter: nameSearch:rangSearch">
                 <td>{{tapoteur.id}}</td>
                 <td>{{tapoteur.login}}</td>
                 <td>{{tapoteur.password}}</td>
@@ -31,18 +49,29 @@
                 <td>{{tapoteur.sommeDon}}</td>
                 <td>{{tapoteur.rang}}</td>
                 <td> <button *ngIf="connected().rang =='Compileur'" (click)="edit(tapoteur.id)">Modifier</button>
-                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev'" (click)="remove(tapoteur.id)">Supprimer</button> 
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev'" (click)="remove(tapoteur.id)">Supprimer</button> <br>
                     <button *ngIf="connected().rang =='Compileur' && tapoteur.rang != 'Fidele' && tapoteur.rang !='Grand Dev'" (click)="demote(tapoteur.id)">Rétrograder</button>
-                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang != 'Compileur' && tapoteur.rang !='Grand Dev'" (click)="promote(tapoteur.id)">Promouvoir</button>
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang != 'Compileur' && tapoteur.rang !='Grand Dev'" (click)="promote(tapoteur.id)">Promouvoir</button><br>
                     <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev'" (click)="banForm(tapoteur.id)">Bannir</button>
                     <button *ngIf="connected().rang =='Grand Dev'" (click)="passationPouvoir(tapoteur.id)">Passation</button> 
-                </td>
-                    
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev'" (click)="addPunition(tapoteur.id)">Punir</button> 
+                </td> 
             </tr>
         </tbody>
     </table>
 
     <button (click)="add()" id="add">Ajouter un tapoteur</button>
+
+    <div *ngIf="punitionForm" id="form">
+        <h2>Choisissez une punition : </h2>
+        <select name="punition" id="punition" [(ngModel)]="punitionForm.punition">
+            <option [value]="punition" *ngFor="let punition of listTypesPunitions()">{{punition}}</option>
+        </select><br>
+
+        <button (click)="punish()">Punir</button>
+        <button (click)="cancel()">Annuler</button>
+        <button (click)="cancelPunish()">Annuler</button>
+    </div>
 
 
     <div *ngIf="bannisForm" id="form">
@@ -53,6 +82,7 @@
         <input type="textarea" name="motif" [(ngModel)]="bannisForm.motif"/>
 
         <button (click)="ban()">Bannir</button>
+        <button (click)="cancelBan()">Annuler</button>
     </div>
 
     <div *ngIf="tapoteurForm" id="form">

@@ -1,5 +1,5 @@
 // Couleurs
-$background-color: #383938;
+$background-color: #2f302f;
 
 
 
@@ -109,9 +109,30 @@ $translation-value: -650%;
   position: absolute;
   bottom: 600px;
   left: - 400px;
-
-
 }
+
+.questionnaire {
+  color: #fcfdf8;
+  font-family: 'sherif';
+  
+  position: absolute;
+  top: 10px;
+  left: 150px;
+}
+
+.validerQ{
+  position: absolute;
+  bottom: 10px;
+  left:  1500px;
+  font-size: 150%;
+}
+
+
+
+
+//.questionnaire h4 {
+  
+//}
 
 
 

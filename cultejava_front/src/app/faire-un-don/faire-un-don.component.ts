@@ -14,7 +14,7 @@ export class FaireUnDonComponent {
   donForm: Don = new Don();
 
   constructor(private donService: DonHttpService, private loginService: LoginService, private router: Router){
-    if(loginService.connected == null){
+    if(loginService.getConnected() == null){
       this.router.navigate([""]);
     }
   }
@@ -29,6 +29,6 @@ export class FaireUnDonComponent {
 
 
   connected(): TapoteurRequestResponse {
-    return this.loginService.connected;
+    return this.loginService.getConnected();
   }
 }

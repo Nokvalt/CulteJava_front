@@ -12,19 +12,16 @@ import { TapoteurRequestResponse } from '../modelTapoteur';
   templateUrl: './evenement.component.html',
   styleUrls: ['./evenement.component.scss']
 })
+
 export class EvenementComponent {
   evenementForm: Evenement = null;
   inscription: InscriptionEvenement = null;
   incomplete: boolean = false;
 
-  constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router, private formBuilder: FormBuilder) {
-    if(this.loginService.connected == null){
+  constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router) {
+    if(this.loginService.getConnected() == null){
       this.router.navigate([""]);
     }
-  }
-
-  connected():TapoteurRequestResponse{
-    return this.loginService.connected;
   }
 
   list(): Array<Evenement> {
@@ -71,5 +68,9 @@ export class EvenementComponent {
     this.evenementService.addInscription(this.inscription);
   }
    
+
+  connected(): TapoteurRequestResponse{
+    return this.loginService.getConnected();
+  }
   }
 

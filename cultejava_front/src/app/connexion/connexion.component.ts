@@ -36,21 +36,17 @@ export class ConnexionComponent {
     this.connexionForm = this.userForm.value;
 
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
-      console.log(resp);
-      this.loginService.connected = resp;
-      console.log(this.loginService.connected.punition)
-      switch (this.loginService.connected.punition){
+      this.loginService.setConnected(resp)
+      switch (this.loginService.getConnected().punition){
         case "aucune":{
           this.router.navigate(['/accueil']);
           break;
         }
         case "dactylo":{
-          console.log("punie!")
           this.router.navigate(['/punitionDactylo']);
           break;
         }
       }
-      
     }, error => {
       if(error.status == 400 || error.status == 404){
         this.error = true;

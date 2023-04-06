@@ -20,6 +20,10 @@
             <li *ngIf="connected().rang != 'Fidele'">
                 <a [routerLink]="['/tapoteur']" routerLinkActive="active">Tapoteurs</a>
             </li>
+
+            <li *ngIf="connected().rang == 'Compileur' || connected().rang == 'Grand Dev'">
+                <a [routerLink]="['/bannis']" routerLinkActive="active">Bannis</a>
+            </li>
                                 
             <li *ngIf="connected().rang == 'Indenteur' || connected().rang == 'Grand Dev'" >
                 <a [routerLink]="['/demandes']" routerLinkActive="active">Demandes</a>

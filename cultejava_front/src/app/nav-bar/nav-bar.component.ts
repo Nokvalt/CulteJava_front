@@ -13,10 +13,10 @@ export class NavBarComponent {
   }
 
   deconnexion(){
-    this.loginService.connected = null;
+    this.loginService.setConnected(null);
   }
 
   connected(): TapoteurRequestResponse{
-    return this.loginService.connected;
+    return this.loginService.getConnected();
   }
 }

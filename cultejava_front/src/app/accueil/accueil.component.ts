@@ -13,7 +13,7 @@ export class AccueilComponent {
 
   constructor(private serviceHttp: AccueilHttpService, private loginService: LoginService, private router: Router){
 
-    if(this.loginService.connected == null){
+    if(this.loginService.getConnected() == null){
       this.router.navigate([""]);
     }
 
@@ -38,6 +38,6 @@ export class AccueilComponent {
   }
 
   connected(): TapoteurRequestResponse{
-    return this.loginService.connected;
+    return this.loginService.getConnected();
   }
 }

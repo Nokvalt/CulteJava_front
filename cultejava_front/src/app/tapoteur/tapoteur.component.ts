@@ -4,6 +4,7 @@ import { TapoteurHttpService } from './tapoteur-http.service';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
 import { BannissementRequest } from '../modelBannissement';
+import { Punition, TypePunition } from '../modelPunition';
 
 @Component({
   selector: 'app-tapoteur',
@@ -14,17 +15,21 @@ import { BannissementRequest } from '../modelBannissement';
 export class TapoteurComponent {
   tapoteurForm: TapoteurRequestResponse = null;
   bannisForm: BannissementRequest = null;
+  punitionForm: Punition = null;
+
+  idPunition: number;
 
   cantPromote: boolean;
   cantDemote: boolean;
 
+  nameSearch = '';
+  rangSearch = '';
+
   constructor(private tapoteurService: TapoteurHttpService, private loginService: LoginService, private router: Router){
 
-    if(loginService.connected == null || loginService.connected.rang == "Fidele"){
+    if(loginService.getConnected() == null || loginService.getConnected().rang == "Fidele"){
       this.router.navigate([""]);
     }
-
-    console.log(loginService.connected.rang)
 
   }
 
@@ -37,8 +42,8 @@ export class TapoteurComponent {
     this.tapoteurForm = new TapoteurRequestResponse();
   }
 
-  edit(id: number): void{
-    this.tapoteurService.findById(id).subscribe(resp => {
+  edit(bannisId: number): void{
+    this.tapoteurService.findById(bannisId).subscribe(resp => {
       this.tapoteurForm = resp;
     })
   }
@@ -85,7 +90,7 @@ export class TapoteurComponent {
             if(confirm("Vous serez éliminé de la secte. Etes-vous sur de vouloir poursuivre ?")){
               this.tapoteurService.passationPouvoir(idTapoteur);
               alert("Vous avez désigné un nouveau GrandDev. Vous allez être déconnecté et ne pourrez plus vous connecter. Merci pour vos bons et loyaux services.");
-              this.loginService.connected = null;
+              this.loginService.setConnected(null);
               this.router.navigate([""]);
             }
           }
@@ -96,11 +101,34 @@ export class TapoteurComponent {
     
   }
 
+  addPunition(idTapoteur:number): void{
+    this.punitionForm = new Punition();
+    this.idPunition = idTapoteur;
+  }
+
+  punish():void{
+    this.tapoteurService.punish(this.idPunition, this.punitionForm);
+    this.idPunition = null;
+    this.punitionForm = null;
+  }
+
+  listTypesPunitions():any{
+    return Object.keys(TypePunition).filter((v) => isNaN(Number(v)));
+  }
+
   cancel():void{
     this.tapoteurForm = null;
   } 
 
+  cancelBan():void{
+  this.bannisForm = null;
+  }
+
+  cancelPunish():void{
+    this.punitionForm = null;
+  }
+
   connected():TapoteurRequestResponse{
-    return this.loginService.connected;
+    return this.loginService.getConnected();
   }
 }

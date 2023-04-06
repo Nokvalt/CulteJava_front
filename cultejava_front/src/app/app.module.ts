@@ -34,7 +34,7 @@ import { DemandeComponent } from './demande/demande.component';
     EvenementComponent,
     FaireUnDonComponent,
     ProfilComponent,
-    DemandeComponent
+    DemandeComponent,
     PunitionDactyloComponent,
     TapoteurFilterPipe,
     BannisComponent,
@@ -47,7 +47,7 @@ import { DemandeComponent } from './demande/demande.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ], 
 
   providers: [],

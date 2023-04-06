@@ -15,7 +15,7 @@ export class BannisComponent {
 
   constructor(private bannisService: BannisHttpService, private loginService: LoginService, private router: Router){
 
-    if(loginService.connected == null || loginService.connected.rang == "Fidele" || loginService.connected.rang == "Indenteur"){
+    if(loginService.getConnected() == null || loginService.getConnected().rang == "Fidele" || loginService.getConnected().rang == "Indenteur"){
       this.router.navigate([""]);
     }
   }
@@ -25,6 +25,6 @@ export class BannisComponent {
   }
 
   connected():TapoteurRequestResponse{
-    return this.loginService.connected;
+    return this.loginService.getConnected();
   }
 }

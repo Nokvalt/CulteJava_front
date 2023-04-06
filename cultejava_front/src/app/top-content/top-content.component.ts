@@ -14,7 +14,7 @@ constructor(private loginService: LoginService) {
 }
 
 connected(): TapoteurRequestResponse {
-  return this.loginService.connected;
+  return this.loginService.getConnected();
 }
 
 

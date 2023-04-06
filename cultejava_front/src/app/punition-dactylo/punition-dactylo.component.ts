@@ -16,7 +16,7 @@ export class PunitionDactyloComponent {
 
   constructor(private tapoteurService: TapoteurHttpService, private loginService: LoginService, private router: Router){
 
-    if(loginService.connected == null){
+    if(loginService.getConnected() == null){
       this.router.navigate([""]);
     }
   }
@@ -25,7 +25,7 @@ export class PunitionDactyloComponent {
     if(this.fInput == this.sInput){
       this.tapoteurService.removePunition(this.connected().id);
       alert("Merci. Vous pouvez vous connecter.");
-      this.loginService.connected = null;
+      this.loginService.setConnected(null);
       this.router.navigate(['']);
     }
   }
@@ -35,6 +35,6 @@ export class PunitionDactyloComponent {
   }
 
   connected(): TapoteurRequestResponse{
-    return this.loginService.connected;
+    return this.loginService.getConnected();
   }
 }

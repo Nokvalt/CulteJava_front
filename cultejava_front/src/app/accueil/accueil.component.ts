@@ -38,6 +38,6 @@ export class AccueilComponent {
   }
 
   connected(): TapoteurRequestResponse{
-    return this.loginService.connected;
+    return this.loginService.getConnected();
   }
 }

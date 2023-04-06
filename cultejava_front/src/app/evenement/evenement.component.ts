@@ -12,6 +12,7 @@ import { TapoteurRequestResponse } from '../modelTapoteur';
   templateUrl: './evenement.component.html',
   styleUrls: ['./evenement.component.scss']
 })
+
 export class EvenementComponent {
   evenementForm: Evenement = null;
   inscription: InscriptionEvenement = null;
@@ -21,10 +22,6 @@ export class EvenementComponent {
     if(this.loginService.getConnected() == null){
       this.router.navigate([""]);
     }
-  }
-
-  connected():TapoteurRequestResponse{
-    return this.loginService.connected;
   }
 
   list(): Array<Evenement> {

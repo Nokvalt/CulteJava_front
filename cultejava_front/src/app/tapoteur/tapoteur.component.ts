@@ -90,7 +90,7 @@ export class TapoteurComponent {
             if(confirm("Vous serez éliminé de la secte. Etes-vous sur de vouloir poursuivre ?")){
               this.tapoteurService.passationPouvoir(idTapoteur);
               alert("Vous avez désigné un nouveau GrandDev. Vous allez être déconnecté et ne pourrez plus vous connecter. Merci pour vos bons et loyaux services.");
-              this.loginService.connected = null;
+              this.loginService.setConnected(null);
               this.router.navigate([""]);
             }
           }
@@ -129,6 +129,6 @@ export class TapoteurComponent {
   }
 
   connected():TapoteurRequestResponse{
-    return this.loginService.connected;
+    return this.loginService.getConnected();
   }
 }

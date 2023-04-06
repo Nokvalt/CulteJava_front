@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./inscription.component.scss']
 })
 export class InscriptionComponent implements OnInit {
+
   inscriptionReussie: boolean = false;
+  afficherQST: boolean = false;
 
   inscriptionForm: FormGroup;
   prenomCtrl: FormControl;
@@ -87,4 +89,11 @@ export class InscriptionComponent implements OnInit {
   retour(){
     this.router.navigate(['']);
   }
+
+  afficherQuestionR(): void {
+    this.afficherQST = true;
+  }
+
+
+ 
   }

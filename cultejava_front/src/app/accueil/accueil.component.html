@@ -1,10 +1,26 @@
 <body>
     <div id="bodyContainer">
+        
+        <div id="elementCagnotte">
         <p *ngIf="connected().rang != 'Grand Dev'"><img id="boutonFaireUnDon" src="/assets/boutonFaireUnDon.PNG" alt="bouton faire un don" (click)="faireUnDon()"></p>
-        <p *ngIf="connected().rang == 'Grand Dev'"><img id="boutonVolerCagnotte" src="/assets/boutonFaireUnDon.PNG" alt="voler la cagnotte" (click)="volerLaCagnotte()"></p>
-        <p>Somme cagnotte totale: {{connected().allDons}} <br>
-        L'argent que j'ai volé: {{connected().argentVole}}</p>
-       
+        <p *ngIf="connected().rang == 'Grand Dev'"><img id="boutonVolerCagnotte" src="/assets/boutonVolerCagnotte.png" alt="voler la cagnotte" (click)="volerLaCagnotte()"></p>
+        
+        <div id="cadreCagnotte">
+        <p *ngIf="connected().rang == 'Grand Dev'">
+           <span class="orange">private </span>  
+           <span class="bleu">Double </span> 
+            <span class="indigo">cagnotte</span> 
+            = {{connected().allDons}}; <br>
+
+        <span class="orange"> private </span> 
+        <span class="bleu">Double </span> 
+        <span class="indigo">argentVole </span> 
+        = {{connected().argentVole}};</p>
+        </div>
+        </div>
+
+        
+        <div id="corpsTexte">
         <p id="EvenementDuMois"><span class="orange">public </span>
                                 <span class="orange">class </span>
                                 <span class="bleu">Evenement </span>
@@ -15,7 +31,7 @@
                                 &#123;&#125;
         </p>
         <p>L'évenement du mois, anniversaire des 83 ans d'Odette Grecque et la naissance de sa fille Monique.</p>
-        <br><br><br><br><br><br><br><br><br><br><br><br>
+        
 
         <p id="EvenementDuMois"><span class="orange">public </span>
             <span class="orange">class </span>
@@ -39,5 +55,6 @@
         <p></p>
     
     </div>
+</div>
 </body>
 

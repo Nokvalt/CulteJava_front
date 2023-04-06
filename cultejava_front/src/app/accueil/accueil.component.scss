@@ -15,20 +15,52 @@ margin-left: 20px
 
 }
 
+
+
+
+
 #boutonFaireUnDon {
 
+    cursor: pointer;
     height: 40%;
     width: 40%;
     display: block;
     margin: auto;
 }
 
-#boutonVolerCagnotte{
 
+#boutonVolerCagnotte{
+    margin-top: 1%;
+    cursor: pointer;
     height: 40%;
     width: 40%;
-    display: block;
-    margin: auto;
+
+
+}
+
+#cadreCagnotte{
+    background-color: #515658;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 24%;
+    position: absolute;
+    left: 55%;
+    top: 3%;
+    border: 2px solid gold;
+    border-radius: 5%;
+    
+}
+
+#cadreCagnotte p{
+    line-height: 350%;
+    font-size: 200%;
+}
+
+#corpsTexte  {
+    font-size: 18px;
+    margin-top: 8%;
 }
 
 .orange {
@@ -36,9 +68,9 @@ margin-left: 20px
 }
 
 .bleu {
-    color: rgb(62, 62, 220);
+    color: rgb(46, 112, 163);
 }
 
 .indigo {
-    color: rgb(62, 232, 232);
+    color: rgb(102, 225, 248);
 }

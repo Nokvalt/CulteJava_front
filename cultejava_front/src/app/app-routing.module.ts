@@ -10,6 +10,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { PunitionDactyloComponent } from './punition-dactylo/punition-dactylo.component';
 import { BannisComponent } from './bannis/bannis.component';
 import { DemandeComponent } from './demande/demande.component';
+import { DonComponent } from './don/don.component';
 
 const routes: Routes = [
   {path: "", component: ConnexionComponent, pathMatch: "full"},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'faireUnDon', component: FaireUnDonComponent},
   {path: "demandes", component: DemandeComponent},
   {path: 'punitionDactylo', component: PunitionDactyloComponent},
+  {path: 'dons', component: DonComponent},
 ];
 
 @NgModule({

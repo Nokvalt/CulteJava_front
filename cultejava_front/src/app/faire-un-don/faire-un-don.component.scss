@@ -7,9 +7,16 @@ h1{
 }
 
 body {
-    background-color: #515658;
+   
+    position: absolute;
+    width: 60%;
+    top: 20%;
+    left: 25%;
     color: white;
-    overflow: hidden;
+
+    
+    
+    
 }
 
 .inputs{
@@ -37,7 +44,7 @@ body {
 }
 
 .inputs input{
-    color: #0b795a;
+    color: rgb(190, 190, 190)
 }
 
 .labels{

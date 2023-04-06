@@ -38,18 +38,21 @@ margin-left: 20px
 
 }
 
+
+
 #cadreCagnotte{
     background-color: #515658;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40%;
-    height: 24%;
+    height: 21%;
     position: absolute;
-    left: 55%;
-    top: 3%;
+    left: 45%;
+    top: 2.6%;
     border: 2px solid gold;
     border-radius: 5%;
+    overflow: hidden;
     
 }
 
@@ -61,6 +64,9 @@ margin-left: 20px
 #corpsTexte  {
     font-size: 18px;
     margin-top: 8%;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-right: 2%;
 }
 
 .orange {
@@ -74,3 +80,4 @@ margin-left: 20px
 .indigo {
     color: rgb(102, 225, 248);
 }
+

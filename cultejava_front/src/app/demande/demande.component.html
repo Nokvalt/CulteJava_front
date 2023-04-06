@@ -11,6 +11,7 @@
                     <th>Montant (en euros)</th>
                     <th>Descriptif</th>
                     <th>Statut</th>
+                    <th *ngIf="connected().rang == 'Grand Dev'">Indenteur</th>
                     <th></th>
                 </tr>
             </thead>
@@ -21,6 +22,7 @@
                         <td>{{demande.montant}}</td>
                         <td>{{demande.descriptif}}</td>
                         <td>{{demande.statut}}</td>
+                        <td *ngIf="connected().rang == 'Grand Dev'">{{demande.indenteurnom}} {{demande.indenteurprenom}} ({{demande.indenteurid}})</td>
                         <td>
                             <input *ngIf="connected().rang == 'Indenteur'" type="button" value="Modifier la demande" (click)="edit(demande.id)">
                             <input *ngIf="connected().rang == 'Grand Dev'" type="button" value="Modifier le statut"  (click)="edit(demande.id)">

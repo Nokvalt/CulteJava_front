@@ -56,6 +56,7 @@ import { TapoteurRequestResponse } from "../modelTapoteur";
       }else{
         this.http.get<Array<Demande>>(this.demandeApiPath).subscribe(resp => {
         this.demandes = resp;
+        console.log(resp);
         });
       }
     } 

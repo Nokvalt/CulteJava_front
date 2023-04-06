@@ -4,7 +4,7 @@
     <h3 *ngIf="connected().rang == 'Indenteur'" >Vos demandes seront bien prises en considération</h3> 
     <h1 *ngIf="connected().rang == 'Grand Dev'" >Liste des Demandes des pigeons </h1>
     <h3 *ngIf="connected().rang == 'Grand Dev'" >Les demandes seront toujours refusées </h3> 
-        <table id="table">
+        <table id="table" *ngIf="list().length != 0">
             <thead>
                 <tr>
                     <th>Identifiant</th>
@@ -28,13 +28,15 @@
                             <input *ngIf="connected().rang == 'Grand Dev'" type="button" value="Modifier le statut"  (click)="edit(demande.id)">
                             <input type="button" value="Supprimer"  (click)="remove(demande.id)">                           
                         </td>
-
                 </tr>
             </tbody>
-
         </table>
-        <div id="ajouter">
-        <input *ngIf="connected().rang == 'Indenteur'" type="button" value="Ajouter une demande" (click)="add()" id="add">
+
+        
+
+        <div id="ajouter" *ngIf="connected().rang == 'Indenteur' && list().length == 0">
+        <span>Vous n'avez pas de demande en cours.</span>
+        <input type="button" value="Ajouter une demande" (click)="add()" id="add">
         </div>
  
         

@@ -12,6 +12,7 @@ import { TapoteurRequestResponse } from '../modelTapoteur';
 })
 export class DemandeComponent {
   demandeForm: Demande = null;
+  demande: boolean;
 
   constructor(private demandeService: DemandeHttpService, private loginService: LoginService, private router: Router) {
     if(this.loginService.getConnected() == null){

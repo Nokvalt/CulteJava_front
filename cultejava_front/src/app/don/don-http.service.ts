@@ -19,10 +19,18 @@ export class DonHttpService {
   }
 
   load(): void{
-    this.http.get<Array<Don>>(this.donApiPath + "/by-tapoteur/" + this.connected().id).subscribe(resp =>{
-      this.dons = resp;
-      console.log(resp);
-    })
+    if(this.connected().rang != "Grand Dev"){
+      this.http.get<Array<Don>>(this.donApiPath + "/by-tapoteur/" + this.connected().id).subscribe(resp =>{
+        this.dons = resp;
+        console.log(resp);
+      })
+    }else{
+      this.http.get<Array<Don>>(this.donApiPath).subscribe(resp =>{
+        this.dons = resp;
+        console.log(resp);
+      })
+    }
+   
   }
 
   findAll(): Array<Don>{

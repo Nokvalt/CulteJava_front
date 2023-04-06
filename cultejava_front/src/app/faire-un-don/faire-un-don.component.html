@@ -36,7 +36,7 @@
             </table>
         </div>    
         <div class="buttonDon bounce">
-            <input type="submit" value="Faire un don">
+            <input type="submit" [disabled]="donForm.montant == null || donForm.numCarte == null || donForm.moisExp == null || donForm.cvv == null" value="Faire un don">
         </div> 
            
 

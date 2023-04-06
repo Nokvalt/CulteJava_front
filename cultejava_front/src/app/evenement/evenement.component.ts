@@ -20,7 +20,7 @@ export class EvenementComponent {
   inscription: InscriptionEvenement = null;
 
   constructor(private evenementService: EvenementHttpService, private loginService: LoginService, private router: Router) {
-    if(this.loginService.connected == null){
+    if(this.loginService.getConnected() == null){
       this.router.navigate([""]);
     }
   }
@@ -72,7 +72,7 @@ export class EvenementComponent {
    
 
   connected(): TapoteurRequestResponse{
-    return this.loginService.connected;
+    return this.loginService.getConnected();
   }
   }
 

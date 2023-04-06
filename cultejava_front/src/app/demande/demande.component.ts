@@ -14,9 +14,13 @@ export class DemandeComponent {
   demandeForm: Demande = null;
 
   constructor(private demandeService: DemandeHttpService, private loginService: LoginService, private router: Router) {
-    if(this.loginService.connected == null){
+    if(this.loginService.getConnected() == null){
       this.router.navigate([""]);
     }
+
+    this.demandeService.load();
+
+    console.log(this.connected().id);
   }
 
   list(): Array<Demande> {
@@ -41,6 +45,7 @@ export class DemandeComponent {
     if(this.demandeForm.id) {
       this.demandeService.update(this.demandeForm);
     } else {
+      this.demandeForm.indenteurid = this.connected().id;
       this.demandeService.create(this.demandeForm);
     }
 
@@ -52,7 +57,7 @@ export class DemandeComponent {
   }
 
   connected(): TapoteurRequestResponse{
-    return this.loginService.connected;
+    return this.loginService.getConnected();
   }
 
   listStatut(): any{

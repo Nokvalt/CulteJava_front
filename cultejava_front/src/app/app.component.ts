@@ -15,7 +15,7 @@ export class AppComponent {
   }
 
   connected(): TapoteurRequestResponse {
-    return this.loginService.connected;
+    return this.loginService.getConnected();
   }
 }
  

@@ -29,7 +29,7 @@ import { TapoteurRequestResponse } from "../modelTapoteur";
     }
   
     create(demande: Demande): void {
-    
+      console.log(demande);
       this.http.post<Demande>(this.demandeApiPath, demande).subscribe(resp => {
         this.load();
       });
@@ -47,14 +47,21 @@ import { TapoteurRequestResponse } from "../modelTapoteur";
       });
     }
 
-    private load(): void {
+    public load(): void {
+
+      if(this.connected().rang != "Grand Dev"){
+        this.http.get<Array<Demande>>(this.demandeApiPath +"/by-indenteur/" + this.connected().id).subscribe(resp => {
+        this.demandes = resp;
+        });
+      }else{
         this.http.get<Array<Demande>>(this.demandeApiPath).subscribe(resp => {
         this.demandes = resp;
         });
+      }
     } 
 
     connected():TapoteurRequestResponse{
-        return this.loginService.connected;
+        return this.loginService.getConnected();
       }
   
 }

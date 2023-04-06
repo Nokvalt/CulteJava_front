@@ -40,8 +40,7 @@ export class ConnexionComponent {
     this.error = false;
 
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
-      this.loginService.connected = resp;
-      console.log("connecté::::", this.loginService.connected);
+      this.loginService.setConnected(resp);
       this.router.navigate(['/accueil']);
     }, error => {
       console.log(error);

@@ -15,14 +15,13 @@ export class ProfilComponent implements OnInit {
 
 
   constructor(private userService: UserService, private loginService: LoginService, router: Router) {
-    if(loginService.connected == null){
+    if(loginService.getConnected() == null){
       router.navigate([""]);
     }
   }
 
   ngOnInit(): void {
-    this.tapoteurForm = this.loginService.connected;
-    console.log(this.tapoteurForm)
+    this.tapoteurForm = this.loginService.getConnected();
   }
 
 

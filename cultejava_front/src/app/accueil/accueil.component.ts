@@ -14,7 +14,7 @@ export class AccueilComponent {
 
   constructor(private loginService: LoginService, private router: Router){
 
-    if(this.loginService.connected == null){
+    if(this.loginService.getConnected() == null){
       this.router.navigate([""]);
     }
   }

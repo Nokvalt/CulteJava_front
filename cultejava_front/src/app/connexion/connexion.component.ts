@@ -48,6 +48,8 @@ export class ConnexionComponent {
         }
       }
       
+      this.loginService.setConnected(resp);
+      this.router.navigate(['/accueil']);
     }, error => {
       if(error.status == 400 || error.status == 404){
         this.error = true;

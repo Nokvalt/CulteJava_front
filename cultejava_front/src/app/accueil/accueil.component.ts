@@ -13,7 +13,7 @@ export class AccueilComponent {
 
   constructor(private serviceHttp: AccueilHttpService, private loginService: LoginService, private router: Router){
 
-    if(this.loginService.connected == null){
+    if(this.loginService.getConnected() == null){
       this.router.navigate([""]);
     }
 

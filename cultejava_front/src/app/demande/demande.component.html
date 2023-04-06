@@ -1,0 +1,62 @@
+<body>
+    
+    <h1 *ngIf="connected().rang == 'Indenteur'" >Liste des Demandes </h1>
+    <h3 *ngIf="connected().rang == 'Indenteur'" >Vos demandes seront bien prises en considération</h3> 
+    <h1 *ngIf="connected().rang == 'Grand Dev'" >Liste des Demandes des pigeons </h1>
+    <h3 *ngIf="connected().rang == 'Grand Dev'" >Les demandes seront toujours refusées </h3> 
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>Identifiant</th>
+                    <th>Montant (en euros)</th>
+                    <th>Descriptif</th>
+                    <th>Statut</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let demande of list()">
+                        <td>{{demande.id}}</td>
+                        <td>{{demande.montant}}</td>
+                        <td>{{demande.descriptif}}</td>
+                        <td>{{demande.statut}}</td>
+                        <td>
+                            <input *ngIf="connected().rang == 'Indenteur'" type="button" value="Modifier la demande" (click)="edit(demande.id)">
+                            <input *ngIf="connected().rang == 'Grand Dev'" type="button" value="Modifier le statut"  (click)="edit(demande.id)">
+                            <input type="button" value="Supprimer"  (click)="remove(demande.id)">                           
+                        </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+        <div id="ajouter">
+        <input *ngIf="connected().rang == 'Indenteur'" type="button" value="Ajouter une demande" (click)="add()" id="add">
+        </div>
+ 
+        
+
+
+
+        <div input type="button" *ngIf="demandeForm">
+            <h2>Edition d'une demande</h2>
+            <h3>Votre demande sera traitée dans les meilleurs délais</h3> 
+            <div id="form">
+                <div> <label for="id" *ngIf="connected().rang == 'Indenteur'">Identifiant:</label> <input *ngIf="connected().rang == 'Indenteur'" type="number" class="form-control" id="id" name="id" size="4" readonly [(ngModel)]="demandeForm.id"></div>
+                <div> <label for="nom" *ngIf="connected().rang == 'Indenteur'">Montant:</label> <input *ngIf="connected().rang == 'Indenteur'" type="number" class="form-control" id="montant" name="montant" [(ngModel)]="demandeForm.montant" step="0.01"></div>
+                <div><label for="descriptif" *ngIf="connected().rang == 'Indenteur'" >Descriptif:</label> <input *ngIf="connected().rang == 'Indenteur'"type="text" class="form-control" id="descriptif" name="descriptif" [(ngModel)]="demandeForm.descriptif"></div>
+                
+                <label for="statut" *ngIf="connected().rang == 'Grand Dev'">Statut:</label> 
+                <select name="liste statut" *ngIf="connected().rang == 'Grand Dev'" id="liste statut" [(ngModel)]="demandeForm.statut">
+                    <option [value]="statut" *ngFor="let statut of listStatut()">{{statut}}</option>
+                </select>
+                
+                
+                
+                <input type="button" value="Ajouter" (click)="save()" id="button">
+                <input type="button" value="Annuler" (click)="cancel()" id="button">
+            </div>
+        </div>
+   
+ </body>

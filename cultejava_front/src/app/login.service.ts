@@ -5,11 +5,26 @@ import { TapoteurRequestResponse } from './modelTapoteur';
   providedIn: 'root'
 })
 export class LoginService {
-  connected: TapoteurRequestResponse = null;
+  private connected: TapoteurRequestResponse = null;
 
   constructor() { }
 
+  setConnected(userConnected : TapoteurRequestResponse) {
+    this.connected = userConnected;
+    sessionStorage.setItem("connected", JSON.stringify(this.connected));
+  }
+
+  getConnected() : TapoteurRequestResponse {
+    if(this.connected) {
+      return this.connected;
+    } else if(sessionStorage.getItem("connected")){
+      return JSON.parse(sessionStorage.getItem("connected"));
+    }
+
+    return null;
+  }
+
   getUserId(): number {
-    return this.connected ? this.connected.id : null;
+    return this. getConnected() ? this.getConnected().id : null;
   }
 }

@@ -21,10 +21,10 @@
                         <td>{{evenement.lieu}}</td>
                         <td>{{evenement.nomActivite}}</td>
                         <td>
-                            <input *ngIf="connected().rang != 'Fidele'" type="button" value="Modifier" (click)="edit(evenement.id)">
-                            <input *ngIf="connected().rang != 'Fidele'" type="button" value="Supprimer"  (click)="remove(evenement.id)">
-                            <input *ngIf="!evenement.inscrit" type="button" value="S'inscrire à l'événement" (click)="inscriptionEvenement(evenement.id)">
-                            <span *ngIf="evenement.inscrit">Inscrit</span>
+                            <input *ngIf="connected().rang == 'Indenteur' || connected().rang == 'Grand Dev'" type="button" value="Modifier" (click)="edit(evenement.id)">
+                            <input *ngIf="connected().rang == 'Indenteur' || connected().rang == 'Grand Dev'" type="button" value="Supprimer" (click)="remove(evenement.id)">
+                            <input *ngIf="!evenement.inscrit &&  connected().rang == 'Fidele'" type="button" value="S'inscrire à l'événement" (click)="inscriptionEvenement(evenement.id)">
+                            <span *ngIf="evenement.inscrit &&  connected().rang == 'Fidele'">Inscrit</span>
                             
                         </td>
 
@@ -32,21 +32,22 @@
             </tbody>
 
         </table>
-        <div *ngIf="connected().rang != 'Fidele'" id="ajouter">
-        <input type="button" value="Ajouter un événement" (click)="add()" id="add">
+        <div id="ajouter">
+        <input *ngIf="connected().rang != 'Fidele'" type="button" value="Ajouter un événement" (click)="add()" id="add">
         </div>
 
 
 
 <div input type="button" *ngIf="evenementForm">
     <h2>Edition d'un événement</h2>
-    <form id="form" name="eventForm">
-            <label for="id">Identifiant:</label> 
-            <input type="number" id="id" name="id" size="4" readonly [(ngModel)]="evenementForm.id" min="10" max="100"><br>
-
-            <label for="nom">Libellé:</label> 
-            <input type="text" id="libelle" name="libelle" [(ngModel)]="evenementForm.nom" required/><br>
-
+    <div id="form">
+        <div> 
+            <a><label for="id">Identifiant:</label> <input type="number" class="form-control" id="id" name="id" size="4" readonly [(ngModel)]="evenementForm.id" ></a>
+        </div>
+        <div>
+            <label for="nom">Libellé:</label> <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="evenementForm.nom"/>
+        </div>
+        <div>
             <label for="nomactivite">Activité:</label> 
             <select name="nomactivite" id="nomactivite" [(ngModel)]="evenementForm.nomActivite">
                 <option [value]="activite" *ngFor="let activite of listActivites()">{{activite}}</option>

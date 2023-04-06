@@ -19,6 +19,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { PunitionDactyloComponent } from './punition-dactylo/punition-dactylo.component';
 import { TapoteurFilterPipe } from './tapoteur-filter.pipe';
 import { BannisComponent } from './bannis/bannis.component';
+import { DemandeComponent } from './demande/demande.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { BannisComponent } from './bannis/bannis.component';
     EvenementComponent,
     FaireUnDonComponent,
     ProfilComponent,
+    DemandeComponent
     PunitionDactyloComponent,
     TapoteurFilterPipe,
     BannisComponent,

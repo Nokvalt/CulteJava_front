@@ -35,7 +35,7 @@ import { BannisComponent } from './bannis/bannis.component';
     ProfilComponent,
     PunitionDactyloComponent,
     TapoteurFilterPipe,
-    BannisComponent
+    BannisComponent,
   ],
   
   imports: [

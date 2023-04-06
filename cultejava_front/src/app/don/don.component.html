@@ -1,0 +1,25 @@
+
+<body>
+
+    <h1>Mes dons</h1>
+
+    <table id="table" *ngIf="listDons().length != 0">
+        <thead>
+            <tr>
+                <th><span class="indigo">Identifiant</span> </th>
+                <th><span class="indigo">Montant</span></th>
+                <th><span class="indigo">Date du don</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let don of listDons()">
+                <td>{{don.id}}</td>
+                <td>{{don.montant}}</td>
+                <td>{{don.dateDon}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 *ngIf="listDons().length == 0">Pensez à faire un don.</h2>
+</body>

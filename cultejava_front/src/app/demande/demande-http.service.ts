@@ -10,7 +10,6 @@ import { TapoteurRequestResponse } from "../modelTapoteur";
     providedIn: 'root'
   })
   export class DemandeHttpService {
-    private connexionApiPath: string;
   
     demandes: Array<Demande> = new Array<Demande>(); 
     private demandeApiPath: string; 

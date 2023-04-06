@@ -20,6 +20,7 @@ import { PunitionDactyloComponent } from './punition-dactylo/punition-dactylo.co
 import { TapoteurFilterPipe } from './tapoteur-filter.pipe';
 import { BannisComponent } from './bannis/bannis.component';
 import { DemandeComponent } from './demande/demande.component';
+import { DonComponent } from './don/don.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { DemandeComponent } from './demande/demande.component';
     PunitionDactyloComponent,
     TapoteurFilterPipe,
     BannisComponent,
+    DonComponent,
   ],
   
   imports: [

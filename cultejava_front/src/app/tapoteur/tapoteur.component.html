@@ -13,7 +13,7 @@
                 <th><span class="indigo">Prénom</span></th>
                 <th><span class="indigo">Date d'adhésion</span></th>
                 <th><span class="rose">Adresse</span></th>
-                <th><span class="gold">Somme des DONS €€€</span></th>
+                <th><span class="gold">DONS €€€</span></th>
                 <th><span class="bleu">Rang</span></th>
                 <th></th>
             </tr>
@@ -24,18 +24,19 @@
                 <th></th>
                 <th></th>
                 <th></th>
-                <th><input type="text" [(ngModel)]="nameSearch" placeholder="recherche par nom"></th>
+                <th><input type="text" size=17 [(ngModel)]="nameSearch" placeholder="recherche par nom"></th>
                 <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
-                <th>
-                    <input type="radio" id="rang" name="rang" value="Tapoteur" [(ngModel)]="rangSearch"/>Tapoteurs
-                    <input type="radio" id="rang" name="rang" value="Fidele" [(ngModel)]="rangSearch"/>Fidèle
-                    <input type="radio" id="rang" name="rang" value="Compileur" [(ngModel)]="rangSearch"/>Compileur
-                    <input type="radio" id="rang" name="rang" value="Indenteur" [(ngModel)]="rangSearch"/>Indenteur
-                    <input type="radio" id="rang" name="rang" value="Grand Dev" [(ngModel)]="rangSearch"/>Grand Dev
+                <th id="rang">
+                    <input type="radio" id="rang" name="rang" value="Tapoteur" [(ngModel)]="rangSearch"/>Tapoteurs<br>
+                    <input type="radio" id="rang" name="rang" value="Fidele" [(ngModel)]="rangSearch"/>Fidèle<br>
+                    <input type="radio" id="rang" name="rang" value="Compileur" [(ngModel)]="rangSearch"/>Compileur<br>
+                    <input type="radio" id="rang" name="rang" value="Indenteur" [(ngModel)]="rangSearch"/>Indenteur<br>
+                    <input type="radio" id="rang" name="rang" value="Grand Dev" [(ngModel)]="rangSearch"/>Grand Dev<br>
                 </th>
+                
                 <th></th>
             </tr>
             <tr *ngFor="let tapoteur of listTapoteurs() | tapoteurFilter: nameSearch:rangSearch">
@@ -45,7 +46,7 @@
                 <td>{{tapoteur.nom}}</td>
                 <td>{{tapoteur.prenom}}</td>
                 <td>{{tapoteur.dateAdhesion}}</td>
-                <td>{{tapoteur.numero}}, {{tapoteur.voie | titlecase}} - {{tapoteur.cp}} {{tapoteur.ville | uppercase}}  ({{tapoteur.pays | uppercase}})</td>
+                <td id="adresse">{{tapoteur.numero}}, {{tapoteur.voie | titlecase}} - {{tapoteur.cp}} {{tapoteur.ville | uppercase}}  ({{tapoteur.pays | uppercase}})</td>
                 <td>{{tapoteur.sommeDon}}</td>
                 <td>{{tapoteur.rang}}</td>
                 <td> <button *ngIf="connected().rang =='Compileur'" (click)="edit(tapoteur.id)">Modifier</button>
@@ -90,10 +91,10 @@
         <label>Identifiant:</label><br>
         <input type="number" id="id" name="id" size=4 readonly [(ngModel)]="tapoteurForm.id"/><br>
 
-        <input type="radio" id="rang" name="ran" value="Fidele" [(ngModel)]="tapoteurForm.rang"/>Fidèle
-        <input type="radio" id="rang" name="rang" value="Compileur" [(ngModel)]="tapoteurForm.rang"/>Compileur
-        <input type="radio" id="rang" name="rang" value="Indenteur" [(ngModel)]="tapoteurForm.rang"/>Indenteur
-        <input type="radio" id="rang" name="ran Dev" value="Grand Dev" [(ngModel)]="tapoteurForm.rang"/>Grand Dev<br>
+        <input type="radio"  name="ran" value="Fidele" [(ngModel)]="tapoteurForm.rang"/>Fidèle
+        <input type="radio"  name="rang" value="Compileur" [(ngModel)]="tapoteurForm.rang"/>Compileur
+        <input type="radio"  name="rang" value="Indenteur" [(ngModel)]="tapoteurForm.rang"/>Indenteur
+        <input type="radio"  name="ran Dev" value="Grand Dev" [(ngModel)]="tapoteurForm.rang"/>Grand Dev<br>
 
         <input type="text" id="login" name="login" placeholder="Login" [(ngModel)]="tapoteurForm.login"/>
 

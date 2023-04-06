@@ -31,7 +31,7 @@ tbody {
 }
 
 #table th, #table td {
-    padding: 12px 15px;
+    padding: 5px 8px;
 }
 
 #table tbody tr:nth-of-type(odd) {
@@ -46,8 +46,13 @@ tbody {
     border-bottom: 2px solid #01350a;
 }
 
-#table thead th:last-of-type, #table tbody th:last-of-type {
-    min-width: 300px;
+#table tbody th:last-of-type {
+    width: 15%;
+}
+
+#rang{
+    width: 10%;
+    text-align: left;
 }
 
 

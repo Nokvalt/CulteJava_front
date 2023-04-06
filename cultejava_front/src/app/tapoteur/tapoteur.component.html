@@ -20,7 +20,24 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let tapoteur of listTapoteurs()">
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th><input type="text" [(ngModel)]="nameSearch" placeholder="recherche par nom"></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>
+                    <input type="radio" id="rang" name="rang" value="Fidele" [(ngModel)]="rangSearch"/>Fidèle
+                    <input type="radio" id="rang" name="rang" value="Compileur" [(ngModel)]="rangSearch"/>Compileur
+                    <input type="radio" id="rang" name="rang" value="Indenteur" [(ngModel)]="rangSearch"/>Indenteur
+                    <input type="radio" id="rang" name="rang" value="Grand Dev" [(ngModel)]="rangSearch"/>Grand Dev
+                </th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let tapoteur of listTapoteurs() | tapoteurFilter: nameSearch:rangSearch">
                 <td>{{tapoteur.id}}</td>
                 <td>{{tapoteur.login}}</td>
                 <td>{{tapoteur.password}}</td>

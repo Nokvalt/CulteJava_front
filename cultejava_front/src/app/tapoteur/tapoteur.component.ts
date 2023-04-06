@@ -22,6 +22,9 @@ export class TapoteurComponent {
   cantPromote: boolean;
   cantDemote: boolean;
 
+  nameSearch = '';
+  rangSearch = '';
+
   constructor(private tapoteurService: TapoteurHttpService, private loginService: LoginService, private router: Router){
 
     if(loginService.connected == null || loginService.connected.rang == "Fidele"){

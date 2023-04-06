@@ -6,18 +6,69 @@
   <title>Mat test des trucs</title>
 </head>
 <body>
+
   <div class="container">
+
     <img class="logo" src="assets/logo.png" alt="Logo">
-    <form [formGroup]="inscriptionForm" (ngSubmit)="inscription()" class="form-container">
+
+    <form *ngIf="!afficherQST" [formGroup]="inscriptionForm" (ngSubmit)="inscription()" class="form-container">
+
       <div class="input-container" *ngFor="let field of fields">
         <span class="label">{{field.label}}</span>
         <input [type]="field.type" [placeholder]="field.placeholder" [formControlName]="field.name">
       </div>
+
       <label for="cardNumber" class="labelCarteB">Numéro de carte bancaire :</label>
       <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" formControlName="cardNumber" class="carteB">
-      <button type="submit" [disabled]="inscriptionForm.invalid"class="submit-button">S'inscrire</button>
+      <button type="submit" [disabled]="inscriptionForm.invalid"class="submit-button" (click)="afficherQuestionR()">S'inscrire</button>
       <button class="retour" (click)="retour()">Retour</button>
     </form>
+    <div *ngIf="afficherQST" class="questionnaire">
+      <h4>Merci de rejoindre notre cause,<br> 
+        votre choix témoigne d'une grande acuité intellectuelle.<br>
+        Nous devons néanmoins vérifier si vous êtes doué du Saint Programme V.1.3 .<br>
+        Veuillez répondre a ce court questionnaire.
+      </h4>
+      <p>Quelle est votre légume préféré ?<br>
+        <input type="radio" name="c1">1 - La patate<br>
+        <input type="radio" name="c1">2 - L'artichaut<br>
+        <input type="radio" name="c1">3 - Le steak (saignant, pas cramé)<br>
+      </p>
+      <p>Vous croisez dans la rue une personne affamée qui vous demande poliment un morceau du sandwitch<br> 
+        que vous mangez, vous:<br>
+        <input type="radio" name="c2">1 - L'ignorez<br>
+        <input type="radio" name="c2">2 - Lui cédez un morceau de sandwitch<br>
+        <input type="radio" name="c2">3 - Lui dites que vous êtes désolé mais que vous n'avez pas de sandwitch sur vous<br>
+        <input type="radio" name="c2">4 - Le frappez violemment jusqu'à ce qu'il arrête de bouger<br>
+      </p>
+      <p>Trouvez vous que la démonstration suivante est pertinente ?<br>
+        <br>
+        "Dans un gruyère, plus il y a de gruyère, plus il y a de trous;<br>
+         plus il y a de trous, moins il y a de gruyère;<br>
+         Donc plus il y a de gruyère, moins il y a de gruyère."<br>
+        
+         <input type="radio" name="c3">1 - Oui <br>
+         <input type="radio" name="c3">2 - Non <br>
+      </p>
+      <p>Si pour survivre vous n'aviez qu'une vache pour vous nourrir,<br> 
+        combien de temps pensez vous que vous puissiez survivre ?<br>
+        <input type="radio" name="c4">1 - 5 minutes<br>
+        <input type="radio" name="c4">2 - 6 jours <br>
+        <input type="radio" name="c4">3 - 7 semaines <br>
+        <input type="radio" name="c4">4 - jusqu'à votre mort <br>
+        <input type="radio" name="c4">5 - La mort c'est surfait<br>
+      </p>
+      <p>Selon Descartes la parole précède l'acte. <br>
+        Dans cette logique de raisonnement, pensez vous que le libre arbitre face à une situation dont les possibilités d'actions sont contraintes<br>
+        constitue un élément décisif, ou du moins pertinent, dans la résolution d'un dilemme dit "insolvable" ?<br>
+        <input type="radio" name="c5">1 - Oui <br>
+        <input type="radio" name="c5">2 - Non <br>
+        <input type="radio" name="c5">3 - Oui mais ça dépend <br>
+        <input type="radio" name="c5">4 - Non car le libre arbitre se définit par une pleine conscience éclairée de la possibilité de ses actes et de la capacité à mobiliser ses propres ressources intellectuelles<br>
+                 et physiques pour la résolution d'un problème. De ce fait une action contrainte échappe totalement au libre arbitre car celui ci est alors dépourvu de son essence première.
+        </p><br>
+        <button class="validerQ" (click)="retour()">Valider</button>
+    </div>
   </div>
 </body>
 </html>

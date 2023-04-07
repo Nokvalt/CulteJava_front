@@ -60,11 +60,11 @@ input[type="number"], input[type="text"], input[type="date"], select {
 }
 
 input[type="number"], input[type="text"], input[type="date"], select{
-    color: #0b795a;
+    color: #aeb1b0;
 }
 
 #button {
-    color: #0b795a;
+    color: #969a99;
     margin: 5px;
     padding: 3px 5px;
     border: none;
@@ -83,4 +83,8 @@ input[type="number"], input[type="text"], input[type="date"], select{
     text-align: center;
     font-family: monospace;
     font-size: 16px;
+}
+
+#nom{
+    width: 400px;
 }

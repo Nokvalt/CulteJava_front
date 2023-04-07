@@ -6,4 +6,4 @@ export class Connexion{
         this.login = login;
         this.password = password;
     }
-}
+} 

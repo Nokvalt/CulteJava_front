@@ -22,6 +22,7 @@ import { BannisComponent } from './bannis/bannis.component';
 import { DemandeComponent } from './demande/demande.component';
 import { LoreComponent } from './lore/lore.component';
 import { FaqComponent } from './faq/faq.component';
+import { DonComponent } from './don/don.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { FaqComponent } from './faq/faq.component';
     BannisComponent,
     LoreComponent,
     FaqComponent,
+    DonComponent,
   ],
   
   imports: [

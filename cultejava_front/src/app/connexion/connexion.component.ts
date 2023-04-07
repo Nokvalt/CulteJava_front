@@ -36,13 +36,14 @@ export class ConnexionComponent {
     this.connexionForm = this.userForm.value;
 
     this.connexionService.findByLogin(this.connexionForm).subscribe(resp => {
-      this.loginService.setConnected(resp)
-      switch (this.loginService.getConnected().punition){
+      switch (resp.punition){
         case "aucune":{
+          this.loginService.setConnected(resp)
           this.router.navigate(['/accueil']);
           break;
         }
         case "dactylo":{
+          this.loginService.setId(resp.id);
           this.router.navigate(['/punitionDactylo']);
           break;
         }

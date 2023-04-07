@@ -12,8 +12,16 @@
         <ul id="navList">
 
             <div id="hautNav">
+
+            <li *ngIf="connected().rang != 'Grand Dev'" >
+                <a [routerLink]="['/dons']" routerLinkActive="active">Mes dons</a>
+            </li>
+
+            <li *ngIf="connected().rang == 'Grand Dev'" >
+                <a [routerLink]="['/dons']" routerLinkActive="active">Dons</a>
+            </li>
+
             <li>
-                
                 <a [routerLink]="['/evenement']" routerLinkActive="active">Evenements</a>
             </li>
                     

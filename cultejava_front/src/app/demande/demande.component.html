@@ -2,7 +2,7 @@
     
     <h1 *ngIf="connected().rang == 'Indenteur'" >Liste des Demandes </h1>
     <h3 *ngIf="connected().rang == 'Indenteur'" >Vos demandes seront bien prises en considération</h3> 
-    <h1 *ngIf="connected().rang == 'Grand Dev'" >Liste des Demandes des pigeons </h1>
+    <h1 *ngIf="connected().rang == 'Grand Dev'" >Liste des Demandes des indenteurs </h1>
     <h3 *ngIf="connected().rang == 'Grand Dev'" >Les demandes seront toujours refusées </h3> 
         <table id="table" *ngIf="list().length != 0">
             <thead>

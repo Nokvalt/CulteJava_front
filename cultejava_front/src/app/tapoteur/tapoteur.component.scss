@@ -16,8 +16,10 @@ h1, h2{
     font-size: 0.9em;
     font-family: monospace;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-left: auto;
+    margin-left: 2%;
     margin-right: 3%;
+    min-width: 80%;
+    
 }
 
 #table thead tr {
@@ -118,4 +120,5 @@ button {
 
 .PUNI {
     background-color: red;
+    color: red;
   }

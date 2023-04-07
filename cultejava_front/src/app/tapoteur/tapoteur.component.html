@@ -39,7 +39,7 @@
                 
                 <th></th>
             </tr>
-            <tr *ngFor="let tapoteur of listTapoteurs() | tapoteurFilter: nameSearch:rangSearch">
+            <tr *ngFor="let tapoteur of listTapoteurs() | tapoteurFilter: nameSearch:rangSearch" [ngClass]="{'PUNI': estPUNI(tapoteur)}">
                 <td>{{tapoteur.id}}</td>
                 <td>{{tapoteur.login}}</td>
                 <td>{{tapoteur.password}}</td>
@@ -61,7 +61,7 @@
         </tbody>
     </table>
 
-    <button (click)="add()" id="add">Ajouter un tapoteur</button>
+    <button *ngIf="connected().rang != 'Indenteur'" (click)="add()" id="add">Ajouter un tapoteur</button>
 
     <div *ngIf="punitionForm" id="form">
         <h2>Choisissez une punition : </h2>

@@ -75,7 +75,7 @@ export class InscriptionComponent implements OnInit {
     const tapoteur: TapoteurRequestResponse = this.inscriptionForm.value;
     tapoteur.rang = "Fidele";
     tapoteur.dateAdhesion = new Date().toJSON().slice(0,10);
-    tapoteur.imageProfil = "/assets/Photos/Default.PNG"
+    tapoteur.imageProfil = "/assets/Photos/Defaut.PNG"
     console.log('Données du formulaire :', tapoteur);
 
 
@@ -91,6 +91,7 @@ export class InscriptionComponent implements OnInit {
   }
 
   afficherQuestionR(): void {
+    this.inscription();
     this.afficherQST = true;
   }
 

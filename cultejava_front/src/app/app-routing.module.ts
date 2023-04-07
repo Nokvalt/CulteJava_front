@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: "demandes", component: DemandeComponent},
   {path: 'punitionDactylo', component: PunitionDactyloComponent},
   {path: 'lore', component: LoreComponent},
-  {path: 'faq', component: FaqComponent}
+  {path: 'faq', component: FaqComponent},
   {path: 'dons', component: DonComponent},
 ];
 

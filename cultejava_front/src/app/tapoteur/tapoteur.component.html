@@ -49,13 +49,13 @@
                 <td id="adresse">{{tapoteur.numero}}, {{tapoteur.voie | titlecase}} - {{tapoteur.cp}} {{tapoteur.ville | uppercase}}  ({{tapoteur.pays | uppercase}})</td>
                 <td>{{tapoteur.sommeDon}}</td>
                 <td>{{tapoteur.rang}}</td>
-                <td> <button *ngIf="connected().rang =='Compileur'" (click)="edit(tapoteur.id)">Modifier</button>
-                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev'" (click)="remove(tapoteur.id)">Supprimer</button> <br>
-                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang != 'Fidele' && tapoteur.rang !='Grand Dev'" (click)="demote(tapoteur.id)">Rétrograder</button>
-                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang != 'Compileur' && tapoteur.rang !='Grand Dev'" (click)="promote(tapoteur.id)">Promouvoir</button><br>
-                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev'" (click)="banForm(tapoteur.id)">Bannir</button>
+                <td> <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev' && tapoteur.rang !='Compileur'" (click)="edit(tapoteur.id)">Modifier</button>
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev' && tapoteur.rang !='Compileur'" (click)="remove(tapoteur.id)">Supprimer</button> <br>
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang != 'Fidele' && tapoteur.rang !='Grand Dev' && tapoteur.rang !='Compileur'" (click)="demote(tapoteur.id)">Rétrograder</button>
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang != 'Compileur' && tapoteur.rang !='Grand Dev' && tapoteur.rang !='Compileur'" (click)="promote(tapoteur.id)">Promouvoir</button><br>
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev' && tapoteur.rang !='Compileur'" (click)="banForm(tapoteur.id)">Bannir</button>
                     <button *ngIf="connected().rang =='Grand Dev'" (click)="passationPouvoir(tapoteur.id)">Passation</button> 
-                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev'" (click)="addPunition(tapoteur.id)">Punir</button> 
+                    <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev' && tapoteur.rang !='Compileur'" (click)="addPunition(tapoteur.id)">Punir</button> 
                 </td> 
             </tr>
         </tbody>

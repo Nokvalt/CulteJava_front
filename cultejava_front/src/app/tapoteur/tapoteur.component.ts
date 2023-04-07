@@ -110,10 +110,11 @@ export class TapoteurComponent {
     this.tapoteurService.punish(this.idPunition, this.punitionForm);
     this.idPunition = null;
     this.punitionForm = null;
+    alert("Vous avez bien puni le tapoteur.")
   }
 
   estPUNI(tapoteur: TapoteurRequestResponse): boolean {
-    return tapoteur.punition !== undefined && tapoteur.punition !== null;
+    return tapoteur.punition != 'aucune';
   }
 
   listTypesPunitions():any{

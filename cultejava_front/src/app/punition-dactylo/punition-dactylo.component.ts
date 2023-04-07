@@ -22,7 +22,7 @@ export class PunitionDactyloComponent {
   }
 
   submit(){
-    if(this.fInput == this.sInput){
+    if(this.fInput === this.sInput){
       this.tapoteurService.removePunition(this.connectedId());
       alert("Merci. Vous pouvez vous connecter.");
       this.router.navigate(['']);

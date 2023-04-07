@@ -56,7 +56,7 @@
                     <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev' && tapoteur.rang !='Compileur'" (click)="banForm(tapoteur.id)">Bannir</button>
                     <button *ngIf="connected().rang =='Grand Dev'" (click)="passationPouvoir(tapoteur.id)">Passation</button> 
                     <button *ngIf="connected().rang =='Compileur' && tapoteur.rang !='Grand Dev' && tapoteur.rang !='Compileur'" (click)="addPunition(tapoteur.id)">Punir</button> 
-                </td> 
+                </td>
             </tr>
         </tbody>
     </table>

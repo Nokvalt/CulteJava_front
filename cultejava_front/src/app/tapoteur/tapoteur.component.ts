@@ -112,6 +112,10 @@ export class TapoteurComponent {
     this.punitionForm = null;
   }
 
+  estPUNI(tapoteur: TapoteurRequestResponse): boolean {
+    return tapoteur.punition !== undefined && tapoteur.punition !== null;
+  }
+
   listTypesPunitions():any{
     return Object.keys(TypePunition).filter((v) => isNaN(Number(v)));
   }

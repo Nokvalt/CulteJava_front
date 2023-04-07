@@ -26,6 +26,7 @@ export class AccueilComponent {
   volerLaCagnotte(): void{
     if (this.connected().allDons != 0){
       this.serviceHttp.steal().subscribe(resp => {
+        console.log(resp);
         this.connected().argentVole = this.connected().allDons + this.connected().argentVole;
         this.connected().allDons = 0;
         alert("Merci pour votre vol, " + this.connected().login);

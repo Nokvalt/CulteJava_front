@@ -1,0 +1,52 @@
+#bodyContainer {
+    position: absolute;
+    top: 10%;
+    left: 14.6%;
+    width: 1625px;
+
+    background-color: #2f2f2f;
+    color: white;
+
+}
+
+#titreFaq {
+
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    padding-bottom: 20px;
+
+}
+
+#faq h1 {
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-bottom: 20px;
+    padding-top: 100px;
+}
+
+#faq p {
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 23px;
+}
+
+.orange {
+    color: #cc6c1d;
+}
+
+.bleu {
+    color: rgb(20, 81, 233);
+}
+
+.turquoise {
+    color: #33e8dc;
+}
+
+.dore {
+    color: rgb(237, 216, 21);
+}

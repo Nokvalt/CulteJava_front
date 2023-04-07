@@ -2,10 +2,14 @@
     <h1>Vous avez été puni(e). Veuillez recopier ce texte pour retrouver vos droits: </h1>
 
     <form id="form">
-        <input readonly placeholder="Lorem ipsum dolor" [(ngModel)]="fInput">
-        <textarea rows="5" cols="33" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off [(ngModel)]="sInput"></textarea>
+        <div id="texteARecopier" readonly >
+          <h1>Texte à recopier:</h1> <p [(ngModel)]="fInput"> Lorem ipsum dolor </p>
+        </div>
+        <textarea id="boiteRecopiage" rows="5" cols="33" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off [(ngModel)]="sInput"></textarea>
 
-        <input type="submit" (click)="submit()" value="Confirmer">
-        <input type="retour" (click)="retour()" value="Retour">
+        <div id="boutons">
+        <input id="confirmer" type="submit" (click)="submit()" value="Confirmer">
+        <input id="retour" type="retour" (click)="retour()" value="Retour">
+        </div>
     </form>
 </body>

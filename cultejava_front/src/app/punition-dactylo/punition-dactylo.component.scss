@@ -14,3 +14,54 @@ h1{
     font-family: monospace;
     font-size: 16px;
 }
+
+#texteARecopier {
+
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 20%;
+    left: 19%;
+    background-color:#2f2f2f;
+    color: white;
+    border: solid 2px red;
+    border-radius: 5%;
+    padding: 15px;
+
+}
+
+#boiteRecopiage {
+
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 20%;
+    left: 58%;
+    background-color:#2f2f2f;
+    color: white;
+    border: solid 2px green;
+    border-radius: 5%;
+    padding: 15px;
+    
+}
+
+#boutons{
+    position: absolute;
+    left: 49%;
+    top: 60%;
+}
+
+#confirmer {
+    width: 100px;
+    
+}
+
+#retour {
+width: 100px;
+text-align: center;
+}
+
+#confirmer input:hover{
+    background-color: green;
+    color: white;
+}

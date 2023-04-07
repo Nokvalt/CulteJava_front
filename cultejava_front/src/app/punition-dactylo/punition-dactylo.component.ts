@@ -11,7 +11,7 @@ import { TapoteurRequestResponse } from '../modelTapoteur';
   styleUrls: ['./punition-dactylo.component.scss']
 })
 export class PunitionDactyloComponent {
-  fInput: string;
+  fInput: string = "Lorem ipsum dolor";
   sInput: string;
 
   constructor(private tapoteurService: TapoteurHttpService, private loginService: LoginService, private router: Router){
